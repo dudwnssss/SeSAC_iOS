@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="NCCViewController" customModule="NewlyConiedWord_Calendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-0s-UXr">
+                                <rect key="frame" x="24" y="119" width="270" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6h-sG-5oI">
+                                <rect key="frame" x="294" y="118.66666666666669" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="searchButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jzi-rM-nra"/>
+                                    <action selector="tapGestureDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="M5G-Gr-ycd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJ3-Go-cx6">
+                                <rect key="frame" x="24" y="363.66666666666669" width="345" height="150.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="d33-Si-fxX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aII-Ke-cO1">
+                                <rect key="frame" x="316.66666666666669" y="363.66666666666669" width="32.333333333333314" height="95.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aao-Eg-od1">
+                                <rect key="frame" x="24" y="171" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="newWordButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="FTq-T4-FJf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0P-4v-jyA">
+                                <rect key="frame" x="107" y="171" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="newWordButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="i8A-KO-qic"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Tt-yD-h6P">
+                                <rect key="frame" x="190" y="171" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="newWordButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="B5Y-Wx-mfx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6X-yw-jan">
+                                <rect key="frame" x="273" y="171" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="newWordButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ZiS-V7-c3x"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="z6h-sG-5oI" firstAttribute="leading" secondItem="W3s-0s-UXr" secondAttribute="trailing" id="1Te-SS-dLJ"/>
+                            <constraint firstItem="W3s-0s-UXr" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="60" id="2su-tZ-f5n"/>
+                            <constraint firstItem="k6X-yw-jan" firstAttribute="centerY" secondItem="Aao-Eg-od1" secondAttribute="centerY" id="AXK-pi-Se1"/>
+                            <constraint firstItem="aII-Ke-cO1" firstAttribute="top" secondItem="qJ3-Go-cx6" secondAttribute="top" id="B2f-g0-hbB"/>
+                            <constraint firstItem="aII-Ke-cO1" firstAttribute="trailing" secondItem="qJ3-Go-cx6" secondAttribute="trailing" constant="-20" id="DAB-wC-UbR"/>
+                            <constraint firstItem="z6h-sG-5oI" firstAttribute="centerY" secondItem="W3s-0s-UXr" secondAttribute="centerY" id="J95-tG-hgk"/>
+                            <constraint firstItem="W3s-0s-UXr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="L7B-FH-vJw"/>
+                            <constraint firstItem="qJ3-Go-cx6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="PX2-AN-H1z"/>
+                            <constraint firstItem="s0P-4v-jyA" firstAttribute="leading" secondItem="Aao-Eg-od1" secondAttribute="trailing" constant="8" symbolic="YES" id="S06-dS-bDy"/>
+                            <constraint firstItem="Aao-Eg-od1" firstAttribute="leading" secondItem="W3s-0s-UXr" secondAttribute="leading" id="Viv-vD-eBZ"/>
+                            <constraint firstItem="qJ3-Go-cx6" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="Wjq-gv-HA3"/>
+                            <constraint firstItem="z6h-sG-5oI" firstAttribute="height" secondItem="W3s-0s-UXr" secondAttribute="height" multiplier="1.02941" id="Z8Z-g3-oNb"/>
+                            <constraint firstItem="s0P-4v-jyA" firstAttribute="centerY" secondItem="Aao-Eg-od1" secondAttribute="centerY" id="cv5-1A-l9f"/>
+                            <constraint firstItem="4Tt-yD-h6P" firstAttribute="centerY" secondItem="Aao-Eg-od1" secondAttribute="centerY" id="dSK-ch-5AW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qJ3-Go-cx6" secondAttribute="trailing" constant="24" id="fFr-lv-arm"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="z6h-sG-5oI" secondAttribute="trailing" constant="24" id="ipC-kC-agF"/>
+                            <constraint firstItem="4Tt-yD-h6P" firstAttribute="leading" secondItem="s0P-4v-jyA" secondAttribute="trailing" constant="8" symbolic="YES" id="qA4-oX-mXl"/>
+                            <constraint firstItem="Aao-Eg-od1" firstAttribute="top" secondItem="W3s-0s-UXr" secondAttribute="bottom" constant="18" id="ujk-40-sci"/>
+                            <constraint firstItem="k6X-yw-jan" firstAttribute="leading" secondItem="4Tt-yD-h6P" secondAttribute="trailing" constant="8" symbolic="YES" id="yPq-U0-N2B"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="nGc-zR-s5i" appends="YES" id="hQe-bZ-ATM"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="meaningLabel" destination="qJ3-Go-cx6" id="pj4-ku-vPR"/>
+                        <outlet property="newWordSearchButton" destination="z6h-sG-5oI" id="Rsu-U2-MQ7"/>
+                        <outlet property="newWordTextField" destination="W3s-0s-UXr" id="7lM-hM-bid"/>
+                        <outletCollection property="newWordButtons" destination="Aao-Eg-od1" collectionClass="NSMutableArray" id="etr-ih-VUS"/>
+                        <outletCollection property="newWordButtons" destination="s0P-4v-jyA" collectionClass="NSMutableArray" id="cgP-Iv-IIY"/>
+                        <outletCollection property="newWordButtons" destination="4Tt-yD-h6P" collectionClass="NSMutableArray" id="Hkm-j6-OoH"/>
+                        <outletCollection property="newWordButtons" destination="k6X-yw-jan" collectionClass="NSMutableArray" id="RHu-6r-FAA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="nGc-zR-s5i">
+                    <connections>
+                        <action selector="tapGestureDidTap:" destination="Y6W-OH-hqX" id="Xfb-l9-BRC"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

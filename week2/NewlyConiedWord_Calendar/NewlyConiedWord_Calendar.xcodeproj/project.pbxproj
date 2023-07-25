@@ -1,0 +1,425 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		105B73AC2A68DABB00D427FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B73AB2A68DABB00D427FE /* AppDelegate.swift */; };
+		105B73AE2A68DABB00D427FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B73AD2A68DABB00D427FE /* SceneDelegate.swift */; };
+		105B73B32A68DABB00D427FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105B73B12A68DABB00D427FE /* Main.storyboard */; };
+		105B73B52A68DABD00D427FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105B73B42A68DABD00D427FE /* Assets.xcassets */; };
+		105B73B82A68DABD00D427FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105B73B62A68DABD00D427FE /* LaunchScreen.storyboard */; };
+		105B73C02A68DBD900D427FE /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B73BF2A68DBD900D427FE /* DateViewController.swift */; };
+		105B73C22A69188C00D427FE /* NewlyCoinedWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105B73C12A69188C00D427FE /* NewlyCoinedWord.storyboard */; };
+		105B73C42A69191100D427FE /* NCCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B73C32A69191100D427FE /* NCCViewController.swift */; };
+		106906D22A6A0C4C00B10839 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106906D12A6A0C4C00B10839 /* SampleViewController.swift */; };
+		106906D52A6A0F0F00B10839 /* AutoLayoutPractice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106906D42A6A0F0F00B10839 /* AutoLayoutPractice.storyboard */; };
+		106906D72A6A10DD00B10839 /* AutoLayoutExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106906D62A6A10DD00B10839 /* AutoLayoutExample.storyboard */; };
+		106906D92A6A4AE600B10839 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106906D82A6A4AE600B10839 /* WordViewController.swift */; };
+		1098A0CA2A6D3346003BF4EE /* Bamin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1098A0C92A6D3346003BF4EE /* Bamin.storyboard */; };
+		1098A0CC2A6D33E9003BF4EE /* BaminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098A0CB2A6D33E9003BF4EE /* BaminViewController.swift */; };
+		10A30A912A6E06900022BA8D /* CommitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A30A902A6E06900022BA8D /* CommitViewController.swift */; };
+		10E240122A6E58FA006C1C53 /* LEDBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E240112A6E58F9006C1C53 /* LEDBoard.storyboard */; };
+		10E240142A6E5906006C1C53 /* LEDBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E240132A6E5906006C1C53 /* LEDBoardViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		105B73A82A68DABB00D427FE /* NewlyConiedWord_Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewlyConiedWord_Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		105B73AB2A68DABB00D427FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		105B73AD2A68DABB00D427FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		105B73B22A68DABB00D427FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		105B73B42A68DABD00D427FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		105B73B72A68DABD00D427FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		105B73B92A68DABD00D427FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		105B73BF2A68DBD900D427FE /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		105B73C12A69188C00D427FE /* NewlyCoinedWord.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewlyCoinedWord.storyboard; sourceTree = "<group>"; };
+		105B73C32A69191100D427FE /* NCCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCCViewController.swift; sourceTree = "<group>"; };
+		106906D12A6A0C4C00B10839 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
+		106906D42A6A0F0F00B10839 /* AutoLayoutPractice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AutoLayoutPractice.storyboard; sourceTree = "<group>"; };
+		106906D62A6A10DD00B10839 /* AutoLayoutExample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AutoLayoutExample.storyboard; sourceTree = "<group>"; };
+		106906D82A6A4AE600B10839 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
+		1098A0C92A6D3346003BF4EE /* Bamin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bamin.storyboard; sourceTree = "<group>"; };
+		1098A0CB2A6D33E9003BF4EE /* BaminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaminViewController.swift; sourceTree = "<group>"; };
+		10A30A902A6E06900022BA8D /* CommitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitViewController.swift; sourceTree = "<group>"; };
+		10E240112A6E58F9006C1C53 /* LEDBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LEDBoard.storyboard; sourceTree = "<group>"; };
+		10E240132A6E5906006C1C53 /* LEDBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEDBoardViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		105B73A52A68DABB00D427FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		105B739F2A68DABB00D427FE = {
+			isa = PBXGroup;
+			children = (
+				105B73AA2A68DABB00D427FE /* NewlyConiedWord_Calendar */,
+				105B73A92A68DABB00D427FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		105B73A92A68DABB00D427FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				105B73A82A68DABB00D427FE /* NewlyConiedWord_Calendar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		105B73AA2A68DABB00D427FE /* NewlyConiedWord_Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				106906D32A6A0C5400B10839 /* ViewControllers */,
+				106906D02A6A0BD600B10839 /* Stroyboards */,
+				105B73AB2A68DABB00D427FE /* AppDelegate.swift */,
+				105B73AD2A68DABB00D427FE /* SceneDelegate.swift */,
+				105B73B42A68DABD00D427FE /* Assets.xcassets */,
+				105B73B62A68DABD00D427FE /* LaunchScreen.storyboard */,
+				105B73B92A68DABD00D427FE /* Info.plist */,
+			);
+			path = NewlyConiedWord_Calendar;
+			sourceTree = "<group>";
+		};
+		106906D02A6A0BD600B10839 /* Stroyboards */ = {
+			isa = PBXGroup;
+			children = (
+				105B73B12A68DABB00D427FE /* Main.storyboard */,
+				105B73C12A69188C00D427FE /* NewlyCoinedWord.storyboard */,
+				106906D42A6A0F0F00B10839 /* AutoLayoutPractice.storyboard */,
+				106906D62A6A10DD00B10839 /* AutoLayoutExample.storyboard */,
+				1098A0C92A6D3346003BF4EE /* Bamin.storyboard */,
+				10E240112A6E58F9006C1C53 /* LEDBoard.storyboard */,
+			);
+			path = Stroyboards;
+			sourceTree = "<group>";
+		};
+		106906D32A6A0C5400B10839 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				106906D12A6A0C4C00B10839 /* SampleViewController.swift */,
+				105B73C32A69191100D427FE /* NCCViewController.swift */,
+				105B73BF2A68DBD900D427FE /* DateViewController.swift */,
+				106906D82A6A4AE600B10839 /* WordViewController.swift */,
+				1098A0CB2A6D33E9003BF4EE /* BaminViewController.swift */,
+				10A30A902A6E06900022BA8D /* CommitViewController.swift */,
+				10E240132A6E5906006C1C53 /* LEDBoardViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		105B73A72A68DABB00D427FE /* NewlyConiedWord_Calendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 105B73BC2A68DABD00D427FE /* Build configuration list for PBXNativeTarget "NewlyConiedWord_Calendar" */;
+			buildPhases = (
+				105B73A42A68DABB00D427FE /* Sources */,
+				105B73A52A68DABB00D427FE /* Frameworks */,
+				105B73A62A68DABB00D427FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NewlyConiedWord_Calendar;
+			productName = NewlyConiedWord_Calendar;
+			productReference = 105B73A82A68DABB00D427FE /* NewlyConiedWord_Calendar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		105B73A02A68DABB00D427FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					105B73A72A68DABB00D427FE = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 105B73A32A68DABB00D427FE /* Build configuration list for PBXProject "NewlyConiedWord_Calendar" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 105B739F2A68DABB00D427FE;
+			productRefGroup = 105B73A92A68DABB00D427FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				105B73A72A68DABB00D427FE /* NewlyConiedWord_Calendar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		105B73A62A68DABB00D427FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				106906D52A6A0F0F00B10839 /* AutoLayoutPractice.storyboard in Resources */,
+				105B73B82A68DABD00D427FE /* LaunchScreen.storyboard in Resources */,
+				105B73B52A68DABD00D427FE /* Assets.xcassets in Resources */,
+				105B73C22A69188C00D427FE /* NewlyCoinedWord.storyboard in Resources */,
+				106906D72A6A10DD00B10839 /* AutoLayoutExample.storyboard in Resources */,
+				105B73B32A68DABB00D427FE /* Main.storyboard in Resources */,
+				1098A0CA2A6D3346003BF4EE /* Bamin.storyboard in Resources */,
+				10E240122A6E58FA006C1C53 /* LEDBoard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		105B73A42A68DABB00D427FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				106906D92A6A4AE600B10839 /* WordViewController.swift in Sources */,
+				105B73C02A68DBD900D427FE /* DateViewController.swift in Sources */,
+				105B73C42A69191100D427FE /* NCCViewController.swift in Sources */,
+				106906D22A6A0C4C00B10839 /* SampleViewController.swift in Sources */,
+				105B73AC2A68DABB00D427FE /* AppDelegate.swift in Sources */,
+				10A30A912A6E06900022BA8D /* CommitViewController.swift in Sources */,
+				10E240142A6E5906006C1C53 /* LEDBoardViewController.swift in Sources */,
+				1098A0CC2A6D33E9003BF4EE /* BaminViewController.swift in Sources */,
+				105B73AE2A68DABB00D427FE /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		105B73B12A68DABB00D427FE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				105B73B22A68DABB00D427FE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		105B73B62A68DABD00D427FE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				105B73B72A68DABD00D427FE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		105B73BA2A68DABD00D427FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		105B73BB2A68DABD00D427FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		105B73BD2A68DABD00D427FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6UJYJPDXP4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewlyConiedWord_Calendar/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sesac.NewlyConiedWord-Calendar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		105B73BE2A68DABD00D427FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6UJYJPDXP4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewlyConiedWord_Calendar/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sesac.NewlyConiedWord-Calendar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		105B73A32A68DABB00D427FE /* Build configuration list for PBXProject "NewlyConiedWord_Calendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				105B73BA2A68DABD00D427FE /* Debug */,
+				105B73BB2A68DABD00D427FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		105B73BC2A68DABD00D427FE /* Build configuration list for PBXNativeTarget "NewlyConiedWord_Calendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				105B73BD2A68DABD00D427FE /* Debug */,
+				105B73BE2A68DABD00D427FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 105B73A02A68DABB00D427FE /* Project object */;
+}
