@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		105B73AC2A68DABB00D427FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B73AB2A68DABB00D427FE /* AppDelegate.swift */; };
 		105B73AE2A68DABB00D427FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B73AD2A68DABB00D427FE /* SceneDelegate.swift */; };
-		105B73B32A68DABB00D427FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105B73B12A68DABB00D427FE /* Main.storyboard */; };
+		105B73B32A68DABB00D427FE /* Date.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105B73B12A68DABB00D427FE /* Date.storyboard */; };
 		105B73B52A68DABD00D427FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105B73B42A68DABD00D427FE /* Assets.xcassets */; };
 		105B73B82A68DABD00D427FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105B73B62A68DABD00D427FE /* LaunchScreen.storyboard */; };
 		105B73C02A68DBD900D427FE /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B73BF2A68DBD900D427FE /* DateViewController.swift */; };
@@ -21,7 +21,6 @@
 		106906D92A6A4AE600B10839 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106906D82A6A4AE600B10839 /* WordViewController.swift */; };
 		1098A0CA2A6D3346003BF4EE /* Bamin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1098A0C92A6D3346003BF4EE /* Bamin.storyboard */; };
 		1098A0CC2A6D33E9003BF4EE /* BaminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098A0CB2A6D33E9003BF4EE /* BaminViewController.swift */; };
-		10A30A912A6E06900022BA8D /* CommitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A30A902A6E06900022BA8D /* CommitViewController.swift */; };
 		10E240122A6E58FA006C1C53 /* LEDBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E240112A6E58F9006C1C53 /* LEDBoard.storyboard */; };
 		10E240142A6E5906006C1C53 /* LEDBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E240132A6E5906006C1C53 /* LEDBoardViewController.swift */; };
 /* End PBXBuildFile section */
@@ -30,7 +29,7 @@
 		105B73A82A68DABB00D427FE /* NewlyConiedWord_Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewlyConiedWord_Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		105B73AB2A68DABB00D427FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		105B73AD2A68DABB00D427FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		105B73B22A68DABB00D427FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		105B73B22A68DABB00D427FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Date.storyboard; sourceTree = "<group>"; };
 		105B73B42A68DABD00D427FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		105B73B72A68DABD00D427FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		105B73B92A68DABD00D427FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,7 +42,6 @@
 		106906D82A6A4AE600B10839 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
 		1098A0C92A6D3346003BF4EE /* Bamin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bamin.storyboard; sourceTree = "<group>"; };
 		1098A0CB2A6D33E9003BF4EE /* BaminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaminViewController.swift; sourceTree = "<group>"; };
-		10A30A902A6E06900022BA8D /* CommitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitViewController.swift; sourceTree = "<group>"; };
 		10E240112A6E58F9006C1C53 /* LEDBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LEDBoard.storyboard; sourceTree = "<group>"; };
 		10E240132A6E5906006C1C53 /* LEDBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEDBoardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +57,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1013AC882A716FD900FA8FDF /* LEDBoard */ = {
+			isa = PBXGroup;
+			children = (
+				10E240112A6E58F9006C1C53 /* LEDBoard.storyboard */,
+				10E240132A6E5906006C1C53 /* LEDBoardViewController.swift */,
+			);
+			path = LEDBoard;
+			sourceTree = "<group>";
+		};
+		1013AC892A71703F00FA8FDF /* Bamin */ = {
+			isa = PBXGroup;
+			children = (
+				1098A0C92A6D3346003BF4EE /* Bamin.storyboard */,
+				1098A0CB2A6D33E9003BF4EE /* BaminViewController.swift */,
+			);
+			path = Bamin;
+			sourceTree = "<group>";
+		};
+		1013AC8A2A71708C00FA8FDF /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				105B73B12A68DABB00D427FE /* Date.storyboard */,
+				105B73BF2A68DBD900D427FE /* DateViewController.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		1013AC8B2A7170F200FA8FDF /* AutoLayoutPractice */ = {
+			isa = PBXGroup;
+			children = (
+				106906D12A6A0C4C00B10839 /* SampleViewController.swift */,
+				106906D42A6A0F0F00B10839 /* AutoLayoutPractice.storyboard */,
+				106906D82A6A4AE600B10839 /* WordViewController.swift */,
+				106906D62A6A10DD00B10839 /* AutoLayoutExample.storyboard */,
+			);
+			path = AutoLayoutPractice;
+			sourceTree = "<group>";
+		};
 		105B739F2A68DABB00D427FE = {
 			isa = PBXGroup;
 			children = (
@@ -78,8 +114,11 @@
 		105B73AA2A68DABB00D427FE /* NewlyConiedWord_Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				106906D32A6A0C5400B10839 /* ViewControllers */,
-				106906D02A6A0BD600B10839 /* Stroyboards */,
+				106906D32A6A0C5400B10839 /* NewCoinedWord */,
+				1013AC8B2A7170F200FA8FDF /* AutoLayoutPractice */,
+				1013AC8A2A71708C00FA8FDF /* Date */,
+				1013AC892A71703F00FA8FDF /* Bamin */,
+				1013AC882A716FD900FA8FDF /* LEDBoard */,
 				105B73AB2A68DABB00D427FE /* AppDelegate.swift */,
 				105B73AD2A68DABB00D427FE /* SceneDelegate.swift */,
 				105B73B42A68DABD00D427FE /* Assets.xcassets */,
@@ -89,31 +128,13 @@
 			path = NewlyConiedWord_Calendar;
 			sourceTree = "<group>";
 		};
-		106906D02A6A0BD600B10839 /* Stroyboards */ = {
+		106906D32A6A0C5400B10839 /* NewCoinedWord */ = {
 			isa = PBXGroup;
 			children = (
-				105B73B12A68DABB00D427FE /* Main.storyboard */,
 				105B73C12A69188C00D427FE /* NewlyCoinedWord.storyboard */,
-				106906D42A6A0F0F00B10839 /* AutoLayoutPractice.storyboard */,
-				106906D62A6A10DD00B10839 /* AutoLayoutExample.storyboard */,
-				1098A0C92A6D3346003BF4EE /* Bamin.storyboard */,
-				10E240112A6E58F9006C1C53 /* LEDBoard.storyboard */,
-			);
-			path = Stroyboards;
-			sourceTree = "<group>";
-		};
-		106906D32A6A0C5400B10839 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				106906D12A6A0C4C00B10839 /* SampleViewController.swift */,
 				105B73C32A69191100D427FE /* NCCViewController.swift */,
-				105B73BF2A68DBD900D427FE /* DateViewController.swift */,
-				106906D82A6A4AE600B10839 /* WordViewController.swift */,
-				1098A0CB2A6D33E9003BF4EE /* BaminViewController.swift */,
-				10A30A902A6E06900022BA8D /* CommitViewController.swift */,
-				10E240132A6E5906006C1C53 /* LEDBoardViewController.swift */,
 			);
-			path = ViewControllers;
+			path = NewCoinedWord;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +200,7 @@
 				105B73B52A68DABD00D427FE /* Assets.xcassets in Resources */,
 				105B73C22A69188C00D427FE /* NewlyCoinedWord.storyboard in Resources */,
 				106906D72A6A10DD00B10839 /* AutoLayoutExample.storyboard in Resources */,
-				105B73B32A68DABB00D427FE /* Main.storyboard in Resources */,
+				105B73B32A68DABB00D427FE /* Date.storyboard in Resources */,
 				1098A0CA2A6D3346003BF4EE /* Bamin.storyboard in Resources */,
 				10E240122A6E58FA006C1C53 /* LEDBoard.storyboard in Resources */,
 			);
@@ -197,7 +218,6 @@
 				105B73C42A69191100D427FE /* NCCViewController.swift in Sources */,
 				106906D22A6A0C4C00B10839 /* SampleViewController.swift in Sources */,
 				105B73AC2A68DABB00D427FE /* AppDelegate.swift in Sources */,
-				10A30A912A6E06900022BA8D /* CommitViewController.swift in Sources */,
 				10E240142A6E5906006C1C53 /* LEDBoardViewController.swift in Sources */,
 				1098A0CC2A6D33E9003BF4EE /* BaminViewController.swift in Sources */,
 				105B73AE2A68DABB00D427FE /* SceneDelegate.swift in Sources */,
@@ -207,12 +227,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		105B73B12A68DABB00D427FE /* Main.storyboard */ = {
+		105B73B12A68DABB00D427FE /* Date.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				105B73B22A68DABB00D427FE /* Base */,
 			);
-			name = Main.storyboard;
+			name = Date.storyboard;
 			sourceTree = "<group>";
 		};
 		105B73B62A68DABD00D427FE /* LaunchScreen.storyboard */ = {
