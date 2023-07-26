@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1013AC872A70DC6C00FA8FDF /* JackflixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1013AC862A70DC6C00FA8FDF /* JackflixViewController.swift */; };
 		105B739A2A67D59000D427FE /* Jackflix.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105B73992A67D59000D427FE /* Jackflix.storyboard */; };
-		105B739C2A67D5DA00D427FE /* JackflixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B739B2A67D5D900D427FE /* JackflixViewController.swift */; };
 		105B739E2A68C43400D427FE /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B739D2A68C43400D427FE /* KeyboardViewController.swift */; };
 		109DC0D62A676E8A0083DF60 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109DC0D52A676E8A0083DF60 /* MovieViewController.swift */; };
 		109DC0D82A67700F0083DF60 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109DC0D72A67700F0083DF60 /* DetailViewController.swift */; };
@@ -23,8 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1013AC862A70DC6C00FA8FDF /* JackflixViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JackflixViewController.swift; sourceTree = "<group>"; };
 		105B73992A67D59000D427FE /* Jackflix.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Jackflix.storyboard; sourceTree = "<group>"; };
-		105B739B2A67D5D900D427FE /* JackflixViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JackflixViewController.swift; path = ../../SeSAC_iOS_Assignment3/SeSAC_iOS_Assignment3/JackflixViewController.swift; sourceTree = "<group>"; };
 		105B739D2A68C43400D427FE /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		109DC0D52A676E8A0083DF60 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		109DC0D72A67700F0083DF60 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 				10B94A822A661AD300D94803 /* SceneDelegate.swift */,
 				105B73992A67D59000D427FE /* Jackflix.storyboard */,
 				105B739D2A68C43400D427FE /* KeyboardViewController.swift */,
-				105B739B2A67D5D900D427FE /* JackflixViewController.swift */,
+				1013AC862A70DC6C00FA8FDF /* JackflixViewController.swift */,
 				10B94A962A667AEA00D94803 /* Inspect.swift */,
 				10B94A942A666E5B00D94803 /* Assignment.storyboard */,
 				109DC0D52A676E8A0083DF60 /* MovieViewController.swift */,
@@ -161,12 +161,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1013AC872A70DC6C00FA8FDF /* JackflixViewController.swift in Sources */,
 				109DC0D62A676E8A0083DF60 /* MovieViewController.swift in Sources */,
 				109DC0DA2A67A7090083DF60 /* BoardViewControlller.swift in Sources */,
 				10B94A812A661AD300D94803 /* AppDelegate.swift in Sources */,
 				109DC0D82A67700F0083DF60 /* DetailViewController.swift in Sources */,
 				10B94A972A667AEA00D94803 /* Inspect.swift in Sources */,
-				105B739C2A67D5DA00D427FE /* JackflixViewController.swift in Sources */,
 				10B94A832A661AD300D94803 /* SceneDelegate.swift in Sources */,
 				105B739E2A68C43400D427FE /* KeyboardViewController.swift in Sources */,
 			);
