@@ -20,7 +20,6 @@ class JackflixViewController: UIViewController {
     
     
     @IBOutlet var jackflixTextFields: [UITextField]!
-    
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var nicknameTextField: UITextField!

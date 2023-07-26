@@ -14,21 +14,30 @@ class StatisticsViewController: UIViewController {
     @IBOutlet var scoreLabels: [UILabel]!
     let moods = Mood.allCases
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setProperties()
         setTags()
         setMoodProperties()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setScoreTexts()
+    }
+    
+    func setScoreTexts(){
+        for i in 0...moods.count-1{
+            if let mood = Mood(rawValue: i){
+                scoreLabels[i].text = "\(UserDefaults.standard.integer(forKey: "\(mood)"))점"}
+        }
     }
     
     func setProperties(){
         for i in 0...moods.count-1{
             backgroundViews[i].layer.cornerRadius = 10
             scoreLabels[i].font = scoreLabels[i].font.withSize(30)
-            scoreLabels[i].text = "0점"
-        }
+                scoreLabels[i].text = "0점"}
     }
     
     func setTags(){
