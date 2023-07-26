@@ -7,18 +7,15 @@
 
 import UIKit
 
-enum TextFieldType: Int{
-    case email = 100
-    case password = 200
-    case nickname = 300
-    case location = 400
-    case recommend = 500
+enum TextFieldType: Int, CaseIterable{
+    case email
+    case password
+    case nickname
+    case location
+    case recommend
 }
 
-
 class JackflixViewController: UIViewController {
-    
-    
     @IBOutlet var jackflixTextFields: [UITextField]!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -27,11 +24,12 @@ class JackflixViewController: UIViewController {
     @IBOutlet var recommendTextField: UITextField!
     @IBOutlet var signupButton: UIButton!
     @IBOutlet var testSwitch: UISwitch!
+    @IBOutlet var saveButton: UIButton!
+    
+    let textfieldTypes = TextFieldType.allCases
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         //기본값 없음: nil
         let testString = UserDefaults.standard.string(forKey: "testString")
@@ -49,38 +47,46 @@ class JackflixViewController: UIViewController {
         setTestSwitch()
         setTextFieldTags()
         setTextFieldTexts()
-        
-        
+        setSaveButtonProperties()
     }
 
     func setTextFieldTexts(){
         
-        let email = UserDefaults.standard.string(forKey: "email")
-        let password = UserDefaults.standard.string(forKey: "password")
-        let nickname = UserDefaults.standard.string(forKey: "nickname")
-        let location = UserDefaults.standard.string(forKey: "location")
-        let recommend = UserDefaults.standard.string(forKey: "recommend")
-        
-        if let email{
-            emailTextField.text = email
+        for i in 0...textfieldTypes.count{
+            if let type = TextFieldType(rawValue: i){
+                if let text = UserDefaults.standard.string(forKey: "\(type)"){
+                    jackflixTextFields[i].text = text
+                }
+            }
         }
-        if let password{
-            passwordTextField.text = password
-        }
-        if let nickname {
-            nicknameTextField.text = nickname
-        }
-        if let location {
-            locationTextField.text = location
-        }
-        if let recommend {
-            recommendTextField.text = recommend
-        }
-        
+//        let email = UserDefaults.standard.string(forKey: "email")
+//        let password = UserDefaults.standard.string(forKey: "password")
+//        let nickname = UserDefaults.standard.string(forKey: "nickname")
+//        let location = UserDefaults.standard.string(forKey: "location")
+//        let recommend = UserDefaults.standard.string(forKey: "recommend")
+//
+//        if let email{
+//            emailTextField.text = email
+//        }
+//        if let password{
+//            passwordTextField.text = password
+//        }
+//        if let nickname {
+//            nicknameTextField.text = nickname
+//        }
+//        if let location {
+//            locationTextField.text = location
+//        }
+//        if let recommend {
+//            recommendTextField.text = recommend
+//        }
     }
     
-    
-    
+    func setSaveButtonProperties(){
+        saveButton.layer.cornerRadius = 8
+        saveButton.setTitle("저장하기", for: .normal)
+        saveButton.setTitleColor(.red, for: .normal)
+    }
     
     
     //회원가입 과제1
@@ -101,7 +107,6 @@ class JackflixViewController: UIViewController {
         recommendTextField.tag = TextFieldType.recommend.rawValue
     }
     
-    //회원가입 과제2
     func setSignupButton(){
         signupButton.layer.cornerRadius = 8
         signupButton.setTitle("회원가입", for: .normal)
@@ -109,21 +114,17 @@ class JackflixViewController: UIViewController {
         signupButton.backgroundColor = .white
     }
     
-    //회원가입 과제3
     func setTestSwitch(){
         testSwitch.onTintColor = .systemRed
         testSwitch.thumbTintColor = .white
         testSwitch.setOn(true, animated: true)
     }
     
-    //회원가입 과제4
     @IBAction func tapGestureDidTap(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
     
-    
     @IBAction func saveButtonDidTap(_ sender: UIButton) {
-        
         UserDefaults.standard.set(emailTextField.text, forKey: "email")
         UserDefaults.standard.set(passwordTextField.text, forKey: "password")
         UserDefaults.standard.set(nicknameTextField.text, forKey: "nickname")
@@ -131,17 +132,27 @@ class JackflixViewController: UIViewController {
         UserDefaults.standard.set(recommendTextField.text, forKey: "recommend")
         
         
-        //저장 버튼 클릭 횟수 저장 기능
-        //1. 저장된 횟수 가지고 오기
-        let value = UserDefaults.standard.integer(forKey: "count")
-        //2. 저장된 횟수에 1을 더하기
-        let result = value + 1
+        guard let nickname = nicknameTextField.text else{
+            print("닉네임 미입력")
+            return
+        }
         
-        //3. 2번에서 나온 결과를 다시 저장해주기
-        UserDefaults.standard.set(result, forKey: "count")
+        let alert = UIAlertController(title: "저장됨", message: "\(nickname)님의 정보가 기기에 저장되었습니다", preferredStyle: .alert)
+        let confirm = UIAlertAction(title: "확인", style: .cancel)
+        alert.addAction(confirm)
+        self.present(alert, animated: true)
         
-        //4. 확인
-        print(UserDefaults.standard.integer(forKey: "count"))
+//        //저장 버튼 클릭 횟수 저장 기능
+//        //1. 저장된 횟수 가지고 오기
+//        let value = UserDefaults.standard.integer(forKey: "count")
+//        //2. 저장된 횟수에 1을 더하기
+//        let result = value + 1
+//
+//        //3. 2번에서 나온 결과를 다시 저장해주기
+//        UserDefaults.standard.set(result, forKey: "count")
+//
+//        //4. 확인
+//        print(UserDefaults.standard.integer(forKey: "count"))
     }
     
     
@@ -194,9 +205,7 @@ class JackflixViewController: UIViewController {
         
         
         func signupButtonDidTap(_ sender: Any){
-            //회원가입 과제5
             view.endEditing(true)
-            
             
             let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
             

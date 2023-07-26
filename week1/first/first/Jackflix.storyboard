@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JACKFLIX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwv-4R-Wmf">
-                                <rect key="frame" x="121" y="59" width="151" height="36"/>
+                                <rect key="frame" x="121" y="69" width="151" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -113,7 +113,7 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="MzI-x0-9Bm" firstAttribute="bottom" secondItem="NNM-IP-VKI" secondAttribute="bottom" constant="60" id="7a9-rp-2Y1"/>
-                            <constraint firstItem="qwv-4R-Wmf" firstAttribute="top" secondItem="MzI-x0-9Bm" secondAttribute="top" id="Fne-K9-cCc"/>
+                            <constraint firstItem="qwv-4R-Wmf" firstAttribute="top" secondItem="MzI-x0-9Bm" secondAttribute="top" constant="10" id="Fne-K9-cCc"/>
                             <constraint firstItem="qwv-4R-Wmf" firstAttribute="centerX" secondItem="MzI-x0-9Bm" secondAttribute="centerX" id="lNK-j5-yk9"/>
                             <constraint firstItem="NNM-IP-VKI" firstAttribute="centerX" secondItem="MzI-x0-9Bm" secondAttribute="centerX" id="zSG-4G-Gf0"/>
                         </constraints>
@@ -127,6 +127,7 @@
                         <outlet property="nicknameTextField" destination="6Pm-h1-UbP" id="ngt-el-At1"/>
                         <outlet property="passwordTextField" destination="0fe-hL-6vW" id="pOP-VZ-uOu"/>
                         <outlet property="recommendTextField" destination="qYj-Jn-7hS" id="mBv-A7-wcN"/>
+                        <outlet property="saveButton" destination="NNM-IP-VKI" id="VEm-Lr-QSu"/>
                         <outlet property="signupButton" destination="nNV-M8-vdS" id="JtD-T0-Ikn"/>
                         <outlet property="testSwitch" destination="j8l-04-W9v" id="j8N-vc-3WZ"/>
                         <outletCollection property="jackflixTextFields" destination="dW6-6O-xVk" collectionClass="NSMutableArray" id="C6Q-F5-ewV"/>
