@@ -67,7 +67,7 @@ extension Case2TableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell") else {
-            print("identifier를 잘못입력")
+            print("Wrong identifier")
             return UITableViewCell()
         }
         cell.textLabel?.font = .systemFont(ofSize: 14)
