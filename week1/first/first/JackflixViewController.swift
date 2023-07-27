@@ -142,17 +142,17 @@ class JackflixViewController: UIViewController {
         alert.addAction(confirm)
         self.present(alert, animated: true)
         
-//        //저장 버튼 클릭 횟수 저장 기능
-//        //1. 저장된 횟수 가지고 오기
-//        let value = UserDefaults.standard.integer(forKey: "count")
-//        //2. 저장된 횟수에 1을 더하기
-//        let result = value + 1
-//
-//        //3. 2번에서 나온 결과를 다시 저장해주기
-//        UserDefaults.standard.set(result, forKey: "count")
-//
-//        //4. 확인
-//        print(UserDefaults.standard.integer(forKey: "count"))
+        //저장 버튼 클릭 횟수 저장 기능
+        //1. 저장된 횟수 가지고 오기
+        let value = UserDefaults.standard.integer(forKey: "count")
+        //2. 저장된 횟수에 1을 더하기
+        let result = value + 1
+
+        //3. 2번에서 나온 결과를 다시 저장해주기
+        UserDefaults.standard.set(result, forKey: "count")
+
+        //4. 확인
+        print(UserDefaults.standard.integer(forKey: "count"))
     }
     
     
