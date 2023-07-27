@@ -9,6 +9,10 @@ import UIKit
 
 class DateViewController: UIViewController {
 
+    
+    //dday를 설정하고 저장하게
+    //저장하면 계속 그 날짜 기준으로 나타나게
+    
     @IBOutlet var viewNoSubview: UIView!
     @IBOutlet var viewWithSubView: UIView!
     
@@ -19,8 +23,6 @@ class DateViewController: UIViewController {
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var background100ImageView: UIImageView!
     @IBOutlet var date100Label: UILabel!
-    
-    
     @IBOutlet var ddayLabels: [UILabel]!
     @IBOutlet var dateLabels: [UILabel]!
     @IBOutlet var backgroundImages: [UIImageView]!
