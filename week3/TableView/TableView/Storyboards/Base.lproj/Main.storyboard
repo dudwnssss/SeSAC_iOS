@@ -247,7 +247,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVo-lh-cxV">
-                                            <rect key="frame" x="0.0" y="4" width="393" height="0.33333333333333304"/>
+                                            <rect key="frame" x="0.0" y="4" width="377" height="0.33333333333333304"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymG-ld-tgB">
                                                     <rect key="frame" x="20" y="-17.333333333333336" width="49" height="35"/>
@@ -258,7 +258,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XD-25-L0i">
-                                                    <rect key="frame" x="321" y="-17.333333333333336" width="52" height="35"/>
+                                                    <rect key="frame" x="309" y="-17.333333333333336" width="52" height="35"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
                                                     <connections>
@@ -266,7 +266,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2e8-Af-Fde">
-                                                    <rect key="frame" x="85" y="-10.333333333333332" width="42" height="21"/>
+                                                    <rect key="frame" x="81" y="-10.333333333333332" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -274,9 +274,9 @@
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="7XD-25-L0i" secondAttribute="trailing" constant="20" id="BwE-b2-nJn"/>
+                                                <constraint firstAttribute="trailing" secondItem="7XD-25-L0i" secondAttribute="trailing" constant="16" id="BwE-b2-nJn"/>
                                                 <constraint firstItem="7XD-25-L0i" firstAttribute="centerY" secondItem="eVo-lh-cxV" secondAttribute="centerY" id="FtF-1j-5F3"/>
-                                                <constraint firstItem="2e8-Af-Fde" firstAttribute="leading" secondItem="ymG-ld-tgB" secondAttribute="trailing" constant="16" id="M79-Tm-XRg"/>
+                                                <constraint firstItem="2e8-Af-Fde" firstAttribute="leading" secondItem="ymG-ld-tgB" secondAttribute="trailing" constant="12" id="M79-Tm-XRg"/>
                                                 <constraint firstItem="ymG-ld-tgB" firstAttribute="leading" secondItem="eVo-lh-cxV" secondAttribute="leading" constant="20" id="hOH-aA-3cV"/>
                                                 <constraint firstItem="ymG-ld-tgB" firstAttribute="centerY" secondItem="eVo-lh-cxV" secondAttribute="centerY" id="mF5-Tc-fHj"/>
                                                 <constraint firstItem="2e8-Af-Fde" firstAttribute="centerY" secondItem="eVo-lh-cxV" secondAttribute="centerY" id="sVp-Gn-GQe"/>
@@ -287,7 +287,7 @@
                                         <constraint firstItem="eVo-lh-cxV" firstAttribute="leading" secondItem="NuU-5Y-tTZ" secondAttribute="leading" id="5NJ-ne-1QN"/>
                                         <constraint firstItem="eVo-lh-cxV" firstAttribute="top" secondItem="NuU-5Y-tTZ" secondAttribute="top" constant="4" id="EyM-TB-nJj"/>
                                         <constraint firstAttribute="bottom" secondItem="eVo-lh-cxV" secondAttribute="bottom" constant="4" id="tzx-Qd-IEE"/>
-                                        <constraint firstAttribute="trailing" secondItem="eVo-lh-cxV" secondAttribute="trailing" id="uf5-hl-eLI"/>
+                                        <constraint firstAttribute="trailing" secondItem="eVo-lh-cxV" secondAttribute="trailing" constant="16" id="uf5-hl-eLI"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

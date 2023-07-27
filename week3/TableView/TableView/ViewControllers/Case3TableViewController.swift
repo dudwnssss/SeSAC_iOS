@@ -45,10 +45,6 @@ class Case3TableViewController: UITableViewController{
     
     func setProperties(){
         tableView.rowHeight = 60
-//        checkButton.tintColor = .black
-//        starButton.tintColor = .black
-//        cellBackgroundView.layer.cornerRadius = 16
-//        cellBackgroundView.backgroundColor = .systemGray6
         
         addButton.setTitle("추가", for: .normal)
         addButton.layer.cornerRadius = 10
@@ -64,7 +60,7 @@ class Case3TableViewController: UITableViewController{
 }
 
 extension Case3TableViewController {
-    
+        
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shoppingList.count
     }

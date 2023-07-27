@@ -19,13 +19,12 @@ class ShoppingCell: UITableViewCell {
         super.awakeFromNib()
         self.selectionStyle = .none
         
+        titleLabel.font = .systemFont(ofSize: 14)
         checkButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
         checkButton.setImage(UIImage(systemName:  "checkmark.square.fill"), for: .selected)
-//        checkButton.adjustsImageWhenHighlighted = false
         
         starButton.setImage(UIImage(systemName: "star"), for: .normal)
         starButton.setImage(UIImage(systemName:  "star.fill"), for: .selected)
-//        starButton.adjustsImageWhenHighlighted = false
 
                 checkButton.tintColor = .black
                 starButton.tintColor = .black
