@@ -28,7 +28,7 @@ class Case3TableViewController: UITableViewController{
         guard let text = shoppingTextField.text else{
             return
         }
-        if text == "" {
+        if text.isEmpty {
             showAlert()
             return
         }

@@ -9,18 +9,16 @@ import UIKit
 
 class Case2TableViewController: UITableViewController{
     
-    enum SettingType: CaseIterable {
-        case total, personal, etc
+    enum SettingType: Int, CaseIterable {
+        case total
+        case personal
+        case etc
     }
     
     let settings = SettingType.allCases
-//    let setting : SettingType
-    
     let totalSettingList = ["공지사항", "실험실", "버전 정보"]
     let personalSettingList = ["개인/보안", "알림", "채팅", "프로필"]
     let etcSettingList = ["고객센터/도움말"]
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +28,6 @@ class Case2TableViewController: UITableViewController{
     func setProperties(){
         view.backgroundColor = .black
     }
-    
-   
-    
 }
 
 extension Case2TableViewController {
@@ -41,28 +36,42 @@ extension Case2TableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return totalSettingList.count
+        if let setting = SettingType(rawValue: section){
+            switch setting {
+            case .total:
+                return totalSettingList.count
+            case .personal:
+                return personalSettingList.count
+            case .etc:
+                return etcSettingList.count
+            }
         }
-        else if section == 1{
-            return personalSettingList.count
-        }
-        else{
-            return etcSettingList.count
-        }
+        return 0
+
+//        if section == 0 {
+//            return totalSettingList.count
+//        }
+//        else if section == 1{
+//            return personalSettingList.count
+//        }
+//        else {
+//            return etcSettingList.count
+//        }
     }
     
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "전체 설정"
+        if let setting = SettingType(rawValue: section){
+            switch setting {
+            case .total:
+                return "전체설정"
+            case .personal:
+                return "개인설정"
+            case .etc:
+                return "기타"
+            }
         }
-        else if section == 1{
-            return "개인 설정"
-        }
-        else {
-            return "기타"
-        }
+        return nil
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,18 +83,16 @@ extension Case2TableViewController {
         cell.textLabel?.textColor = .white
         cell.backgroundColor = .black
 
-        if indexPath.section == 0 {
-            cell.textLabel?.text = totalSettingList[indexPath.row]
+        if let setting = SettingType(rawValue: indexPath.section){
+            switch setting {
+            case .total:
+                cell.textLabel?.text = totalSettingList[indexPath.row]
+            case .personal:
+                cell.textLabel?.text = personalSettingList[indexPath.row]
+            case .etc:
+                cell.textLabel?.text = etcSettingList[indexPath.row]
+            }
         }
-        else if indexPath.section == 1{
-            cell.textLabel?.text = personalSettingList[indexPath.row]
-        }
-        else{
-            cell.textLabel?.text = etcSettingList[indexPath.row]
-        }
-        
-        
-        
         return cell
     }
 }
