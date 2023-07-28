@@ -10,9 +10,6 @@ import UIKit
 
 class Case3TableViewController: UITableViewController{
     
-
-    
-    
     @IBOutlet var shoppingHeaderView: UIView!
     @IBOutlet var shoppingTextField: UITextField!
     @IBOutlet var addButton: UIButton!
@@ -45,7 +42,6 @@ class Case3TableViewController: UITableViewController{
     
     func setProperties(){
         tableView.rowHeight = 60
-        
         addButton.setTitle("추가", for: .normal)
         addButton.layer.cornerRadius = 10
         addButton.backgroundColor = .systemGray5
@@ -54,8 +50,7 @@ class Case3TableViewController: UITableViewController{
         shoppingTextField.placeholder = "무엇을 구매하실 건가요?"
         shoppingTextField.borderStyle = .none
         
-        shoppingHeaderView.backgroundColor = .systemGray6
-        shoppingHeaderView.layer.cornerRadius = 16
+        shoppingHeaderView.configureRoundedColorView()
     }
 }
 
@@ -71,8 +66,6 @@ extension Case3TableViewController {
             print("Wrong identifier")
             return UITableViewCell()
         }
-//        cell.textLabel?.font = .systemFont(ofSize: 16)
-//        cell.textLabel?.text = shoppingList[indexPath.row]
         cell.titleLabel.text = shoppingList[indexPath.row]
         
         return cell

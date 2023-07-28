@@ -46,17 +46,8 @@ extension Case2TableViewController {
                 return etcSettingList.count
             }
         }
+        
         return 0
-
-//        if section == 0 {
-//            return totalSettingList.count
-//        }
-//        else if section == 1{
-//            return personalSettingList.count
-//        }
-//        else {
-//            return etcSettingList.count
-//        }
     }
     
     
@@ -94,5 +85,10 @@ extension Case2TableViewController {
             }
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        print(#fileID, #function, #line, "- ")
+        return 44
     }
 }

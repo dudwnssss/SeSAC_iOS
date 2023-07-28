@@ -250,7 +250,7 @@
                                             <rect key="frame" x="0.0" y="4" width="377" height="0.33333333333333304"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymG-ld-tgB">
-                                                    <rect key="frame" x="20" y="-17.333333333333336" width="49" height="35"/>
+                                                    <rect key="frame" x="20" y="-17" width="49" height="34.333333333333336"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="checkmark.square" catalog="system"/>
                                                     <connections>
@@ -258,7 +258,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XD-25-L0i">
-                                                    <rect key="frame" x="309" y="-17.333333333333336" width="52" height="35"/>
+                                                    <rect key="frame" x="309" y="-17" width="52" height="34.333333333333336"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
                                                     <connections>
@@ -266,7 +266,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2e8-Af-Fde">
-                                                    <rect key="frame" x="81" y="-10.333333333333332" width="42" height="21"/>
+                                                    <rect key="frame" x="81" y="-10" width="42" height="20.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

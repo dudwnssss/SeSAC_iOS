@@ -8,7 +8,7 @@
 import UIKit
 
 class ShoppingCell: UITableViewCell {
-
+    
     @IBOutlet var cellBackgroundView: UIView!
     @IBOutlet var checkButton: UIButton!
     @IBOutlet var titleLabel: UILabel!
@@ -25,13 +25,13 @@ class ShoppingCell: UITableViewCell {
         
         starButton.setImage(UIImage(systemName: "star"), for: .normal)
         starButton.setImage(UIImage(systemName:  "star.fill"), for: .selected)
-
-                checkButton.tintColor = .black
-                starButton.tintColor = .black
-                cellBackgroundView.layer.cornerRadius = 16
-                cellBackgroundView.backgroundColor = .systemGray6
+        
+        checkButton.tintColor = .black
+        starButton.tintColor = .black
+        cellBackgroundView.layer.cornerRadius = 16
+        cellBackgroundView.backgroundColor = .systemGray6
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
