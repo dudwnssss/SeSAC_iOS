@@ -207,7 +207,7 @@
         <scene sceneID="k2h-8O-frk">
             <objects>
                 <tableViewController id="QRt-Nv-BSL" customClass="Case3TableViewController" customModule="TableView" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="cMi-qy-ymm">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="cMi-qy-ymm">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -239,26 +239,18 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="todoCell" id="9O4-Zq-3g8" customClass="ShoppingCell" customModule="TableView" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="121" width="393" height="8.3333330154418945"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingCell" rowHeight="113" id="9O4-Zq-3g8" customClass="ShoppingCell" customModule="TableView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="121" width="393" height="113"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9O4-Zq-3g8" id="NuU-5Y-tTZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="8.3333330154418945"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="113"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVo-lh-cxV">
-                                            <rect key="frame" x="0.0" y="4" width="377" height="0.33333333333333304"/>
+                                            <rect key="frame" x="0.0" y="4" width="377" height="105"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymG-ld-tgB">
-                                                    <rect key="frame" x="20" y="-17" width="49" height="34.333333333333336"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="checkmark.square" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="checkButtonDidTap:" destination="9O4-Zq-3g8" eventType="touchUpInside" id="r1v-Co-ozc"/>
-                                                    </connections>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XD-25-L0i">
-                                                    <rect key="frame" x="309" y="-17" width="52" height="34.333333333333336"/>
+                                                    <rect key="frame" x="309" y="35.333333333333329" width="52" height="34.333333333333329"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
                                                     <connections>
@@ -266,19 +258,22 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2e8-Af-Fde">
-                                                    <rect key="frame" x="81" y="-10" width="42" height="20.333333333333332"/>
+                                                    <rect key="frame" x="56.333333333333343" y="42.333333333333336" width="42" height="20.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="CdV-yr-U0K">
+                                                    <rect key="frame" x="15.999999999999998" y="44" width="19.333333333333329" height="17.333333333333336"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="7XD-25-L0i" secondAttribute="trailing" constant="16" id="BwE-b2-nJn"/>
                                                 <constraint firstItem="7XD-25-L0i" firstAttribute="centerY" secondItem="eVo-lh-cxV" secondAttribute="centerY" id="FtF-1j-5F3"/>
-                                                <constraint firstItem="2e8-Af-Fde" firstAttribute="leading" secondItem="ymG-ld-tgB" secondAttribute="trailing" constant="12" id="M79-Tm-XRg"/>
-                                                <constraint firstItem="ymG-ld-tgB" firstAttribute="leading" secondItem="eVo-lh-cxV" secondAttribute="leading" constant="20" id="hOH-aA-3cV"/>
-                                                <constraint firstItem="ymG-ld-tgB" firstAttribute="centerY" secondItem="eVo-lh-cxV" secondAttribute="centerY" id="mF5-Tc-fHj"/>
+                                                <constraint firstItem="CdV-yr-U0K" firstAttribute="leading" secondItem="eVo-lh-cxV" secondAttribute="leading" constant="16" id="ROv-At-1GS"/>
+                                                <constraint firstItem="2e8-Af-Fde" firstAttribute="leading" secondItem="CdV-yr-U0K" secondAttribute="trailing" constant="21" id="TrE-l0-MV7"/>
+                                                <constraint firstItem="CdV-yr-U0K" firstAttribute="centerY" secondItem="eVo-lh-cxV" secondAttribute="centerY" id="cGc-L2-kvL"/>
                                                 <constraint firstItem="2e8-Af-Fde" firstAttribute="centerY" secondItem="eVo-lh-cxV" secondAttribute="centerY" id="sVp-Gn-GQe"/>
                                             </constraints>
                                         </view>
@@ -292,7 +287,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="cellBackgroundView" destination="eVo-lh-cxV" id="e1U-Sb-47z"/>
-                                    <outlet property="checkButton" destination="ymG-ld-tgB" id="9eS-KG-iMq"/>
+                                    <outlet property="checkImageView" destination="CdV-yr-U0K" id="poq-fp-d4E"/>
                                     <outlet property="starButton" destination="7XD-25-L0i" id="zAT-As-h97"/>
                                     <outlet property="titleLabel" destination="2e8-Af-Fde" id="4ea-Uf-AAJ"/>
                                 </connections>
@@ -384,6 +379,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="iYj-4p-I2A" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="glr-g0-JUl">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

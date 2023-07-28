@@ -18,6 +18,7 @@
 		106EE6962A726EFE00934587 /* ShoppingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EE6952A726EFE00934587 /* ShoppingCell.swift */; };
 		106EE6992A72716700934587 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EE6982A72716700934587 /* UIButton+.swift */; };
 		106EE69B2A72717400934587 /* UIVIew+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EE69A2A72717400934587 /* UIVIew+.swift */; };
+		10DC96152A73AD8200A37253 /* ShoppingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC96142A73AD8200A37253 /* ShoppingInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		106EE6952A726EFE00934587 /* ShoppingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCell.swift; sourceTree = "<group>"; };
 		106EE6982A72716700934587 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		106EE69A2A72717400934587 /* UIVIew+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+.swift"; sourceTree = "<group>"; };
+		10DC96142A73AD8200A37253 /* ShoppingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		1013ACBF2A724FA900FA8FDF /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				10DC96132A73AD5F00A37253 /* Structs */,
 				106EE6972A72715400934587 /* Extensions */,
 				106EE6942A726EDB00934587 /* Cell */,
 				1013ACD92A72513000FA8FDF /* Storyboards */,
@@ -112,6 +115,14 @@
 				106EE69A2A72717400934587 /* UIVIew+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		10DC96132A73AD5F00A37253 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				10DC96142A73AD8200A37253 /* ShoppingInfo.swift */,
+			);
+			path = Structs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 				106EE6992A72716700934587 /* UIButton+.swift in Sources */,
 				106EE6962A726EFE00934587 /* ShoppingCell.swift in Sources */,
 				1013ACC52A724FA900FA8FDF /* Case1TableViewController.swift in Sources */,
+				10DC96152A73AD8200A37253 /* ShoppingInfo.swift in Sources */,
 				106EE69B2A72717400934587 /* UIVIew+.swift in Sources */,
 				1013ACC12A724FA900FA8FDF /* AppDelegate.swift in Sources */,
 				1013ACD62A7250DA00FA8FDF /* Case2TableViewController.swift in Sources */,

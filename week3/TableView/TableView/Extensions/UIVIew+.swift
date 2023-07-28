@@ -10,7 +10,7 @@ import UIKit
 extension UIView{
     
     func configureRoundedColorView(){
-        self.backgroundColor = .systemGray5
+        self.backgroundColor = .systemGray6
         self.layer.cornerRadius = 16
     }
 }

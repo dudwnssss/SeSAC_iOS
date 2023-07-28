@@ -14,7 +14,7 @@ class Case3TableViewController: UITableViewController{
     @IBOutlet var shoppingTextField: UITextField!
     @IBOutlet var addButton: UIButton!
     
-    var shoppingList = ["그립톡 구매하기", "사이다 구매", "아이패드 케이스 최저가 알아보기", "양말"]
+    var shoppingInfo = ShoppingInfo()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +25,11 @@ class Case3TableViewController: UITableViewController{
         guard let text = shoppingTextField.text else{
             return
         }
-        if text.isEmpty {
+        if text.isEmpty { //빈문자열인지 체크
             showAlert()
             return
         }
-        shoppingList.append(text)
+        shoppingInfo.shoppingList.append(ShoppingItem(check: false, title: text, like: false))
         tableView.reloadData()
     }
     
@@ -57,17 +57,23 @@ class Case3TableViewController: UITableViewController{
 extension Case3TableViewController {
         
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shoppingList.count
+        return shoppingInfo.shoppingList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell") as? ShoppingCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ShoppingCell.identifier) as? ShoppingCell
         else {
             print("Wrong identifier")
             return UITableViewCell()
         }
-        cell.titleLabel.text = shoppingList[indexPath.row]
         
+        let row = shoppingInfo.shoppingList[indexPath.row]
+        cell.configureCell(row: row)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        shoppingInfo.shoppingList[indexPath.row].check.toggle()
+        tableView.reloadData()
     }
 }
