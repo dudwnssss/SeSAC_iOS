@@ -67,6 +67,7 @@ extension Case3TableViewController {
             return UITableViewCell()
         }
         
+        //add target으로 별 속성 바꿀 수 있을 듯?
         let row = shoppingInfo.shoppingList[indexPath.row]
         cell.configureCell(row: row)
         return cell
@@ -74,6 +75,8 @@ extension Case3TableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         shoppingInfo.shoppingList[indexPath.row].check.toggle()
-        tableView.reloadData()
+        
+        //내가 선택한 셀만 바뀔 수 있게 하기!!!
+        tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .automatic)
     }
 }
