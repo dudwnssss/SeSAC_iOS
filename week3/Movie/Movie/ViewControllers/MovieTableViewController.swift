@@ -43,4 +43,30 @@ extension MovieTableViewController{
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let swipe = UIContextualAction(style: .normal, title: "swipe") { action, view, completionHandler in
+            print("swiped")
+        }
+        let test = UIContextualAction(style: .normal, title: "test") { action, view, completionHandler in
+            print("tested")
+        }
+        return UISwipeActionsConfiguration(actions: [swipe, test])
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "delete") { action, view, completionHandler in
+            print("deleted")
+        }
+        let flag = UIContextualAction(style: .normal, title: "flag") { action, view, completionHandler in
+            print("flaged")
+        }
+        let test = UIContextualAction(style: .normal, title: "test") { action, view, completionHandler in
+            print("tested")
+        }
+        return UISwipeActionsConfiguration(actions: [delete, flag, test])
+    }
+    
+    
+    
 }
