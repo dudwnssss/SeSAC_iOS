@@ -83,6 +83,6 @@ extension BookWarmCollectionViewController {
         vc.title = movieInfo.movie[indexPath.row].title
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
 }
+
+

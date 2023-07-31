@@ -14,6 +14,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         setNavigationBar()
         setProperties()
+        setSearchController()
     }
     
     func setNavigationBar(){
@@ -31,8 +32,18 @@ class SearchViewController: UIViewController {
         contentLabel.text = "검색 화면"
         contentLabel.font = .systemFont(ofSize: 50)
     }
+    
+    func setSearchController(){
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.placeholder = "찾고싶은 영화를 입력하세요"
+        searchController.searchResultsUpdater = self
+        self.navigationItem.searchController = searchController
+    }
+}
 
-
-
+extension SearchViewController : UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        dump(searchController.searchBar.text)
+    }
 }
 
