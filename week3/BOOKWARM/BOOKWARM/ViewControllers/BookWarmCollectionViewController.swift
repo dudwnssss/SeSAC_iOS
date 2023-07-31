@@ -53,13 +53,9 @@ class BookWarmCollectionViewController: UICollectionViewController {
     }
     
     
-
 }
 
 extension BookWarmCollectionViewController {
-    
-    
-    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         movieInfo.movie.count
@@ -73,7 +69,6 @@ extension BookWarmCollectionViewController {
         
         let row = movieInfo.movie[indexPath.row]
         cell.configureCell(row: row)
-        
         return cell
     }
     
