@@ -17,8 +17,8 @@
 		104C746E2A779A98002F486A /* BookWarmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104C746C2A779A98002F486A /* BookWarmCell.xib */; };
 		104C74702A779AB5002F486A /* BookWarmCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C746F2A779AB5002F486A /* BookWarmCollectionViewController.swift */; };
 		104C74722A779B09002F486A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C74712A779B09002F486A /* DetailViewController.swift */; };
-		104C74762A779F67002F486A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C74742A779F67002F486A /* Movie.swift */; };
-		104C74772A779F67002F486A /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C74752A779F67002F486A /* MovieInfo.swift */; };
+		104C74902A790EE2002F486A /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C748F2A790EE2002F486A /* MovieInfo.swift */; };
+		104C749A2A790FB7002F486A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C74992A790FB7002F486A /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +34,8 @@
 		104C746C2A779A98002F486A /* BookWarmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BookWarmCell.xib; path = BOOKWARM/ViewControllers/BookWarmCell.xib; sourceTree = SOURCE_ROOT; };
 		104C746F2A779AB5002F486A /* BookWarmCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookWarmCollectionViewController.swift; sourceTree = "<group>"; };
 		104C74712A779B09002F486A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		104C74742A779F67002F486A /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = ../../../Movie/Movie/Structs/Movie.swift; sourceTree = "<group>"; };
-		104C74752A779F67002F486A /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieInfo.swift; path = ../../../Movie/Movie/Structs/MovieInfo.swift; sourceTree = "<group>"; };
+		104C748F2A790EE2002F486A /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
+		104C74992A790FB7002F486A /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +119,8 @@
 		104C74732A779F44002F486A /* Structs */ = {
 			isa = PBXGroup;
 			children = (
-				104C74742A779F67002F486A /* Movie.swift */,
-				104C74752A779F67002F486A /* MovieInfo.swift */,
+				104C74992A790FB7002F486A /* Movie.swift */,
+				104C748F2A790EE2002F486A /* MovieInfo.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -197,13 +197,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				104C74762A779F67002F486A /* Movie.swift in Sources */,
+				104C74902A790EE2002F486A /* MovieInfo.swift in Sources */,
 				104C74582A7799D3002F486A /* SearchViewController.swift in Sources */,
 				104C74702A779AB5002F486A /* BookWarmCollectionViewController.swift in Sources */,
 				104C74542A7799D3002F486A /* AppDelegate.swift in Sources */,
 				104C74722A779B09002F486A /* DetailViewController.swift in Sources */,
 				104C74562A7799D3002F486A /* SceneDelegate.swift in Sources */,
-				104C74772A779F67002F486A /* MovieInfo.swift in Sources */,
+				104C749A2A790FB7002F486A /* Movie.swift in Sources */,
 				104C746D2A779A98002F486A /* BookWarmCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
