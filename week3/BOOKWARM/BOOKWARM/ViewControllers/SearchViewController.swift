@@ -25,7 +25,7 @@ class SearchViewController: UIViewController {
     }
     
     @objc func dismissButtonDidTap(){
-        self.dismiss(animated: true)
+        dismiss(animated: true)
     }
     
     func setProperties(){

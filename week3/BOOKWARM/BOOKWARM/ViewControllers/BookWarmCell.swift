@@ -15,19 +15,21 @@ class BookWarmCell: UICollectionViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var rateLabel: UILabel!
     @IBOutlet var posterImageView: UIImageView!
-    
+    @IBOutlet var likeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setProperties()
-        // Initialization code
     }
     
     func configureCell(row: Movie){
         titleLabel.text = row.title
         rateLabel.text = "\(row.rate)"
         posterImageView.image = UIImage(named: row.title)
-        bgView.backgroundColor = getRandomColor()
+        
+        row.like ? likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal) : likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        
+        bgView.backgroundColor = row.bgColor
     }
     
     func setProperties(){
@@ -37,11 +39,12 @@ class BookWarmCell: UICollectionViewCell {
         titleLabel.font = .boldSystemFont(ofSize: 16)
         rateLabel.textColor = .white
         rateLabel.font = .systemFont(ofSize: 12)
-        
+        likeButton.setTitle("", for: .normal)
+        likeButton.tintColor = .white
+
     }
     
     func getRandomColor() -> UIColor{
-        
         let randomRed:CGFloat = CGFloat(drand48())
         let randomGreen:CGFloat = CGFloat(drand48())
         let randomBlue:CGFloat = CGFloat(drand48())

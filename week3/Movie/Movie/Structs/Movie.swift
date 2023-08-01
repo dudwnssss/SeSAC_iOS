@@ -14,6 +14,14 @@ struct Movie{
     let overview: String
     var rate: Double
     lazy var poster : Poster = Poster()
+    var like: Bool = false
+    var bgColor: UIColor = .black
+    
+    var rateLabelText : String {
+        get{
+            return "평균★\(rate)"
+        }
+    }
 }
 
 struct Poster{

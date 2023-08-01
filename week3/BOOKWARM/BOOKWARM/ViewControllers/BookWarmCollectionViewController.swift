@@ -9,15 +9,31 @@ import UIKit
 
 
 class BookWarmCollectionViewController: UICollectionViewController {
-
     
-    let movieInfo = MovieInfo()
+    var movieInfo = MovieInfo() {
+        didSet{
+            collectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
         registerCell()
         setCollectionViewLayout()
+        
+        //how to change property in struct
+//        for item in movieInfo.movie{
+//            item.bgColor = getRandomColor()
+//        }
+    }
+    
+    func getRandomColor() -> UIColor{
+        let randomRed:CGFloat = CGFloat(drand48())
+        let randomGreen:CGFloat = CGFloat(drand48())
+        let randomBlue:CGFloat = CGFloat(drand48())
+        
+        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
     }
     
     func setNavigationBar(){
@@ -31,6 +47,12 @@ class BookWarmCollectionViewController: UICollectionViewController {
         let nib = UINib(nibName: "BookWarmCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: BookWarmCell.identifier)
     }
+    
+    @objc func likeButtonDidTap(_ sender: UIButton){
+        movieInfo.movie[sender.tag].like.toggle()
+    }
+    
+    
     
     func setCollectionViewLayout(){
         let layout = UICollectionViewFlowLayout()
@@ -53,6 +75,7 @@ class BookWarmCollectionViewController: UICollectionViewController {
     }
     
     
+    
 }
 
 extension BookWarmCollectionViewController {
@@ -69,13 +92,19 @@ extension BookWarmCollectionViewController {
         
         let row = movieInfo.movie[indexPath.row]
         cell.configureCell(row: row)
+        cell.likeButton.tag = indexPath.row
+        cell.likeButton.addTarget(self, action: #selector(likeButtonDidTap), for: .touchUpInside)
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "DetailViewController")
-        vc.title = movieInfo.movie[indexPath.row].title
+    
+        guard let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else{
+            return
+        }
+        
+        vc.movie = movieInfo.movie[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 }
