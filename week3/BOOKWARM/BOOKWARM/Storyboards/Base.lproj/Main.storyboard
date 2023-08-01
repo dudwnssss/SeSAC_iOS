@@ -58,12 +58,18 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wH7-hn-7RF">
                                         <rect key="frame" x="20" y="10.000000000000028" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="7WM-ZP-HEe"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기본정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqE-Hi-Xp0">
                                         <rect key="frame" x="19.999999999999996" y="58.000000000000028" width="48.666666666666657" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="6sB-rc-BB2"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -102,6 +108,7 @@
                                     <constraint firstItem="JzG-h4-HMO" firstAttribute="trailing" secondItem="2F3-pu-Xie" secondAttribute="trailing" id="bAH-fI-ASE"/>
                                     <constraint firstAttribute="bottom" secondItem="JzG-h4-HMO" secondAttribute="bottom" constant="20" id="gxA-RR-sqV"/>
                                     <constraint firstItem="2F3-pu-Xie" firstAttribute="top" secondItem="qqE-Hi-Xp0" secondAttribute="bottom" constant="10" id="hRw-a1-8ik"/>
+                                    <constraint firstItem="JzG-h4-HMO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2F3-pu-Xie" secondAttribute="bottom" constant="10" id="hvx-ij-Qib"/>
                                     <constraint firstItem="2F3-pu-Xie" firstAttribute="leading" secondItem="TWU-zX-0AM" secondAttribute="leading" constant="20" id="hwJ-oD-HSe"/>
                                     <constraint firstAttribute="trailing" secondItem="d0d-rx-voW" secondAttribute="trailing" id="kpz-mf-eWn"/>
                                     <constraint firstItem="JzG-h4-HMO" firstAttribute="leading" secondItem="2F3-pu-Xie" secondAttribute="leading" id="pg5-ht-D74"/>
