@@ -15,6 +15,7 @@
 		1013ACCD2A724FAB00FA8FDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1013ACCB2A724FAB00FA8FDF /* LaunchScreen.storyboard */; };
 		1013ACD62A7250DA00FA8FDF /* Case2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1013ACD52A7250DA00FA8FDF /* Case2TableViewController.swift */; };
 		1013ACD82A7250EA00FA8FDF /* Case3TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1013ACD72A7250EA00FA8FDF /* Case3TableViewController.swift */; };
+		104C74842A78FD84002F486A /* SettingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C74832A78FD84002F486A /* SettingType.swift */; };
 		106EE6962A726EFE00934587 /* ShoppingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EE6952A726EFE00934587 /* ShoppingCell.swift */; };
 		106EE6992A72716700934587 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EE6982A72716700934587 /* UIButton+.swift */; };
 		106EE69B2A72717400934587 /* UIVIew+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EE69A2A72717400934587 /* UIVIew+.swift */; };
@@ -32,6 +33,7 @@
 		1013ACCE2A724FAB00FA8FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1013ACD52A7250DA00FA8FDF /* Case2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case2TableViewController.swift; sourceTree = "<group>"; };
 		1013ACD72A7250EA00FA8FDF /* Case3TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case3TableViewController.swift; sourceTree = "<group>"; };
+		104C74832A78FD84002F486A /* SettingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingType.swift; sourceTree = "<group>"; };
 		106EE6952A726EFE00934587 /* ShoppingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCell.swift; sourceTree = "<group>"; };
 		106EE6982A72716700934587 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		106EE69A2A72717400934587 /* UIVIew+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+.swift"; sourceTree = "<group>"; };
@@ -68,7 +70,7 @@
 		1013ACBF2A724FA900FA8FDF /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				10DC96132A73AD5F00A37253 /* Structs */,
+				10DC96132A73AD5F00A37253 /* Datas */,
 				106EE6972A72715400934587 /* Extensions */,
 				106EE6942A726EDB00934587 /* Cell */,
 				1013ACD92A72513000FA8FDF /* Storyboards */,
@@ -117,12 +119,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		10DC96132A73AD5F00A37253 /* Structs */ = {
+		10DC96132A73AD5F00A37253 /* Datas */ = {
 			isa = PBXGroup;
 			children = (
 				10DC96142A73AD8200A37253 /* ShoppingInfo.swift */,
+				104C74832A78FD84002F486A /* SettingType.swift */,
 			);
-			path = Structs;
+			path = Datas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +205,7 @@
 				1013ACC52A724FA900FA8FDF /* Case1TableViewController.swift in Sources */,
 				10DC96152A73AD8200A37253 /* ShoppingInfo.swift in Sources */,
 				106EE69B2A72717400934587 /* UIVIew+.swift in Sources */,
+				104C74842A78FD84002F486A /* SettingType.swift in Sources */,
 				1013ACC12A724FA900FA8FDF /* AppDelegate.swift in Sources */,
 				1013ACD62A7250DA00FA8FDF /* Case2TableViewController.swift in Sources */,
 				1013ACC32A724FA900FA8FDF /* SceneDelegate.swift in Sources */,
