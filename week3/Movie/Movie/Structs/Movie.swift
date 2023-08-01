@@ -15,6 +15,12 @@ struct Movie{
     var rate: Double
     lazy var poster : Poster = Poster()
     var like: Bool = false
+    
+    var movieDescription: String {
+        get{
+            "\(releaseDate) | \(runtime)분 | \(rate)점"
+        }
+    }
 }
 
 struct Poster{

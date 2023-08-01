@@ -34,7 +34,7 @@ class MovieCell: UITableViewCell {
     
     func configureCell(row: Movie){
         titleLabel.text = row.title
-        infoLabel.text = "\(row.releaseDate) | \(row.runtime)분 | \(row.rate)점"
+        infoLabel.text = row.movieDescription
         overviewLabel.text = row.overview
         posterImageVIew.image = UIImage(named: "\(row.title)")
     }
