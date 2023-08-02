@@ -9,6 +9,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet var dismissButton: UIButton!
     @IBOutlet var infoBackgroundView: UIView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var posterImageVIew: UIImageView!
@@ -16,16 +17,28 @@ class DetailViewController: UIViewController {
     @IBOutlet var overviewLabel: UILabel!
     @IBOutlet var memoTextView: UITextView!
     
-    var movie = Movie(title: "", releaseDate: "", runtime: 0, overview: "", rate: 0)
-    
+    var movie: Movie?
+    var isNav: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setProperties()
         setNavigationBar()
+        setDismissButton()
+    }
+    
+    func setDismissButton(){
+        dismissButton.isHidden = isNav ? true : false
+    }
+    
+    @IBAction func dismissButtonDidTap(_ sender: UIButton) {
+        dismiss(animated: true)
     }
     
     func setProperties(){
+        guard let movie else {
+             return
+        }
         titleLabel.text = movie.title
         titleLabel.font = .boldSystemFont(ofSize: 17)
         titleLabel.textColor = .white
@@ -38,6 +51,9 @@ class DetailViewController: UIViewController {
         rateLabel.textColor = .darkGray
         memoTextView.text = ""
         setInfoBackgroundView()
+        dismissButton.setImage(UIImage(systemName: "xmark"), for: .normal)
+        dismissButton.setTitle("", for: .normal)
+        dismissButton.tintColor = .white
     }
     
     func setInfoBackgroundView(){
@@ -49,7 +65,6 @@ class DetailViewController: UIViewController {
     func setNavigationBar(){
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.topItem?.title = ""
-        
     }
 
 

@@ -21,11 +21,6 @@ class BookWarmCollectionViewController: UICollectionViewController {
         setNavigationBar()
         registerCell()
         setCollectionViewLayout()
-        
-        //how to change property in struct
-//        for item in movieInfo.movie{
-//            item.bgColor = getRandomColor()
-//        }
     }
     
 
@@ -97,8 +92,8 @@ extension BookWarmCollectionViewController {
         guard let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else{
             return
         }
-        
         vc.movie = movieInfo.movie[indexPath.row]
+        vc.isNav = true
         navigationController?.pushViewController(vc, animated: true)
     }
 }
