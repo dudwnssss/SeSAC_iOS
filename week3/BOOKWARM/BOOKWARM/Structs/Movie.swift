@@ -29,6 +29,11 @@ struct Movie{
         
         return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
     }
+    
+    mutating func toggleLike(){
+        like.toggle()
+    }
+    
 }
 
 struct Poster{

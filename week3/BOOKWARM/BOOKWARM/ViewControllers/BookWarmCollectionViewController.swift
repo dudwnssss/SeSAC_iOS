@@ -34,7 +34,7 @@ class BookWarmCollectionViewController: UICollectionViewController {
         hideKeyboardWhenTappedAround()
     }
     
-
+    
     
     func setNavigationBar(){
         let searchImage = UIImage(systemName: "magnifyingglass")
@@ -51,16 +51,15 @@ class BookWarmCollectionViewController: UICollectionViewController {
     @objc func likeButtonDidTap(_ sender: UIButton){
         searchedMovies[sender.tag].like.toggle()
         print("\(searchedMovies[sender.tag].like)")
+        
+        for i in 0...movieInfo.movie.count-1{
+            if searchedMovies[sender.tag].title == movieInfo.movie[i].title{
+                movieInfo.movie[i].like.toggle()
+            }
+        }
     }
-        
-//        for item in movieInfo.movie{
-//            if searchedMovies[sender.tag].title == item.title{
-//                movieInfo.movie[sender.tag].like.toggle()
-//            }
-//        }
-        
-//        movieInfo.movie.first(where: { $0.title.contains(searchedMovies[sender.tag].title) })?.like.toggle()
-        
+            
+    
     
     
     func setCollectionViewLayout(){
@@ -93,7 +92,7 @@ extension BookWarmCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         searchedMovies.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookWarmCell.identifier, for: indexPath) as? BookWarmCell else{
             print("wrong identifier")
@@ -109,7 +108,7 @@ extension BookWarmCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-    
+        
         guard let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else{
             return
         }
