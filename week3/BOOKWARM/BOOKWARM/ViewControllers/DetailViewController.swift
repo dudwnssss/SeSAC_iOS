@@ -37,6 +37,11 @@ class DetailViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
+    
     func setProperties(){
         guard let movie else {
              return
@@ -76,6 +81,7 @@ class DetailViewController: UIViewController {
 extension DetailViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if memoTextView.text == placeholder {
+            memoTextView.text = ""
             memoTextView.textColor = .black
         }
     }
@@ -85,5 +91,4 @@ extension DetailViewController: UITextViewDelegate {
             memoTextView.textColor = .lightGray
         }
     }
-
 }
