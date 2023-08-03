@@ -31,6 +31,7 @@ class BookWarmCollectionViewController: UICollectionViewController {
         setCollectionViewLayout()
         searchedMovies = movieInfo.movie
         searchBar.delegate = self
+        hideKeyboardWhenTappedAround()
     }
     
 
@@ -50,16 +51,17 @@ class BookWarmCollectionViewController: UICollectionViewController {
     @objc func likeButtonDidTap(_ sender: UIButton){
         searchedMovies[sender.tag].like.toggle()
         print("\(searchedMovies[sender.tag].like)")
-        
+    }
         
 //        for item in movieInfo.movie{
 //            if searchedMovies[sender.tag].title == item.title{
-//                item.like.toggle()
+//                movieInfo.movie[sender.tag].like.toggle()
 //            }
 //        }
         
+//        movieInfo.movie.first(where: { $0.title.contains(searchedMovies[sender.tag].title) })?.like.toggle()
         
-    }
+    
     
     func setCollectionViewLayout(){
         let layout = UICollectionViewFlowLayout()

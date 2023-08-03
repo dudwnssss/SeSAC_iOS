@@ -27,6 +27,7 @@ class DetailViewController: UIViewController {
         setNavigationBar()
         setDismissButton()
         memoTextView.delegate = self
+        hideKeyboardWhenTappedAround()
     }
     
     func setDismissButton(){

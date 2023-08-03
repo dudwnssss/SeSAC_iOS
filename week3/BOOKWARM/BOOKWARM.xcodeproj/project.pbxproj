@@ -25,6 +25,7 @@
 		104C74A72A7A2E80002F486A /* BrowseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C74A52A7A2E80002F486A /* BrowseCollectionViewCell.swift */; };
 		104C74A82A7A2E80002F486A /* BrowseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104C74A62A7A2E80002F486A /* BrowseCollectionViewCell.xib */; };
 		104C74AB2A7A39B4002F486A /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C74AA2A7A39B4002F486A /* UIView+.swift */; };
+		10C9B6282A7BB13800026EE0 /* UIVIewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C9B6272A7BB13800026EE0 /* UIVIewController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		104C74A52A7A2E80002F486A /* BrowseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionViewCell.swift; sourceTree = "<group>"; };
 		104C74A62A7A2E80002F486A /* BrowseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowseCollectionViewCell.xib; sourceTree = "<group>"; };
 		104C74AA2A7A39B4002F486A /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		10C9B6272A7BB13800026EE0 /* UIVIewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				104C74AA2A7A39B4002F486A /* UIView+.swift */,
+				10C9B6272A7BB13800026EE0 /* UIVIewController+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				104C74AB2A7A39B4002F486A /* UIView+.swift in Sources */,
+				10C9B6282A7BB13800026EE0 /* UIVIewController+.swift in Sources */,
 				104C74902A790EE2002F486A /* MovieInfo.swift in Sources */,
 				104C74582A7799D3002F486A /* SearchViewController.swift in Sources */,
 				104C74702A779AB5002F486A /* BookWarmCollectionViewController.swift in Sources */,

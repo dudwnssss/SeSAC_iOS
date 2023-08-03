@@ -10,7 +10,8 @@ import UIKit
 class BrowseViewController: UIViewController {
 
     let movieInfo = MovieInfo()
-    @IBOutlet var headerTitleLabel: UILabel!
+    @IBOutlet var cvHeaderLabel: UILabel!
+    @IBOutlet var tvHeaderLabel: UILabel!
     @IBOutlet var browseCollectionView: UICollectionView!
     @IBOutlet var browseTableView: UITableView!
     
@@ -49,13 +50,19 @@ class BrowseViewController: UIViewController {
     
     func setProperties(){
         title = "둘러보기"
-        headerTitleLabel.text = "최근 본 작품"
-        headerTitleLabel.font = .boldSystemFont(ofSize: 16)
-        headerTitleLabel.textColor = .gray
+        cvHeaderLabel.text = "최근 본 작품"
+        cvHeaderLabel.font = .boldSystemFont(ofSize: 16)
+        cvHeaderLabel.textColor = .gray
+        
+        tvHeaderLabel.text = "요즘 인기 작품"
+        tvHeaderLabel.font = .boldSystemFont(ofSize: 16)
+        tvHeaderLabel.textColor = .gray
+        
+        
         browseTableView.rowHeight = 100
         browseCollectionView.showsHorizontalScrollIndicator = false
-        //separatorInset
-//        browseTableView.separatorInset = UIEdgeInsets(top: 0, left: 100, bottom: 0, right: 0)
+//        separatorInset
+        browseTableView.separatorInset = UIEdgeInsets(top: 0, left: UIScreen.main.bounds.width * 0.2, bottom: 0, right: 0)
     }
     
     func presentDetailVC(row: Int){
@@ -69,11 +76,7 @@ class BrowseViewController: UIViewController {
 }
 
 extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "요즘 인기작품"
-    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieInfo.movie.count
     }
@@ -91,9 +94,11 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
-    }
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 20
+//    }
+    
+    
     
 }
 
@@ -108,6 +113,7 @@ extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSo
             return UICollectionViewCell()
         }
         cell.configureCell(row: movieInfo.movie[indexPath.row])
+        
         return cell
     }
     
