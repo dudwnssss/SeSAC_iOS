@@ -7,10 +7,9 @@
 
 import UIKit
 
-extension UIView {
+extension UIImageView {
     func configureRoundedView(){
         clipsToBounds = true
-        layer.masksToBounds = true
         layer.cornerRadius = 8
     }
 }

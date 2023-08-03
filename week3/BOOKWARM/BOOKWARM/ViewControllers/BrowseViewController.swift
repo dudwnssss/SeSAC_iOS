@@ -24,7 +24,6 @@ class BrowseViewController: UIViewController {
         browseTableView.delegate = self
         browseCollectionView.dataSource = self
         browseCollectionView.delegate = self
-        browseTableView.rowHeight = 100
     }
     
     func registerCells(){
@@ -48,13 +47,15 @@ class BrowseViewController: UIViewController {
         browseCollectionView.collectionViewLayout = layout
     }
     
-    
-    
     func setProperties(){
         title = "둘러보기"
         headerTitleLabel.text = "최근 본 작품"
-        headerTitleLabel.font = .boldSystemFont(ofSize: 15)
-        
+        headerTitleLabel.font = .boldSystemFont(ofSize: 16)
+        headerTitleLabel.textColor = .gray
+        browseTableView.rowHeight = 100
+        browseCollectionView.showsHorizontalScrollIndicator = false
+        //separatorInset
+//        browseTableView.separatorInset = UIEdgeInsets(top: 0, left: 100, bottom: 0, right: 0)
     }
     
     func presentDetailVC(row: Int){
@@ -88,6 +89,10 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presentDetailVC(row: indexPath.row)
         tableView.reloadRows(at: [indexPath], with: .none)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
     }
     
 }

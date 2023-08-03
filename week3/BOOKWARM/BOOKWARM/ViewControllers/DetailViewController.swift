@@ -19,12 +19,14 @@ class DetailViewController: UIViewController {
     
     var movie: Movie?
     var isNav: Bool = false
+    let placeholder = "메모를 입력해주세요"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setProperties()
         setNavigationBar()
         setDismissButton()
+        memoTextView.delegate = self
     }
     
     func setDismissButton(){
@@ -49,7 +51,8 @@ class DetailViewController: UIViewController {
         rateLabel.text = movie.rateLabelText
         rateLabel.font = .systemFont(ofSize: 12)
         rateLabel.textColor = .darkGray
-        memoTextView.text = ""
+        memoTextView.text = placeholder
+        memoTextView.textColor = .lightGray
         setInfoBackgroundView()
         dismissButton.setImage(UIImage(systemName: "xmark"), for: .normal)
         dismissButton.setTitle("", for: .normal)
@@ -67,5 +70,20 @@ class DetailViewController: UIViewController {
         navigationController?.navigationBar.topItem?.title = ""
     }
 
+
+}
+
+extension DetailViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if memoTextView.text == placeholder {
+            memoTextView.textColor = .black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if memoTextView.text.isEmpty {
+            memoTextView.text = placeholder
+            memoTextView.textColor = .lightGray
+        }
+    }
 
 }

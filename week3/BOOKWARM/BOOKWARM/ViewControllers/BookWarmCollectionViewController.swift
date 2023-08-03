@@ -10,26 +10,36 @@ import UIKit
 
 class BookWarmCollectionViewController: UICollectionViewController {
     
-    var movieInfo = MovieInfo() {
+    var movieInfo = MovieInfo()
+    
+    var searchedMovies : [Movie] = []{
         didSet{
             collectionView.reloadData()
         }
     }
+    
+    let searchBar : UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "검색어를 입력하세요"
+        return searchBar
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
         registerCell()
         setCollectionViewLayout()
+        searchedMovies = movieInfo.movie
+        searchBar.delegate = self
     }
     
 
     
     func setNavigationBar(){
-        title = "고래밥님의 책장"
         let searchImage = UIImage(systemName: "magnifyingglass")
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: #selector(searchButtonDidTap))
         navigationItem.rightBarButtonItem?.tintColor = .black
+        navigationItem.titleView = searchBar
     }
     
     func registerCell(){
@@ -38,10 +48,18 @@ class BookWarmCollectionViewController: UICollectionViewController {
     }
     
     @objc func likeButtonDidTap(_ sender: UIButton){
-        movieInfo.movie[sender.tag].like.toggle()
+        searchedMovies[sender.tag].like.toggle()
+        print("\(searchedMovies[sender.tag].like)")
+        
+        
+//        for item in movieInfo.movie{
+//            if searchedMovies[sender.tag].title == item.title{
+//                item.like.toggle()
+//            }
+//        }
+        
+        
     }
-    
-    
     
     func setCollectionViewLayout(){
         let layout = UICollectionViewFlowLayout()
@@ -52,6 +70,7 @@ class BookWarmCollectionViewController: UICollectionViewController {
         layout.minimumInteritemSpacing = spacing
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         collectionView.collectionViewLayout = layout
+        collectionView.keyboardDismissMode = .onDrag
     }
     
     @objc func searchButtonDidTap(){
@@ -70,7 +89,7 @@ class BookWarmCollectionViewController: UICollectionViewController {
 extension BookWarmCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        movieInfo.movie.count
+        searchedMovies.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -79,7 +98,7 @@ extension BookWarmCollectionViewController {
             return UICollectionViewCell()
         }
         
-        let row = movieInfo.movie[indexPath.row]
+        let row = searchedMovies[indexPath.row]
         cell.configureCell(row: row)
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(likeButtonDidTap), for: .touchUpInside)
@@ -92,10 +111,26 @@ extension BookWarmCollectionViewController {
         guard let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else{
             return
         }
-        vc.movie = movieInfo.movie[indexPath.row]
+        vc.movie = searchedMovies[indexPath.row]
         vc.isNav = true
         navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 
+extension BookWarmCollectionViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let searchBarText = searchBar.text else {return}
+        if searchBarText.isEmpty {
+            searchedMovies = movieInfo.movie
+        }
+        else{
+            searchedMovies.removeAll()
+            for item in movieInfo.movie {
+                if item.title.contains(searchBar.text!){
+                    searchedMovies.append(item)
+                }
+            }
+        }
+    }
+}

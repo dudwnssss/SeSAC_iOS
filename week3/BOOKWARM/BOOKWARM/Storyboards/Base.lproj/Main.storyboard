@@ -199,7 +199,7 @@
         <scene sceneID="zIx-Dv-JRA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B4w-bU-tDE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Ewa-dj-aHD"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="star.fill" catalog="system" id="Ewa-dj-aHD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="k4G-wh-xce">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -222,15 +222,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Saa-3W-FkK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Saa-3W-FkK">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="Ajz-xI-w7P">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="155"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="175"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CD6-7O-9Zb">
-                                            <rect key="frame" x="0.0" y="31" width="393" height="124"/>
+                                            <rect key="frame" x="0.0" y="41" width="393" height="134"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Z8w-t1-gGJ">
                                                 <size key="itemSize" width="128" height="128"/>
@@ -241,7 +240,7 @@
                                             <cells/>
                                         </collectionView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Bp-XT-QAk">
-                                            <rect key="frame" x="10" y="10" width="42" height="21"/>
+                                            <rect key="frame" x="16" y="10" width="42" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="OaZ-U3-23r"/>
                                             </constraints>
@@ -254,10 +253,10 @@
                                     <constraints>
                                         <constraint firstItem="CD6-7O-9Zb" firstAttribute="leading" secondItem="Ajz-xI-w7P" secondAttribute="leading" id="4P1-Df-SJP"/>
                                         <constraint firstItem="0Bp-XT-QAk" firstAttribute="top" secondItem="Ajz-xI-w7P" secondAttribute="top" constant="10" id="HPy-tF-6UH"/>
-                                        <constraint firstItem="CD6-7O-9Zb" firstAttribute="top" secondItem="0Bp-XT-QAk" secondAttribute="bottom" id="NVT-T3-aPV"/>
+                                        <constraint firstItem="CD6-7O-9Zb" firstAttribute="top" secondItem="0Bp-XT-QAk" secondAttribute="bottom" constant="10" id="NVT-T3-aPV"/>
                                         <constraint firstAttribute="bottom" secondItem="CD6-7O-9Zb" secondAttribute="bottom" id="hnl-qK-GsX"/>
                                         <constraint firstAttribute="trailing" secondItem="CD6-7O-9Zb" secondAttribute="trailing" id="lr1-lQ-BXv"/>
-                                        <constraint firstItem="0Bp-XT-QAk" firstAttribute="leading" secondItem="Ajz-xI-w7P" secondAttribute="leading" constant="10" id="xvD-3q-yhk"/>
+                                        <constraint firstItem="0Bp-XT-QAk" firstAttribute="leading" secondItem="Ajz-xI-w7P" secondAttribute="leading" constant="16" id="xvD-3q-yhk"/>
                                     </constraints>
                                 </view>
                             </tableView>
@@ -286,7 +285,7 @@
         <scene sceneID="0X3-9G-ddc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RhP-if-Prh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7bL-eU-khN"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="star.fill" catalog="system" id="7bL-eU-khN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oiu-5H-rQQ">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -307,6 +306,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="eRp-07-d3t" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XP3-gQ-SgF">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -321,6 +321,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
