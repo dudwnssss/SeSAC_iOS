@@ -81,7 +81,7 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if memoTextView.text == placeholder {
+        if memoTextView.textColor == .lightGray {
             memoTextView.text = ""
             memoTextView.textColor = .black
         }

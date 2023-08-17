@@ -25,6 +25,7 @@
 		104C74A72A7A2E80002F486A /* BrowseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C74A52A7A2E80002F486A /* BrowseCollectionViewCell.swift */; };
 		104C74A82A7A2E80002F486A /* BrowseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104C74A62A7A2E80002F486A /* BrowseCollectionViewCell.xib */; };
 		104C74AB2A7A39B4002F486A /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C74AA2A7A39B4002F486A /* UIView+.swift */; };
+		108212DB2A7C8B8B00695F75 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108212DA2A7C8B8B00695F75 /* FirstViewController.swift */; };
 		10C9B6282A7BB13800026EE0 /* UIVIewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C9B6272A7BB13800026EE0 /* UIVIewController+.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		104C74A52A7A2E80002F486A /* BrowseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionViewCell.swift; sourceTree = "<group>"; };
 		104C74A62A7A2E80002F486A /* BrowseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowseCollectionViewCell.xib; sourceTree = "<group>"; };
 		104C74AA2A7A39B4002F486A /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		108212DA2A7C8B8B00695F75 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		10C9B6272A7BB13800026EE0 /* UIVIewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 				104C74572A7799D3002F486A /* SearchViewController.swift */,
 				104C74712A779B09002F486A /* DetailViewController.swift */,
 				104C749F2A7A2C98002F486A /* BrowseViewController.swift */,
+				108212DA2A7C8B8B00695F75 /* FirstViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				104C74A02A7A2C98002F486A /* BrowseViewController.swift in Sources */,
 				104C749A2A790FB7002F486A /* Movie.swift in Sources */,
 				104C746D2A779A98002F486A /* BookWarmCell.swift in Sources */,
+				108212DB2A7C8B8B00695F75 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

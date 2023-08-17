@@ -34,6 +34,19 @@ class BookWarmCollectionViewController: UICollectionViewController {
         hideKeyboardWhenTappedAround()
     }
     
+    func searchQuery(text: String){
+        if text.isEmpty {
+            searchedMovies = movieInfo.movie
+        }
+        else{
+            searchedMovies.removeAll()
+            for item in movieInfo.movie {
+                if item.title.contains(text){
+                    searchedMovies.append(item)
+                }
+            }
+        }
+    }
     
     
     func setNavigationBar(){
@@ -50,18 +63,18 @@ class BookWarmCollectionViewController: UICollectionViewController {
     
     @objc func likeButtonDidTap(_ sender: UIButton){
         searchedMovies[sender.tag].like.toggle()
-        print("\(searchedMovies[sender.tag].like)")
         
-        for i in 0...movieInfo.movie.count-1{
-            if searchedMovies[sender.tag].title == movieInfo.movie[i].title{
-                movieInfo.movie[i].like.toggle()
+        //원본 list에서 제목을 통해 영화를 찾고,
+        let title = searchedMovies[sender.tag].title
+
+        //그 영화의 인덱스를 통해 list[sender.tag].like.toggle()를 해줘야 함
+        for (index,item) in movieInfo.movie.enumerated(){
+            if item.title == title{
+                movieInfo.movie[index].like.toggle()
             }
         }
     }
             
-    
-    
-    
     func setCollectionViewLayout(){
         let layout = UICollectionViewFlowLayout()
         let spacing : CGFloat = 20
@@ -82,9 +95,6 @@ class BookWarmCollectionViewController: UICollectionViewController {
         present(nav, animated: true)
         
     }
-    
-    
-    
 }
 
 extension BookWarmCollectionViewController {
@@ -120,18 +130,26 @@ extension BookWarmCollectionViewController {
 
 
 extension BookWarmCollectionViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchBarText = searchBar.text else {return}
+        searchQuery(text: searchBarText)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchedMovies = movieInfo.movie
+        searchBar.text = ""
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard let searchBarText = searchBar.text else {return}
-        if searchBarText.isEmpty {
-            searchedMovies = movieInfo.movie
-        }
-        else{
-            searchedMovies.removeAll()
-            for item in movieInfo.movie {
-                if item.title.contains(searchBar.text!){
-                    searchedMovies.append(item)
-                }
-            }
-        }
+        searchQuery(text: searchBarText)
     }
 }
