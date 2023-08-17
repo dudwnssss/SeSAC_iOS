@@ -15,13 +15,55 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yEd-n1-Yug">
+                                <rect key="frame" x="0.0" y="272" width="393" height="580"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kOb-tO-aYl">
+                                <rect key="frame" x="0.0" y="59" width="393" height="213"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XTk-Ys-sMF">
+                                <rect key="frame" x="23.999999999999993" y="114.66666666666667" width="98.333333333333314" height="157.33333333333331"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XTk-Ys-sMF" secondAttribute="height" multiplier="10:16" id="K8K-lb-4RY"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyi-Nq-vPl">
+                                <rect key="frame" x="24" y="83" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kOb-tO-aYl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1KM-FY-XgX"/>
+                            <constraint firstItem="XTk-Ys-sMF" firstAttribute="bottom" secondItem="kOb-tO-aYl" secondAttribute="bottom" id="AOS-1k-8dH"/>
+                            <constraint firstItem="kOb-tO-aYl" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Ih3-2g-SvE"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kOb-tO-aYl" secondAttribute="trailing" id="ROf-av-BAz"/>
+                            <constraint firstItem="XTk-Ys-sMF" firstAttribute="leading" secondItem="pyi-Nq-vPl" secondAttribute="leading" id="WGd-gA-L5k"/>
+                            <constraint firstItem="pyi-Nq-vPl" firstAttribute="leading" secondItem="kOb-tO-aYl" secondAttribute="leading" constant="24" id="YlP-fe-Vuc"/>
+                            <constraint firstItem="pyi-Nq-vPl" firstAttribute="top" secondItem="kOb-tO-aYl" secondAttribute="top" constant="24" id="bVA-qb-kAQ"/>
+                            <constraint firstItem="XTk-Ys-sMF" firstAttribute="width" secondItem="kOb-tO-aYl" secondAttribute="width" multiplier="0.25" id="lty-dI-HgE"/>
+                            <constraint firstItem="yEd-n1-Yug" firstAttribute="top" secondItem="kOb-tO-aYl" secondAttribute="bottom" id="pCd-EN-j1A"/>
+                            <constraint firstItem="yEd-n1-Yug" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="t6S-gV-yqg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yEd-n1-Yug" secondAttribute="trailing" id="uUK-JX-q1Y"/>
+                            <constraint firstItem="kOb-tO-aYl" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.25" id="uib-4J-g5i"/>
+                            <constraint firstAttribute="bottom" secondItem="yEd-n1-Yug" secondAttribute="bottom" id="wTA-gf-4Cm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundPosterImageView" destination="kOb-tO-aYl" id="FQA-49-laB"/>
+                        <outlet property="castTableView" destination="yEd-n1-Yug" id="xvJ-dv-7GI"/>
+                        <outlet property="mainPosterImageView" destination="XTk-Ys-sMF" id="0Py-bF-Sc4"/>
+                        <outlet property="titleLabel" destination="pyi-Nq-vPl" id="aub-O2-WYr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="-2"/>
+            <point key="canvasLocation" x="138.1679389312977" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>

@@ -16,6 +16,10 @@ extension UIView{
         self.layer.shadowOpacity = 0.5
         self.clipsToBounds = false
     }
+    
+    func setCircleView(){
+        self.layer.cornerRadius = self.frame.width/2
+    }
 }
 
 
