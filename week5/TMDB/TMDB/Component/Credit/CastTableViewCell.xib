@@ -17,19 +17,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nhc-nh-OcY">
-                        <rect key="frame" x="24" y="23" width="129" height="222"/>
+                        <rect key="frame" x="24" y="11" width="164" height="246"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="nhc-nh-OcY" secondAttribute="height" multiplier="43:74" id="Hf1-7D-gfG"/>
+                            <constraint firstAttribute="width" secondItem="nhc-nh-OcY" secondAttribute="height" multiplier="2:3" id="Hf1-7D-gfG"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9F-YU-Zwl">
-                        <rect key="frame" x="173" y="103.66666666666667" width="42" height="21"/>
+                        <rect key="frame" x="208" y="115.66666666666667" width="42" height="21.000000000000014"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMF-g6-NC2">
-                        <rect key="frame" x="173" y="131" width="42" height="21"/>
+                        <rect key="frame" x="208" y="140.66666666666666" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -38,10 +38,10 @@
                 <constraints>
                     <constraint firstItem="z9F-YU-Zwl" firstAttribute="leading" secondItem="nhc-nh-OcY" secondAttribute="trailing" constant="20" id="0BZ-0V-qip"/>
                     <constraint firstItem="nhc-nh-OcY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="4" id="79I-fw-2MJ"/>
-                    <constraint firstItem="nhc-nh-OcY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="12" id="HSV-Wp-osn"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="nhc-nh-OcY" secondAttribute="bottom" constant="12" id="SVF-ek-wEw"/>
-                    <constraint firstItem="zMF-g6-NC2" firstAttribute="top" secondItem="z9F-YU-Zwl" secondAttribute="bottom" constant="6.3333333333333286" id="UGi-DW-USa"/>
-                    <constraint firstItem="z9F-YU-Zwl" firstAttribute="centerY" secondItem="nhc-nh-OcY" secondAttribute="centerY" constant="-20" id="Vue-DT-soL"/>
+                    <constraint firstItem="nhc-nh-OcY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="HSV-Wp-osn"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="nhc-nh-OcY" secondAttribute="bottom" id="SVF-ek-wEw"/>
+                    <constraint firstItem="zMF-g6-NC2" firstAttribute="top" secondItem="z9F-YU-Zwl" secondAttribute="bottom" constant="4" id="UGi-DW-USa"/>
+                    <constraint firstItem="z9F-YU-Zwl" firstAttribute="centerY" secondItem="nhc-nh-OcY" secondAttribute="centerY" constant="-8" id="Vue-DT-soL"/>
                     <constraint firstItem="zMF-g6-NC2" firstAttribute="leading" secondItem="z9F-YU-Zwl" secondAttribute="leading" id="fzX-Xx-8i1"/>
                 </constraints>
             </tableViewCellContentView>

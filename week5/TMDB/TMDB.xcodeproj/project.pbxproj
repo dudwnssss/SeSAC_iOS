@@ -15,6 +15,8 @@
 		103EB6232A8E4D9700FF47FB /* OverViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 103EB6212A8E4D9700FF47FB /* OverViewTableViewCell.xib */; };
 		103EB6262A8E4DA300FF47FB /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103EB6242A8E4DA300FF47FB /* CastTableViewCell.swift */; };
 		103EB6272A8E4DA300FF47FB /* CastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 103EB6252A8E4DA300FF47FB /* CastTableViewCell.xib */; };
+		103EB63C2A8F506500FF47FB /* CastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103EB63B2A8F506500FF47FB /* CastManager.swift */; };
+		103EB63E2A8F513300FF47FB /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103EB63D2A8F513300FF47FB /* Credit.swift */; };
 		10E7BCD32A8E262200A20A93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E7BCD22A8E262200A20A93 /* AppDelegate.swift */; };
 		10E7BCD52A8E262200A20A93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E7BCD42A8E262200A20A93 /* SceneDelegate.swift */; };
 		10E7BCD72A8E262200A20A93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E7BCD62A8E262200A20A93 /* ViewController.swift */; };
@@ -40,6 +42,8 @@
 		103EB6212A8E4D9700FF47FB /* OverViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverViewTableViewCell.xib; sourceTree = "<group>"; };
 		103EB6242A8E4DA300FF47FB /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
 		103EB6252A8E4DA300FF47FB /* CastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastTableViewCell.xib; sourceTree = "<group>"; };
+		103EB63B2A8F506500FF47FB /* CastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastManager.swift; sourceTree = "<group>"; };
+		103EB63D2A8F513300FF47FB /* Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
 		10E7BCCF2A8E262200A20A93 /* TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E7BCD22A8E262200A20A93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10E7BCD42A8E262200A20A93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 			children = (
 				103EB61A2A8E3D1700FF47FB /* APIServices */,
 				103EB61D2A8E3E1900FF47FB /* Trend.swift */,
+				103EB63D2A8F513300FF47FB /* Credit.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				103EB61B2A8E3D2500FF47FB /* TrendManager.swift */,
+				103EB63B2A8F506500FF47FB /* CastManager.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -257,10 +263,12 @@
 				10E7BCD72A8E262200A20A93 /* ViewController.swift in Sources */,
 				10E7BCED2A8E267E00A20A93 /* CreditViewController.swift in Sources */,
 				10E7BCD32A8E262200A20A93 /* AppDelegate.swift in Sources */,
+				103EB63E2A8F513300FF47FB /* Credit.swift in Sources */,
 				103EB6172A8E325B00FF47FB /* UIView+.swift in Sources */,
 				103EB6152A8E2E0F00FF47FB /* ReusableViewProtocol.swift in Sources */,
 				103EB61C2A8E3D2500FF47FB /* TrendManager.swift in Sources */,
 				103EB61E2A8E3E1900FF47FB /* Trend.swift in Sources */,
+				103EB63C2A8F506500FF47FB /* CastManager.swift in Sources */,
 				103EB6262A8E4DA300FF47FB /* CastTableViewCell.swift in Sources */,
 				10E7BCD52A8E262200A20A93 /* SceneDelegate.swift in Sources */,
 				10E7BCFB2A8E283C00A20A93 /* TrendTableViewCell.swift in Sources */,

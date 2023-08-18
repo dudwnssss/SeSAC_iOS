@@ -42,9 +42,14 @@ class TrendTableViewCell: UITableViewCell {
         
         posterImageView.backgroundColor = .black
         rateTextLabel.text = "평점"
+        rateTextLabel.font = .systemFont(ofSize: 13)
         rateTextLabel.backgroundColor = .systemIndigo
+        rateTextLabel.textAlignment = .center
         rateTextLabel.textColor = .white
         rateScoreLabel.backgroundColor = .white
+        rateScoreLabel.textAlignment = .center
+        rateScoreLabel.font = .systemFont(ofSize: 13)
+
         
         trendBackgroundView.layer.cornerRadius = 10
         trendBackgroundView.clipsToBounds = true

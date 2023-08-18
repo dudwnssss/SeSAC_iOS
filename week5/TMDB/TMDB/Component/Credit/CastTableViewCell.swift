@@ -23,9 +23,10 @@ class CastTableViewCell: UITableViewCell {
     }
     
     func setProperties(){
-        actorImageView.layer.cornerRadius = 10
+        actorImageView.layer.cornerRadius = 2
         characterLabel.font = .systemFont(ofSize: 14)
         characterLabel.textColor = .lightGray
+        actorImageView.backgroundColor = .black
     }
     
 }

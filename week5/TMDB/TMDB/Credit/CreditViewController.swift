@@ -20,31 +20,47 @@ class CreditViewController : UIViewController{
     @IBOutlet var castTableView: UITableView!
     
     var movieInfo : Result?
+    var creditInfo : Credit?
+    
     
     enum cellType: Int, CaseIterable{
-        case overview, cast
+        case overview = 0
+        case cast = 1
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setProperties()
         registerCell()
+        setCredits()
+    }
+    
+    func setCredits(){
+        CastManager.shared.callRequest(id: movieInfo?.id ?? 0) { data in
+            self.creditInfo = data
+            self.castTableView.reloadData()
+        } failure: {
+            print("에러")
+        }
+
     }
     
     func setProperties(){
         setNavigationBar()
         castTableView.dataSource = self
         castTableView.delegate = self
-        titleLabel.font = .boldSystemFont(ofSize: 18)
+        castTableView.rowHeight = UITableView.automaticDimension
+        titleLabel.font = .systemFont(ofSize: 18, weight: UIFont.Weight(0.5))
         titleLabel.textColor = .white
         titleLabel.text = movieInfo?.title
+       
+        let bgImageUrl = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2\(movieInfo?.backdropPath ?? "")"
+        let mainImageurl = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2\(movieInfo?.posterPath ?? "")"
+       
+        backgroundPosterImageView.kf.setImage(with: URL(string: bgImageUrl))
+        mainPosterImageView.kf.setImage(with: URL(string: mainImageurl))
         
-        backgroundPosterImageView.backgroundColor = .black
-        let bgImageUrl = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2\(movieInfo?.backdropPath)"
-        let mainImageurl = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2\(movieInfo?.posterPath)"
-        mainPosterImageView.backgroundColor = .brown
-        
-        backgroundPosterImageView.kf
+        backgroundPosterImageView.contentMode = .scaleAspectFill
     }
     
     func registerCell(){
@@ -60,64 +76,42 @@ class CreditViewController : UIViewController{
 }
 
 extension CreditViewController: UITableViewDelegate, UITableViewDataSource{
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch cellType(rawValue: section){
-        case .overview:
-            return 1
-        case .cast:
-            return 10 //배우 수
-        default:
-            return 0
-        }
+        return section == 0 ? 1 : creditInfo?.cast.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                
-        guard let overviewCell = tableView.dequeueReusableCell(withIdentifier: OverViewTableViewCell.identifier) as? OverViewTableViewCell else {
-            return UITableViewCell()
-        }
+        
+        guard let overviewCell = tableView.dequeueReusableCell(withIdentifier: OverViewTableViewCell.identifier) as? OverViewTableViewCell else {return UITableViewCell()}
+        guard let castCell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier) as? CastTableViewCell else {return UITableViewCell()}
+        let profileImageUrl = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2\(creditInfo?.cast[indexPath.row].profilePath ?? "")"
         overviewCell.overviewLabel.text = movieInfo?.overview
+        castCell.actorNameLabel.text = creditInfo?.cast[indexPath.row].name
+        castCell.characterLabel.text = creditInfo?.cast[indexPath.row].character
+        castCell.actorImageView.kf.setImage(with: URL(string: profileImageUrl))
         
-        
-        
-        guard let castCell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier) as? CastTableViewCell else {
-            return UITableViewCell()
-        }
-        switch cellType(rawValue: indexPath.row){
-        case .overview:
-            return overviewCell
-        case .cast:
-            return castCell
-        default:
-            return UITableViewCell()
-        }
+        return indexPath.section == 0 ? overviewCell : castCell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch cellType(rawValue: indexPath.row){
-        case .overview:
-            return 100
-        case .cast:
-            return 70
-        default:
-            return 0
-        }
+        return indexPath.section == 0 ? tableView.estimatedRowHeight : 100
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch cellType(rawValue: section){
-        case .overview:
-            return "OverView"
-        case .cast:
-            return "Cast"
-        default:
-            return nil
-        }
+        return section == 0 ? "OverView" : "Cast"
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.section)
+        print(indexPath.row)
+        print(indexPath.item)
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+          return UITableView.automaticDimension
     }
     
 }

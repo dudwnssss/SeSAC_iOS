@@ -77,7 +77,6 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource{
         
         vc.movieInfo = list.results[indexPath.row]
         
-        
         navigationController?.pushViewController(vc, animated: true)
     }
 }
