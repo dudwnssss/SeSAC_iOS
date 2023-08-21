@@ -18,6 +18,7 @@ class TrendTableViewCell: UITableViewCell {
     @IBOutlet var rateTextLabel: UILabel!
     @IBOutlet var rateScoreLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var originalTitleLabel: UILabel!
     @IBOutlet var castLabel: UILabel!
     @IBOutlet var separatorView: UIView!
     @IBOutlet var detailLabel: UILabel!
@@ -36,6 +37,8 @@ class TrendTableViewCell: UITableViewCell {
         genreLabel.font = .boldSystemFont(ofSize: 18)
         
         titleLabel.font = .systemFont(ofSize: 17, weight: UIFont.Weight(0.25))
+        originalTitleLabel.font = .systemFont(ofSize: 16, weight: UIFont.Weight(0.2))
+        originalTitleLabel.textColor = .darkGray
         
         castLabel.textColor = .gray
         castLabel.font = .systemFont(ofSize: 14)

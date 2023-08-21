@@ -55,6 +55,7 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource{
         }
         let row = list.results[indexPath.row]
         cell.titleLabel.text = row.title
+        cell.originalTitleLabel.text = row.originalTitle
         cell.dateLabel.text = row.releaseDate//datefomatter쓰자
         
         if let genre = genreList[row.genreIDS[0]] {
