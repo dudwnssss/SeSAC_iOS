@@ -52,13 +52,26 @@ struct Result: Codable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
+    
+    var date: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let convertDate = dateFormatter.date(from: releaseDate)
+        let myDateFormatter = DateFormatter()
+        myDateFormatter.dateFormat = "MM/dd/yyyy"
+        let convertStr = myDateFormatter.string(from: convertDate!)
+        return convertStr
+    }
+    
+    var rate: String {
+        let digit: Double = pow(10, 1)
+        let rate = floor(voteAverage * digit) / digit
+        return "\(rate)"
+    }
 }
 
 enum MediaType: String, Codable {
     case movie = "movie"
 }
 
-//enum OriginalLanguage: String, Codable {
-//    case en = "en"
-//    case hi = "hi"
-//}
+

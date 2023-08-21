@@ -18,7 +18,7 @@ class OverViewTableViewCell: UITableViewCell {
         super.awakeFromNib()
         setProperties()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -41,9 +41,6 @@ class OverViewTableViewCell: UITableViewCell {
             setSummaryOverView()
         }
     }
-    
-
-    
     
     func setProperties(){
         overviewLabel.font = .systemFont(ofSize: 14)

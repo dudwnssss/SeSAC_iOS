@@ -30,7 +30,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyi-Nq-vPl">
-                                <rect key="frame" x="24" y="83" width="42" height="21"/>
+                                <rect key="frame" x="24.000000000000004" y="83" width="41.333333333333343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,6 +48,7 @@
                             <constraint firstItem="pyi-Nq-vPl" firstAttribute="top" secondItem="kOb-tO-aYl" secondAttribute="top" constant="24" id="bVA-qb-kAQ"/>
                             <constraint firstItem="XTk-Ys-sMF" firstAttribute="width" secondItem="kOb-tO-aYl" secondAttribute="width" multiplier="0.25" id="lty-dI-HgE"/>
                             <constraint firstItem="yEd-n1-Yug" firstAttribute="top" secondItem="kOb-tO-aYl" secondAttribute="bottom" id="pCd-EN-j1A"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pyi-Nq-vPl" secondAttribute="trailing" constant="24" id="r2l-7i-U39"/>
                             <constraint firstItem="yEd-n1-Yug" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="t6S-gV-yqg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yEd-n1-Yug" secondAttribute="trailing" id="uUK-JX-q1Y"/>
                             <constraint firstItem="kOb-tO-aYl" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.25" id="uib-4J-g5i"/>

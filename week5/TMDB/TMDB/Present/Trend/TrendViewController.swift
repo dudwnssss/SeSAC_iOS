@@ -24,18 +24,31 @@ class TrendViewController : UIViewController{
         TrendManager.shared.callRequest { data in
             self.list = data
             print(data)
+            
             self.trendTableView.reloadData()
         } failure: {
             print("에러")
         }
     }
     
+    func setNavigationBar(){
+        let listImage = UIImage(systemName: "list.bullet")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: listImage, style: .plain, target: self, action: nil)
+        let searchImage = UIImage(systemName: "magnifyingglass")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: nil)
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .clear
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    }
     
     func setProperties(){
+        setNavigationBar()
         trendTableView.delegate = self
         trendTableView.dataSource = self
         trendTableView.separatorStyle = .none
-        
         trendTableView.rowHeight = 450
     }
     
@@ -57,18 +70,18 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource{
         let row = list.results[indexPath.row]
         cell.titleLabel.text = row.title
         cell.originalTitleLabel.text = row.originalTitle
-        cell.dateLabel.text = row.releaseDate//datefomatter쓰자
+        
+        cell.dateLabel.text = row.date
         
         if let genre = Genre.genreList[row.genreIDS[0]] {
             cell.genreLabel.text = "#\(genre)"
         }
-        let digit: Double = pow(10, 1)
-        let score = floor(row.voteAverage * digit) / digit
+       
+        cell.rateScoreLabel.text = row.rate
         
-        cell.rateScoreLabel.text = "\(score)" //버림하자
-        let url = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2\(row.backdropPath)"
+        let url = URLConstant.imageBaseURL + (row.backdropPath)
         cell.posterImageView.kf.setImage(with: URL(string: url))
-
+        cell.selectionStyle = .none
         return cell
     }
     

@@ -15,7 +15,7 @@ class CreditViewController : UIViewController{
     
     var isMoreButtonTapped = false {
         didSet {
-            castTableView.reloadSections(IndexSet(0...0), with: .automatic)
+            castTableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
         }
     }
     
@@ -25,7 +25,8 @@ class CreditViewController : UIViewController{
     
     @IBOutlet var castTableView: UITableView!
     
-    var movieInfo : Result?
+    var movieInfo : Result!
+    //문제
     var creditInfo : Credit?
     
     
@@ -42,7 +43,7 @@ class CreditViewController : UIViewController{
     }
     
     func setCredits(){
-        CastManager.shared.callRequest(id: movieInfo?.id ?? 0) { data in
+        CastManager.shared.callRequest(id: movieInfo.id ) { data in
             self.creditInfo = data
             self.castTableView.reloadData()
         } failure: {
@@ -58,10 +59,10 @@ class CreditViewController : UIViewController{
         castTableView.rowHeight = UITableView.automaticDimension
         titleLabel.font = .systemFont(ofSize: 18, weight: UIFont.Weight(0.5))
         titleLabel.textColor = .white
-        titleLabel.text = movieInfo?.title
+        titleLabel.text = movieInfo.title
        
-        let bgImageUrl = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2\(movieInfo?.backdropPath ?? "")"
-        let mainImageurl = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2\(movieInfo?.posterPath ?? "")"
+        let bgImageUrl = URLConstant.imageBaseURL + (movieInfo.backdropPath )
+        let mainImageurl = URLConstant.imageBaseURL + (movieInfo.posterPath )
        
         backgroundPosterImageView.kf.setImage(with: URL(string: bgImageUrl))
         mainPosterImageView.kf.setImage(with: URL(string: mainImageurl))
@@ -78,6 +79,8 @@ class CreditViewController : UIViewController{
     
     func setNavigationBar(){
         title = "출연/제작"
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.topItem?.title = ""
     }
     
     @objc func moreButtonDidTap(){
@@ -98,15 +101,17 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource{
         
         guard let overviewCell = tableView.dequeueReusableCell(withIdentifier: OverViewTableViewCell.identifier) as? OverViewTableViewCell else {return UITableViewCell()}
         guard let castCell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier) as? CastTableViewCell else {return UITableViewCell()}
-        let profileImageUrl = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2\(creditInfo?.cast[indexPath.row].profilePath ?? "")"
-        overviewCell.overviewLabel.text = movieInfo?.overview
+        let profileImageUrl = URLConstant.imageBaseURL + (creditInfo?.cast[indexPath.row].profilePath ?? "")
+        overviewCell.overviewLabel.text = movieInfo.overview
         overviewCell.moreButton.addTarget(self, action: #selector(moreButtonDidTap), for: .touchUpInside)
         overviewCell.configureCell(isMore: isMoreButtonTapped)
+        overviewCell.selectionStyle = .none
         
         
         castCell.actorNameLabel.text = creditInfo?.cast[indexPath.row].name
         castCell.characterLabel.text = creditInfo?.cast[indexPath.row].character
         castCell.actorImageView.kf.setImage(with: URL(string: profileImageUrl))
+        castCell.selectionStyle = .none
         
         
         return indexPath.section == 0 ? overviewCell : castCell

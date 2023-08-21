@@ -29,6 +29,11 @@ class TrendTableViewCell: UITableViewCell {
         setProperties()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        posterImageView.image = nil
+    }
+    
     func setProperties(){
         
         dateLabel.font = .systemFont(ofSize: 14)
