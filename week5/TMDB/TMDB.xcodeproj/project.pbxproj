@@ -17,6 +17,9 @@
 		103EB6272A8E4DA300FF47FB /* CastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 103EB6252A8E4DA300FF47FB /* CastTableViewCell.xib */; };
 		103EB63C2A8F506500FF47FB /* CastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103EB63B2A8F506500FF47FB /* CastManager.swift */; };
 		103EB63E2A8F513300FF47FB /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103EB63D2A8F513300FF47FB /* Credit.swift */; };
+		103EB6642A9342FD00FF47FB /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103EB6632A9342FD00FF47FB /* Genre.swift */; };
+		103EB6672A9343D300FF47FB /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103EB6662A9343D300FF47FB /* APIKey.swift */; };
+		103EB66C2A9344B300FF47FB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 103EB66B2A9344B300FF47FB /* .gitignore */; };
 		10E7BCD32A8E262200A20A93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E7BCD22A8E262200A20A93 /* AppDelegate.swift */; };
 		10E7BCD52A8E262200A20A93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E7BCD42A8E262200A20A93 /* SceneDelegate.swift */; };
 		10E7BCD72A8E262200A20A93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E7BCD62A8E262200A20A93 /* ViewController.swift */; };
@@ -44,6 +47,9 @@
 		103EB6252A8E4DA300FF47FB /* CastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastTableViewCell.xib; sourceTree = "<group>"; };
 		103EB63B2A8F506500FF47FB /* CastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastManager.swift; sourceTree = "<group>"; };
 		103EB63D2A8F513300FF47FB /* Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
+		103EB6632A9342FD00FF47FB /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		103EB6662A9343D300FF47FB /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		103EB66B2A9344B300FF47FB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		10E7BCCF2A8E262200A20A93 /* TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E7BCD22A8E262200A20A93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10E7BCD42A8E262200A20A93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,9 +91,11 @@
 		103EB6192A8E378600FF47FB /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				103EB6652A9343C400FF47FB /* Key */,
 				103EB61A2A8E3D1700FF47FB /* APIServices */,
 				103EB61D2A8E3E1900FF47FB /* Trend.swift */,
 				103EB63D2A8F513300FF47FB /* Credit.swift */,
+				103EB6632A9342FD00FF47FB /* Genre.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -112,6 +120,14 @@
 			path = Credit;
 			sourceTree = "<group>";
 		};
+		103EB6652A9343C400FF47FB /* Key */ = {
+			isa = PBXGroup;
+			children = (
+				103EB6662A9343D300FF47FB /* APIKey.swift */,
+			);
+			path = Key;
+			sourceTree = "<group>";
+		};
 		10E7BCC62A8E262200A20A93 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +147,7 @@
 		10E7BCD12A8E262200A20A93 /* TMDB */ = {
 			isa = PBXGroup;
 			children = (
+				103EB66B2A9344B300FF47FB /* .gitignore */,
 				103EB6192A8E378600FF47FB /* Data */,
 				103EB6132A8E2DD700FF47FB /* Extension */,
 				10E7BCF62A8E280800A20A93 /* Component */,
@@ -248,6 +265,7 @@
 				103EB6272A8E4DA300FF47FB /* CastTableViewCell.xib in Resources */,
 				10E7BCFC2A8E283C00A20A93 /* TrendTableViewCell.xib in Resources */,
 				10E7BCDC2A8E262300A20A93 /* Assets.xcassets in Resources */,
+				103EB66C2A9344B300FF47FB /* .gitignore in Resources */,
 				10E7BCDA2A8E262200A20A93 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +286,8 @@
 				103EB6152A8E2E0F00FF47FB /* ReusableViewProtocol.swift in Sources */,
 				103EB61C2A8E3D2500FF47FB /* TrendManager.swift in Sources */,
 				103EB61E2A8E3E1900FF47FB /* Trend.swift in Sources */,
+				103EB6642A9342FD00FF47FB /* Genre.swift in Sources */,
+				103EB6672A9343D300FF47FB /* APIKey.swift in Sources */,
 				103EB63C2A8F506500FF47FB /* CastManager.swift in Sources */,
 				103EB6262A8E4DA300FF47FB /* CastTableViewCell.swift in Sources */,
 				10E7BCD52A8E262200A20A93 /* SceneDelegate.swift in Sources */,

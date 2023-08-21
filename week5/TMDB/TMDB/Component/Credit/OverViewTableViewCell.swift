@@ -33,11 +33,16 @@ class OverViewTableViewCell: UITableViewCell {
         moreButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
     }
     
-    
-    @IBAction func moreButtonDidTap(_ sender: UIButton) {
-        isMoreButtonSelected.toggle()
-        isMoreButtonSelected ?  setFullOverView() : setSummaryOverView()
+    func configureCell(isMore: Bool){
+        if isMore{
+            setFullOverView()
+        }
+        else {
+            setSummaryOverView()
+        }
     }
+    
+
     
     
     func setProperties(){

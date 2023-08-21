@@ -13,6 +13,12 @@ import Alamofire
 
 class CreditViewController : UIViewController{
     
+    var isMoreButtonTapped = false {
+        didSet {
+            castTableView.reloadSections(IndexSet(0...0), with: .automatic)
+        }
+    }
+    
     @IBOutlet var backgroundPosterImageView: UIImageView!
     @IBOutlet var mainPosterImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
@@ -73,6 +79,11 @@ class CreditViewController : UIViewController{
     func setNavigationBar(){
         title = "출연/제작"
     }
+    
+    @objc func moreButtonDidTap(){
+        isMoreButtonTapped.toggle()
+        print(#fileID, #function, #line, "- ")
+    }
 }
 
 extension CreditViewController: UITableViewDelegate, UITableViewDataSource{
@@ -89,9 +100,14 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource{
         guard let castCell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier) as? CastTableViewCell else {return UITableViewCell()}
         let profileImageUrl = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2\(creditInfo?.cast[indexPath.row].profilePath ?? "")"
         overviewCell.overviewLabel.text = movieInfo?.overview
+        overviewCell.moreButton.addTarget(self, action: #selector(moreButtonDidTap), for: .touchUpInside)
+        overviewCell.configureCell(isMore: isMoreButtonTapped)
+        
+        
         castCell.actorNameLabel.text = creditInfo?.cast[indexPath.row].name
         castCell.characterLabel.text = creditInfo?.cast[indexPath.row].character
         castCell.actorImageView.kf.setImage(with: URL(string: profileImageUrl))
+        
         
         return indexPath.section == 0 ? overviewCell : castCell
     }

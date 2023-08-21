@@ -12,7 +12,8 @@ class TrendViewController : UIViewController{
     
     @IBOutlet var trendTableView: UITableView!
     
-    let genreList = [28: "Action", 12: "Adventure", 16: "Animation", 35: "Comedy", 80: "Crime", 99: "Documentary", 18: "Drama", 10751: "Family", 14: "Fanasy", 36: "History", 27: "Horror", 10402: "Music", 9648: "Mystery", 10749: "Romance", 878: "Science Fiction", 10770: "TV Movie", 53: "Thriller", 10752: "War", 37: "Western"]
+
+    
     var list = Trend(page: 0, results: [], totalPages: 0, totalResults: 0)
     
     override func viewDidLoad() {
@@ -58,7 +59,7 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource{
         cell.originalTitleLabel.text = row.originalTitle
         cell.dateLabel.text = row.releaseDate//datefomatter쓰자
         
-        if let genre = genreList[row.genreIDS[0]] {
+        if let genre = Genre.genreList[row.genreIDS[0]] {
             cell.genreLabel.text = "#\(genre)"
         }
         let digit: Double = pow(10, 1)
@@ -67,10 +68,7 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource{
         cell.rateScoreLabel.text = "\(score)" //버림하자
         let url = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2\(row.backdropPath)"
         cell.posterImageView.kf.setImage(with: URL(string: url))
-        
-        
-        
-        
+
         return cell
     }
     
