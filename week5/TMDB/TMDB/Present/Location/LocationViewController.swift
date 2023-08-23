@@ -59,38 +59,25 @@ class LocationViewController: UIViewController {
         present(actionSheet, animated: true)
     }
     
-    func setAnnotation(type: String){
+    func setAnnotation(type: String){ //확실히 action의 title 값만 전달 받음
         mapView.removeAnnotations(mapView.annotations)
         
         var annotations : [MKAnnotation] = []
         
-        if type == "전체보기" {
+        if TheaterType(rawValue: type) == .all {
             for item in list.mapAnnotations {
                 annotations.append(getAnnotation(coordinate: getCoordinate(with: item), title: item.location))
             }
             mapView.addAnnotations(annotations)
-            return
         }
-        
-        for item in list.mapAnnotations {
-            if item.type == type{
-                annotations.append(getAnnotation(coordinate: getCoordinate(with: item), title: item.location))
+        else {
+            for item in list.mapAnnotations {
+                if item.type == type{
+                    annotations.append(getAnnotation(coordinate: getCoordinate(with: item), title: item.location))
+                }
             }
+            mapView.addAnnotations(annotations)
         }
-        mapView.addAnnotations(annotations)
-        
-        //        switch TheaterType(rawValue: type){
-        //        case .all:
-        //            print("all")
-        //        case .cgv:
-        //            print("cgv")
-        //        case .lotte:
-        //            print("lotte")
-        //        case .megabox:
-        //            print("megabox")
-        //        default:
-        //            print("error")
-        //        }
     }
     func showRequestLocationServiceAlert() {
         let requestLocationServiceAlert = UIAlertController(title: "위치정보 이용", message: "위치 서비스를 사용할 수 없습니다. 기기의 '설정>개인정보 보호'에서 위치 서비스를 켜주세요.", preferredStyle: .alert)
@@ -108,10 +95,17 @@ class LocationViewController: UIViewController {
     func setRegionAndAnnotation(center: CLLocationCoordinate2D){
         let region = MKCoordinateRegion(center: center, latitudinalMeters: 100, longitudinalMeters: 100)
         mapView.setRegion(region, animated: true)
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = center
-        annotation.title = "내 위치"
-        mapView.addAnnotation(annotation)
+        
+        var title = ""
+        let status = locationManager.authorizationStatus
+        if status == .denied || status == .restricted || status == .notDetermined {
+            title = list.sesac.location
+        }
+        else {
+            title = "내 위치"
+        }
+
+        mapView.addAnnotation(getAnnotation(coordinate: center, title: title))
     }
     func checkDeviceLocationAuthorization(){
         DispatchQueue.global().async {
