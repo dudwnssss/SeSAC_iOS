@@ -35,13 +35,23 @@ class TrendViewController : UIViewController{
         let listImage = UIImage(systemName: "list.bullet")
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: listImage, style: .plain, target: self, action: nil)
         let searchImage = UIImage(systemName: "magnifyingglass")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: nil)
+        let searchItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: nil)
+        let locationImage = UIImage(systemName: "location.circle")
+        let locationItem = UIBarButtonItem(image: locationImage, style: .plain, target: self, action: #selector(locationButtonDidTap))
+        
+        navigationItem.rightBarButtonItems = [searchItem, locationItem]
+        
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .clear
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    }
+    
+    @objc func locationButtonDidTap(){
+        let vc = LocationViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func setProperties(){

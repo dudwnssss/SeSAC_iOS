@@ -8,6 +8,13 @@
 import UIKit.UIView
 
 extension UIView{
+    
+    func addSubviews(_ views: UIView...) {
+        for view in views {
+            addSubview(view)
+        }
+    }
+    
     func setShadowView(){
         self.layer.cornerRadius = 10
         self.layer.shadowColor = UIColor.black.cgColor

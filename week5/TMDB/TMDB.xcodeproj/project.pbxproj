@@ -21,6 +21,10 @@
 		103EB6672A9343D300FF47FB /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103EB6662A9343D300FF47FB /* APIKey.swift */; };
 		103EB66C2A9344B300FF47FB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 103EB66B2A9344B300FF47FB /* .gitignore */; };
 		103EB66F2A93491100FF47FB /* URLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103EB66E2A93491100FF47FB /* URLConstant.swift */; };
+		10AB4AD12A95D5AF00E1B514 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AB4AD02A95D5AF00E1B514 /* LocationViewController.swift */; };
+		10AB4AD42A95D73C00E1B514 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 10AB4AD32A95D73C00E1B514 /* SnapKit */; };
+		10AB4AD62A95DE9A00E1B514 /* sampleCode_map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AB4AD52A95DE9A00E1B514 /* sampleCode_map.swift */; };
+		10AB4AD82A95DFE300E1B514 /* TheaterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AB4AD72A95DFE300E1B514 /* TheaterType.swift */; };
 		10E7BCD32A8E262200A20A93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E7BCD22A8E262200A20A93 /* AppDelegate.swift */; };
 		10E7BCD52A8E262200A20A93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E7BCD42A8E262200A20A93 /* SceneDelegate.swift */; };
 		10E7BCDA2A8E262200A20A93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E7BCD82A8E262200A20A93 /* Main.storyboard */; };
@@ -51,6 +55,9 @@
 		103EB6662A9343D300FF47FB /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		103EB66B2A9344B300FF47FB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		103EB66E2A93491100FF47FB /* URLConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstant.swift; sourceTree = "<group>"; };
+		10AB4AD02A95D5AF00E1B514 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		10AB4AD52A95DE9A00E1B514 /* sampleCode_map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sampleCode_map.swift; sourceTree = "<group>"; };
+		10AB4AD72A95DFE300E1B514 /* TheaterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterType.swift; sourceTree = "<group>"; };
 		10E7BCCF2A8E262200A20A93 /* TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E7BCD22A8E262200A20A93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10E7BCD42A8E262200A20A93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10AB4AD42A95D73C00E1B514 /* SnapKit in Frameworks */,
 				10E7BCF52A8E277B00A20A93 /* Kingfisher in Frameworks */,
 				10E7BCF22A8E276E00A20A93 /* Alamofire in Frameworks */,
 			);
@@ -91,6 +99,8 @@
 		103EB6192A8E378600FF47FB /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				10AB4AD72A95DFE300E1B514 /* TheaterType.swift */,
+				10AB4AD52A95DE9A00E1B514 /* sampleCode_map.swift */,
 				103EB66D2A9348F800FF47FB /* Model */,
 				103EB6652A9343C400FF47FB /* Key */,
 				103EB61A2A8E3D1700FF47FB /* APIServices */,
@@ -140,10 +150,19 @@
 		103EB6732A9350DE00FF47FB /* Present */ = {
 			isa = PBXGroup;
 			children = (
+				10AB4ACF2A95D4E100E1B514 /* Location */,
 				10E7BCE62A8E265600A20A93 /* Trend */,
 				10E7BCE72A8E265900A20A93 /* Credit */,
 			);
 			path = Present;
+			sourceTree = "<group>";
+		};
+		10AB4ACF2A95D4E100E1B514 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				10AB4AD02A95D5AF00E1B514 /* LocationViewController.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		10E7BCC62A8E262200A20A93 = {
@@ -227,6 +246,7 @@
 			packageProductDependencies = (
 				10E7BCF12A8E276E00A20A93 /* Alamofire */,
 				10E7BCF42A8E277B00A20A93 /* Kingfisher */,
+				10AB4AD32A95D73C00E1B514 /* SnapKit */,
 			);
 			productName = TMDB;
 			productReference = 10E7BCCF2A8E262200A20A93 /* TMDB.app */;
@@ -259,6 +279,7 @@
 			packageReferences = (
 				10E7BCF02A8E276E00A20A93 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				10E7BCF32A8E277B00A20A93 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				10AB4AD22A95D73C00E1B514 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 10E7BCD02A8E262200A20A93 /* Products */;
 			projectDirPath = "";
@@ -294,9 +315,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				10E7BCEB2A8E267400A20A93 /* TrendViewController.swift in Sources */,
+				10AB4AD62A95DE9A00E1B514 /* sampleCode_map.swift in Sources */,
 				10E7BCED2A8E267E00A20A93 /* CreditViewController.swift in Sources */,
+				10AB4AD82A95DFE300E1B514 /* TheaterType.swift in Sources */,
 				10E7BCD32A8E262200A20A93 /* AppDelegate.swift in Sources */,
 				103EB63E2A8F513300FF47FB /* Credit.swift in Sources */,
+				10AB4AD12A95D5AF00E1B514 /* LocationViewController.swift in Sources */,
 				103EB66F2A93491100FF47FB /* URLConstant.swift in Sources */,
 				103EB6172A8E325B00FF47FB /* UIView+.swift in Sources */,
 				103EB6152A8E2E0F00FF47FB /* ReusableViewProtocol.swift in Sources */,
@@ -528,6 +552,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		10AB4AD22A95D73C00E1B514 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		10E7BCF02A8E276E00A20A93 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -547,6 +579,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		10AB4AD32A95D73C00E1B514 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10AB4AD22A95D73C00E1B514 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		10E7BCF12A8E276E00A20A93 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 10E7BCF02A8E276E00A20A93 /* XCRemoteSwiftPackageReference "Alamofire" */;
