@@ -57,8 +57,8 @@ class Example2ViewController: UIViewController {
     }()
     let nameLabel: UILabel = {
         let view = UILabel()
-        view.text = "JACK"
-        view.font = .boldSystemFont(ofSize: 16)
+        view.text = "Jack"
+        view.font = .boldSystemFont(ofSize: 17)
         view.textColor = .white
         return view
     }()
