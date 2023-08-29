@@ -21,6 +21,9 @@
 		103EB6672A9343D300FF47FB /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103EB6662A9343D300FF47FB /* APIKey.swift */; };
 		103EB66C2A9344B300FF47FB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 103EB66B2A9344B300FF47FB /* .gitignore */; };
 		103EB66F2A93491100FF47FB /* URLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103EB66E2A93491100FF47FB /* URLConstant.swift */; };
+		104941A82A9D8515006B52BC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104941A72A9D8515006B52BC /* BaseViewController.swift */; };
+		104941AA2A9D851D006B52BC /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104941A92A9D851D006B52BC /* BaseView.swift */; };
+		104941AD2A9D8548006B52BC /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 104941AC2A9D8548006B52BC /* Then */; };
 		10AB4AD12A95D5AF00E1B514 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AB4AD02A95D5AF00E1B514 /* LocationViewController.swift */; };
 		10AB4AD42A95D73C00E1B514 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 10AB4AD32A95D73C00E1B514 /* SnapKit */; };
 		10AB4AD62A95DE9A00E1B514 /* sampleCode_map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AB4AD52A95DE9A00E1B514 /* sampleCode_map.swift */; };
@@ -55,6 +58,8 @@
 		103EB6662A9343D300FF47FB /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		103EB66B2A9344B300FF47FB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		103EB66E2A93491100FF47FB /* URLConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstant.swift; sourceTree = "<group>"; };
+		104941A72A9D8515006B52BC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		104941A92A9D851D006B52BC /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		10AB4AD02A95D5AF00E1B514 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		10AB4AD52A95DE9A00E1B514 /* sampleCode_map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sampleCode_map.swift; sourceTree = "<group>"; };
 		10AB4AD72A95DFE300E1B514 /* TheaterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterType.swift; sourceTree = "<group>"; };
@@ -81,6 +86,7 @@
 				10AB4AD42A95D73C00E1B514 /* SnapKit in Frameworks */,
 				10E7BCF52A8E277B00A20A93 /* Kingfisher in Frameworks */,
 				10E7BCF22A8E276E00A20A93 /* Alamofire in Frameworks */,
+				104941AD2A9D8548006B52BC /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,11 +156,30 @@
 		103EB6732A9350DE00FF47FB /* Present */ = {
 			isa = PBXGroup;
 			children = (
+				104941A62A9D850A006B52BC /* Base */,
 				10AB4ACF2A95D4E100E1B514 /* Location */,
 				10E7BCE62A8E265600A20A93 /* Trend */,
 				10E7BCE72A8E265900A20A93 /* Credit */,
 			);
 			path = Present;
+			sourceTree = "<group>";
+		};
+		104941A62A9D850A006B52BC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				104941A72A9D8515006B52BC /* BaseViewController.swift */,
+				104941A92A9D851D006B52BC /* BaseView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		104941E52A9DA8E8006B52BC /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				10E7BCD42A8E262200A20A93 /* SceneDelegate.swift */,
+				10E7BCD22A8E262200A20A93 /* AppDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 		10AB4ACF2A95D4E100E1B514 /* Location */ = {
@@ -184,13 +209,12 @@
 		10E7BCD12A8E262200A20A93 /* TMDB */ = {
 			isa = PBXGroup;
 			children = (
+				104941E52A9DA8E8006B52BC /* Application */,
 				103EB66B2A9344B300FF47FB /* .gitignore */,
 				10E7BCF62A8E280800A20A93 /* Component */,
 				103EB6732A9350DE00FF47FB /* Present */,
 				103EB6192A8E378600FF47FB /* Data */,
 				103EB6132A8E2DD700FF47FB /* Extension */,
-				10E7BCD22A8E262200A20A93 /* AppDelegate.swift */,
-				10E7BCD42A8E262200A20A93 /* SceneDelegate.swift */,
 				10E7BCD82A8E262200A20A93 /* Main.storyboard */,
 				10E7BCDB2A8E262300A20A93 /* Assets.xcassets */,
 				10E7BCDD2A8E262300A20A93 /* LaunchScreen.storyboard */,
@@ -247,6 +271,7 @@
 				10E7BCF12A8E276E00A20A93 /* Alamofire */,
 				10E7BCF42A8E277B00A20A93 /* Kingfisher */,
 				10AB4AD32A95D73C00E1B514 /* SnapKit */,
+				104941AC2A9D8548006B52BC /* Then */,
 			);
 			productName = TMDB;
 			productReference = 10E7BCCF2A8E262200A20A93 /* TMDB.app */;
@@ -280,6 +305,7 @@
 				10E7BCF02A8E276E00A20A93 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				10E7BCF32A8E277B00A20A93 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				10AB4AD22A95D73C00E1B514 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				104941AB2A9D8548006B52BC /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = 10E7BCD02A8E262200A20A93 /* Products */;
 			projectDirPath = "";
@@ -319,6 +345,7 @@
 				10E7BCED2A8E267E00A20A93 /* CreditViewController.swift in Sources */,
 				10AB4AD82A95DFE300E1B514 /* TheaterType.swift in Sources */,
 				10E7BCD32A8E262200A20A93 /* AppDelegate.swift in Sources */,
+				104941A82A9D8515006B52BC /* BaseViewController.swift in Sources */,
 				103EB63E2A8F513300FF47FB /* Credit.swift in Sources */,
 				10AB4AD12A95D5AF00E1B514 /* LocationViewController.swift in Sources */,
 				103EB66F2A93491100FF47FB /* URLConstant.swift in Sources */,
@@ -331,6 +358,7 @@
 				103EB63C2A8F506500FF47FB /* CastManager.swift in Sources */,
 				103EB6262A8E4DA300FF47FB /* CastTableViewCell.swift in Sources */,
 				10E7BCD52A8E262200A20A93 /* SceneDelegate.swift in Sources */,
+				104941AA2A9D851D006B52BC /* BaseView.swift in Sources */,
 				10E7BCFB2A8E283C00A20A93 /* TrendTableViewCell.swift in Sources */,
 				103EB6222A8E4D9700FF47FB /* OverViewTableViewCell.swift in Sources */,
 			);
@@ -552,6 +580,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		104941AB2A9D8548006B52BC /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		10AB4AD22A95D73C00E1B514 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -579,6 +615,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		104941AC2A9D8548006B52BC /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 104941AB2A9D8548006B52BC /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
 		10AB4AD32A95D73C00E1B514 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 10AB4AD22A95D73C00E1B514 /* XCRemoteSwiftPackageReference "SnapKit" */;

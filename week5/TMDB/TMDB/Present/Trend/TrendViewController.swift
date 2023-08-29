@@ -8,18 +8,18 @@
 import UIKit
 import Kingfisher
 
-class TrendViewController : UIViewController{
-    
-    @IBOutlet var trendTableView: UITableView!
-    
-
-    
+class TrendViewController : BaseViewController{
+    lazy var trendTableView = UITableView().then{
+        $0.register(TrendTableViewCell.self, forCellReuseIdentifier: TrendTableViewCell.identifier)
+        $0.delegate = self
+        $0.dataSource = self
+        $0.separatorStyle = .none
+        $0.rowHeight = 450
+    }
     var list = Trend(page: 0, results: [], totalPages: 0, totalResults: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerCell()
-        setProperties()
         
         TrendManager.shared.callRequest { data in
             self.list = data
@@ -54,18 +54,17 @@ class TrendViewController : UIViewController{
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func setProperties(){
+    override func setProperties(){
         setNavigationBar()
-        trendTableView.delegate = self
-        trendTableView.dataSource = self
-        trendTableView.separatorStyle = .none
-        trendTableView.rowHeight = 450
     }
     
-    func registerCell(){
-        let nib = UINib(nibName: TrendTableViewCell.identifier, bundle: nil)
-        trendTableView.register(nib, forCellReuseIdentifier: TrendTableViewCell.identifier)
+    override func setLayouts() {
+        view.addSubview(trendTableView)
+        trendTableView.snp.makeConstraints {
+            $0.edges.equalTo(view.safeAreaLayoutGuide)
+        }
     }
+    
 }
 
 extension TrendViewController: UITableViewDelegate, UITableViewDataSource{
@@ -96,9 +95,8 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let sb = UIStoryboard(name: CreditViewController.identifier, bundle: nil)
         
-        guard let vc = sb.instantiateViewController(withIdentifier: CreditViewController.identifier) as? CreditViewController else {return}
+        let vc = CreditViewController()
         
         vc.movieInfo = list.results[indexPath.row]
         

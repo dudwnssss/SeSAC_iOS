@@ -16,11 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let sceneDelegate = windowScene.delegate as? SceneDelegate
-        let sb = UIStoryboard(name: TrendViewController.identifier, bundle: nil)
-        guard let vc = sb.instantiateViewController(identifier: TrendViewController.identifier) as? TrendViewController else {
-            return
-        }
-        let nav = UINavigationController(rootViewController: vc)
+        let nav = UINavigationController(rootViewController: TrendViewController())
         sceneDelegate?.window?.rootViewController = nav
         sceneDelegate?.window?.makeKeyAndVisible()
 

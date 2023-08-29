@@ -11,7 +11,7 @@
 import UIKit
 import Alamofire
 
-class CreditViewController : UIViewController{
+class CreditViewController : BaseViewController{
     
     var isMoreButtonTapped = false {
         didSet {
@@ -19,12 +19,25 @@ class CreditViewController : UIViewController{
         }
     }
     
-    @IBOutlet var backgroundPosterImageView: UIImageView!
-    @IBOutlet var mainPosterImageView: UIImageView!
-    @IBOutlet var titleLabel: UILabel!
+    let backgroundPosterImageView = UIImageView().then{
+        $0.contentMode = .scaleAspectFill
+    }
+    let mainPosterImageView = UIImageView()
     
-    @IBOutlet var castTableView: UITableView!
+    let titleLabel = UILabel().then{
+        $0.font = .systemFont(ofSize: 18, weight: UIFont.Weight(0.5))
+        $0.textColor = .white
+    }
     
+    lazy var castTableView = UITableView().then{
+        $0.dataSource = self
+        $0.delegate = self
+        $0.rowHeight = UITableView.automaticDimension
+        $0.register(OverViewTableViewCell.self, forCellReuseIdentifier: OverViewTableViewCell.identifier)
+        $0.register(CastTableViewCell.self, forCellReuseIdentifier: CastTableViewCell.identifier)
+    }
+    
+        
     var movieInfo : Result!
     //문제
     var creditInfo : Credit?
@@ -38,7 +51,6 @@ class CreditViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setProperties()
-        registerCell()
         setCredits()
     }
     
@@ -52,13 +64,9 @@ class CreditViewController : UIViewController{
 
     }
     
-    func setProperties(){
+    override func setProperties(){
         setNavigationBar()
-        castTableView.dataSource = self
-        castTableView.delegate = self
-        castTableView.rowHeight = UITableView.automaticDimension
-        titleLabel.font = .systemFont(ofSize: 18, weight: UIFont.Weight(0.5))
-        titleLabel.textColor = .white
+
         titleLabel.text = movieInfo.title
        
         let bgImageUrl = URLConstant.imageBaseURL + (movieInfo.backdropPath )
@@ -67,16 +75,32 @@ class CreditViewController : UIViewController{
         backgroundPosterImageView.kf.setImage(with: URL(string: bgImageUrl))
         mainPosterImageView.kf.setImage(with: URL(string: mainImageurl))
         
-        backgroundPosterImageView.contentMode = .scaleAspectFill
     }
     
-    func registerCell(){
-        let overviewNib = UINib(nibName: OverViewTableViewCell.identifier, bundle: nil)
-        castTableView.register(overviewNib, forCellReuseIdentifier: OverViewTableViewCell.identifier)
-        let castNib = UINib(nibName: CastTableViewCell.identifier, bundle: nil)
-        castTableView.register(castNib, forCellReuseIdentifier: CastTableViewCell.identifier)
+    override func setLayouts() {
+        view.addSubviews(mainPosterImageView, titleLabel, backgroundPosterImageView, castTableView)
+        backgroundPosterImageView.snp.makeConstraints{
+            $0.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalToSuperview().multipliedBy(0.25)
+        }
+        
+        titleLabel.snp.makeConstraints {
+            $0.leading.top.equalToSuperview().inset(24)
+        }
+        mainPosterImageView.snp.makeConstraints {
+            $0.leading.equalTo(titleLabel)
+            $0.bottom.equalTo(backgroundPosterImageView)
+            $0.width.equalTo(backgroundPosterImageView).multipliedBy(0.25)
+            $0.height.equalTo(mainPosterImageView.snp.width).multipliedBy(1.6)
+        }
+        castTableView.snp.makeConstraints {
+            $0.top.equalTo(backgroundPosterImageView.snp.bottom)
+            $0.horizontalEdges.bottom.equalToSuperview()
+        }
+        
     }
     
+
     func setNavigationBar(){
         title = "출연/제작"
         navigationController?.navigationBar.tintColor = .black
