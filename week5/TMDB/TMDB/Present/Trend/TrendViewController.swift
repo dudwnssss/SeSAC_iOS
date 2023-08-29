@@ -38,8 +38,10 @@ class TrendViewController : BaseViewController{
         let searchItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: nil)
         let locationImage = UIImage(systemName: "location.circle")
         let locationItem = UIBarButtonItem(image: locationImage, style: .plain, target: self, action: #selector(locationButtonDidTap))
+        let profileImage = UIImage(systemName: "person.circle")
+        let profileItem = UIBarButtonItem(image: profileImage, style: .plain, target: self, action: #selector(profileButtonDidTap))
         
-        navigationItem.rightBarButtonItems = [searchItem, locationItem]
+        navigationItem.rightBarButtonItems = [searchItem, locationItem, profileItem]
         
         
         let appearance = UINavigationBarAppearance()
@@ -53,6 +55,12 @@ class TrendViewController : BaseViewController{
         let vc = LocationViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @objc func profileButtonDidTap(){
+        let vc = ProfileViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     override func setProperties(){
         setNavigationBar()
