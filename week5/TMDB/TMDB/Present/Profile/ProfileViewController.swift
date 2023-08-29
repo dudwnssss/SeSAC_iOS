@@ -53,6 +53,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch editCase[indexPath.row]{
+            //vc연습용
         case .name:
             let vc = NameNotificationViewController()
             navigationController?.pushViewController(vc, animated: true)
@@ -69,9 +70,15 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             navigationController?.pushViewController(vc, animated: true)
         case .link:
             let vc = LinkClosureViewController()
+            vc.completionHandler = { text in
+                self.subTitles[4] = text
+            }
             navigationController?.pushViewController(vc, animated: true)
         case .gender:
             let vc = GenderClosureViewController()
+            vc.completionHandler = {text in
+                self.subTitles[5] = text
+            }
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -85,6 +92,6 @@ extension ProfileViewController: GenderAliasDelegate{
 
 extension ProfileViewController: DescriptionDelegate{
     func passDescriptionDelegate(description: String) {
-        
+        subTitles[3] = description
     }
 }

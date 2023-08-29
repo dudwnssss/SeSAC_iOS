@@ -9,6 +9,8 @@ import UIKit
 
 class LinkClosureViewController: BaseViewController{
     
+    var completionHandler : ((String) -> Void)?
+    
     let textField = UITextField().then{
         $0.placeholder = "링크를 입력하세요"
     }
@@ -21,10 +23,12 @@ class LinkClosureViewController: BaseViewController{
     }
     
     @objc func completeButtonDidTap(){
+        
         navigationController?.popViewController(animated: true)
     }
     
     override func setProperties() {
+        completionHandler?(textField.text!)
         setNavigationBar()
     }
     

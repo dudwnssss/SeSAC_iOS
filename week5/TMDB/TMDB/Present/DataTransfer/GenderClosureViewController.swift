@@ -9,6 +9,8 @@ import UIKit
 
 class GenderClosureViewController: BaseViewController{
     
+    var completionHandler: ((String) -> Void)?
+    
     let textField = UITextField().then{
         $0.placeholder = "성별을 입력하세요"
     }
@@ -21,6 +23,7 @@ class GenderClosureViewController: BaseViewController{
     }
     
     @objc func completeButtonDidTap(){
+        completionHandler?(textField.text!)
         navigationController?.popViewController(animated: true)
     }
     
