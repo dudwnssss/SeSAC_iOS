@@ -15,7 +15,9 @@ class TrendTableViewCell: UITableViewCell {
     let trendBackgroundView = UIView().then{
         $0.layer.cornerRadius = 10
         $0.clipsToBounds = true
+        $0.backgroundColor = .white
     }
+    
     let dateLabel = UILabel().then{
         $0.font = .systemFont(ofSize: 14)
         $0.textColor = .gray
@@ -28,11 +30,11 @@ class TrendTableViewCell: UITableViewCell {
         $0.backgroundColor = .white
         $0.setTitle("", for: .normal)
         $0.tintColor = .black
-        $0.setCircleView()
     }
     let posterImageView = UIImageView().then{
         $0.backgroundColor = .black
         $0.contentMode = .scaleAspectFill
+        $0.clipsToBounds = true
     }
     let rateTextLabel = UILabel().then{
         $0.text = "평점"
@@ -74,7 +76,6 @@ class TrendTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setProperties()
         setLayouts()
     }
     
@@ -87,9 +88,12 @@ class TrendTableViewCell: UITableViewCell {
         posterImageView.image = nil
     }
     
-    func setProperties(){
-        
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        clipButton.setCircleView()
     }
+    
+    
     
     func setLayouts(){
         contentView.addSubviews(dateLabel, genreLabel, shadowBackgroundView)
@@ -106,10 +110,13 @@ class TrendTableViewCell: UITableViewCell {
             $0.bottom.horizontalEdges.equalToSuperview().inset(12)
         }
         shadowBackgroundView.addSubview(trendBackgroundView)
+        
         trendBackgroundView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+        
         trendBackgroundView.addSubviews(posterImageView, rateTextLabel, rateScoreLabel, clipButton, castLabel, detailLabel, arrowButton, titleLabel, separatorView, originalTitleLabel)
+       
         posterImageView.snp.makeConstraints {
             $0.top.horizontalEdges.equalToSuperview()
             $0.height.equalToSuperview().multipliedBy(0.7)
@@ -131,7 +138,7 @@ class TrendTableViewCell: UITableViewCell {
         }
         titleLabel.snp.makeConstraints {
             $0.leading.equalTo(rateTextLabel)
-            $0.top.equalTo(posterImageView).offset(20)
+            $0.top.equalTo(posterImageView.snp.bottom).offset(20)
             $0.trailing.equalTo(originalTitleLabel.snp.leading).offset(-10)
         }
         castLabel.snp.makeConstraints {
@@ -141,7 +148,7 @@ class TrendTableViewCell: UITableViewCell {
         }
         originalTitleLabel.snp.makeConstraints {
             $0.trailing.equalTo(clipButton)
-            $0.bottom.equalTo(castLabel.snp.top)
+            $0.bottom.equalTo(titleLabel)
         }
         separatorView.snp.makeConstraints {
             $0.height.equalTo(1)

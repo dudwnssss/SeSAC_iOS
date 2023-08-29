@@ -29,14 +29,10 @@ class CreditViewController : BaseViewController{
         }
     }
     
-  
-        
     var movieInfo : Result!
     //문제
     var creditInfo : Credit?
     
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,11 +95,11 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource{
         guard let overviewCell = tableView.dequeueReusableCell(withIdentifier: OverViewTableViewCell.identifier) as? OverViewTableViewCell else {return UITableViewCell()}
         guard let castCell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier) as? CastTableViewCell else {return UITableViewCell()}
         let profileImageUrl = URLConstant.imageBaseURL + (creditInfo?.cast[indexPath.row].profilePath ?? "")
+        
         overviewCell.overviewLabel.text = movieInfo.overview
         overviewCell.moreButton.addTarget(self, action: #selector(moreButtonDidTap), for: .touchUpInside)
         overviewCell.configureCell(isMore: isMoreButtonTapped)
         overviewCell.selectionStyle = .none
-        
         
         castCell.actorNameLabel.text = creditInfo?.cast[indexPath.row].name
         castCell.characterLabel.text = creditInfo?.cast[indexPath.row].character
@@ -123,7 +119,7 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.reloadData()
+        
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -66,7 +66,7 @@ class OverViewTableViewCell: UITableViewCell {
         moreButton.snp.makeConstraints {
             $0.centerX.equalTo(overviewLabel)
             $0.top.equalTo(overviewLabel.snp.bottom)
-            $0.bottom.greaterThanOrEqualToSuperview().offset(-12)
+            $0.bottom.lessThanOrEqualToSuperview().offset(-12)
         }
         
     }

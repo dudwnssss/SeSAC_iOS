@@ -230,9 +230,9 @@
 		10E7BCE62A8E265600A20A93 /* Trend */ = {
 			isa = PBXGroup;
 			children = (
-				10E7BCE82A8E266A00A20A93 /* TrendViewController.storyboard */,
 				10E7BCEA2A8E267400A20A93 /* TrendViewController.swift */,
 				104941E82A9DBBFA006B52BC /* TrendView.swift */,
+				10E7BCE82A8E266A00A20A93 /* TrendViewController.storyboard */,
 			);
 			path = Trend;
 			sourceTree = "<group>";
@@ -241,8 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				10E7BCEC2A8E267E00A20A93 /* CreditViewController.swift */,
-				10E7BCEE2A8E268500A20A93 /* CreditViewController.storyboard */,
 				104941EA2A9DBF63006B52BC /* CreditView.swift */,
+				10E7BCEE2A8E268500A20A93 /* CreditViewController.storyboard */,
 			);
 			path = Credit;
 			sourceTree = "<group>";

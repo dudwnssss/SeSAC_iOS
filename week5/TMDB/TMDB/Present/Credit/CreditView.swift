@@ -11,6 +11,7 @@ class CreditView: BaseView {
     
     let backgroundPosterImageView = UIImageView().then{
         $0.contentMode = .scaleAspectFill
+        $0.clipsToBounds = true
     }
     let mainPosterImageView = UIImageView()
     
@@ -26,14 +27,17 @@ class CreditView: BaseView {
     }
     
     override func setLayouts() {
-        addSubviews(mainPosterImageView, titleLabel, backgroundPosterImageView, castTableView)
+        addSubviews(backgroundPosterImageView, titleLabel, mainPosterImageView, castTableView)
+        
         backgroundPosterImageView.snp.makeConstraints{
             $0.top.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
             $0.height.equalToSuperview().multipliedBy(0.25)
         }
-        
+    
         titleLabel.snp.makeConstraints {
-            $0.leading.top.equalToSuperview().inset(24)
+//            $0.leading.top.equalTo(backgroundPosterImageView).inset(24)
+            $0.leading.equalTo(backgroundPosterImageView).offset(24)
+            $0.top.equalTo(backgroundPosterImageView).offset(24)
         }
         mainPosterImageView.snp.makeConstraints {
             $0.leading.equalTo(titleLabel)
@@ -45,6 +49,5 @@ class CreditView: BaseView {
             $0.top.equalTo(backgroundPosterImageView.snp.bottom)
             $0.horizontalEdges.bottom.equalToSuperview()
         }
-        
     }
 }
