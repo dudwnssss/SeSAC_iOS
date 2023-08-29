@@ -9,13 +9,13 @@ import UIKit
 import Kingfisher
 
 class TrendViewController : BaseViewController{
-    lazy var trendTableView = UITableView().then{
-        $0.register(TrendTableViewCell.self, forCellReuseIdentifier: TrendTableViewCell.identifier)
-        $0.delegate = self
-        $0.dataSource = self
-        $0.separatorStyle = .none
-        $0.rowHeight = 450
+    
+    let trendView = TrendView()
+    
+    override func loadView() {
+        self.view = trendView
     }
+
     var list = Trend(page: 0, results: [], totalPages: 0, totalResults: 0)
     
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class TrendViewController : BaseViewController{
             self.list = data
             print(data)
             
-            self.trendTableView.reloadData()
+            self.trendView.trendTableView.reloadData()
         } failure: {
             print("에러")
         }
@@ -56,14 +56,11 @@ class TrendViewController : BaseViewController{
     
     override func setProperties(){
         setNavigationBar()
+        trendView.trendTableView.delegate = self
+        trendView.trendTableView.dataSource = self
     }
     
-    override func setLayouts() {
-        view.addSubview(trendTableView)
-        trendTableView.snp.makeConstraints {
-            $0.edges.equalTo(view.safeAreaLayoutGuide)
-        }
-    }
+
     
 }
 

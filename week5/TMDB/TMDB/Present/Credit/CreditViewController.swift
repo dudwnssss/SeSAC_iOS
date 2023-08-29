@@ -13,40 +13,30 @@ import Alamofire
 
 class CreditViewController : BaseViewController{
     
+    enum cellType: Int, CaseIterable{
+        case overview = 0
+        case cast = 1
+    }
+    
+    let creditView = CreditView()
+    override func loadView() {
+        self.view = creditView
+    }
+    
     var isMoreButtonTapped = false {
         didSet {
-            castTableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+            creditView.castTableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
         }
     }
     
-    let backgroundPosterImageView = UIImageView().then{
-        $0.contentMode = .scaleAspectFill
-    }
-    let mainPosterImageView = UIImageView()
-    
-    let titleLabel = UILabel().then{
-        $0.font = .systemFont(ofSize: 18, weight: UIFont.Weight(0.5))
-        $0.textColor = .white
-    }
-    
-    lazy var castTableView = UITableView().then{
-        $0.dataSource = self
-        $0.delegate = self
-        $0.rowHeight = UITableView.automaticDimension
-        $0.register(OverViewTableViewCell.self, forCellReuseIdentifier: OverViewTableViewCell.identifier)
-        $0.register(CastTableViewCell.self, forCellReuseIdentifier: CastTableViewCell.identifier)
-    }
-    
+  
         
     var movieInfo : Result!
     //문제
     var creditInfo : Credit?
     
     
-    enum cellType: Int, CaseIterable{
-        case overview = 0
-        case cast = 1
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +47,7 @@ class CreditViewController : BaseViewController{
     func setCredits(){
         CastManager.shared.callRequest(id: movieInfo.id ) { data in
             self.creditInfo = data
-            self.castTableView.reloadData()
+            self.creditView.castTableView.reloadData()
         } failure: {
             print("에러")
         }
@@ -67,38 +57,21 @@ class CreditViewController : BaseViewController{
     override func setProperties(){
         setNavigationBar()
 
-        titleLabel.text = movieInfo.title
+        creditView.castTableView.dataSource = self
+        creditView.castTableView.delegate = self
+        creditView.titleLabel.text = movieInfo.title
        
         let bgImageUrl = URLConstant.imageBaseURL + (movieInfo.backdropPath )
         let mainImageurl = URLConstant.imageBaseURL + (movieInfo.posterPath )
        
-        backgroundPosterImageView.kf.setImage(with: URL(string: bgImageUrl))
-        mainPosterImageView.kf.setImage(with: URL(string: mainImageurl))
+        creditView.backgroundPosterImageView.kf.setImage(with: URL(string: bgImageUrl))
+        creditView.mainPosterImageView.kf.setImage(with: URL(string: mainImageurl))
         
     }
     
-    override func setLayouts() {
-        view.addSubviews(mainPosterImageView, titleLabel, backgroundPosterImageView, castTableView)
-        backgroundPosterImageView.snp.makeConstraints{
-            $0.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
-            $0.height.equalToSuperview().multipliedBy(0.25)
-        }
+    
         
-        titleLabel.snp.makeConstraints {
-            $0.leading.top.equalToSuperview().inset(24)
-        }
-        mainPosterImageView.snp.makeConstraints {
-            $0.leading.equalTo(titleLabel)
-            $0.bottom.equalTo(backgroundPosterImageView)
-            $0.width.equalTo(backgroundPosterImageView).multipliedBy(0.25)
-            $0.height.equalTo(mainPosterImageView.snp.width).multipliedBy(1.6)
-        }
-        castTableView.snp.makeConstraints {
-            $0.top.equalTo(backgroundPosterImageView.snp.bottom)
-            $0.horizontalEdges.bottom.equalToSuperview()
-        }
-        
-    }
+    
     
 
     func setNavigationBar(){
