@@ -21,6 +21,7 @@ class UsernameNotificationViewController: BaseViewController{
     }
     
     @objc func completeButtonDidTap(){
+        NotificationCenter.default.post(name: NSNotification.Name("Username"), object: nil, userInfo: ["username": textField.text!])
         navigationController?.popViewController(animated: true)
     }
     

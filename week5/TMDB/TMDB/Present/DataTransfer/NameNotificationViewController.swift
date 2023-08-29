@@ -21,6 +21,7 @@ class NameNotificationViewController: BaseViewController{
     }
     
     @objc func completeButtonDidTap(){
+        NotificationCenter.default.post(name: NSNotification.Name("Name"), object: nil, userInfo: ["name": textField.text!])
         navigationController?.popViewController(animated: true)
     }
     

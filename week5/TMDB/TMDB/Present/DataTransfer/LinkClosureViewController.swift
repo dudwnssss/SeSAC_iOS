@@ -23,12 +23,11 @@ class LinkClosureViewController: BaseViewController{
     }
     
     @objc func completeButtonDidTap(){
-        
+        completionHandler?(textField.text!)
         navigationController?.popViewController(animated: true)
     }
     
     override func setProperties() {
-        completionHandler?(textField.text!)
         setNavigationBar()
     }
     

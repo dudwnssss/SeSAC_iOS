@@ -10,6 +10,7 @@ import UIKit
 class ProfileViewController: BaseViewController {
     
     let profileView = ProfileView()
+    let editCase = EditCase.allCases
     
     var subTitles = EditCase.subTitles{
         didSet{
@@ -20,14 +21,27 @@ class ProfileViewController: BaseViewController {
     override func loadView() {
         self.view = profileView
     }
-    let editCase = EditCase.allCases
     
     override func setProperties() {
+        NotificationCenter.default.addObserver(self, selector: #selector(captureNameNotification(notification:)), name: NSNotification.Name("Name"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(captureUsernameNotification(notification:)), name: NSNotification.Name("Username"), object: nil)
         title = "프로필편집"
         profileView.tableView.delegate = self
         profileView.tableView.dataSource = self
     }
     
+    
+    @objc func captureNameNotification(notification: NSNotification){
+        if let name = notification.userInfo?["name"] as? String {
+            subTitles[0] = name
+        }
+    }
+    
+    @objc func captureUsernameNotification(notification: NSNotification){
+        if let username = notification.userInfo?["username"] as? String {
+            subTitles[1] = username
+        }
+    }
     
 }
 
@@ -71,12 +85,14 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         case .link:
             let vc = LinkClosureViewController()
             vc.completionHandler = { text in
+                print(text)
                 self.subTitles[4] = text
             }
             navigationController?.pushViewController(vc, animated: true)
         case .gender:
             let vc = GenderClosureViewController()
             vc.completionHandler = {text in
+                print(text)
                 self.subTitles[5] = text
             }
             navigationController?.pushViewController(vc, animated: true)
