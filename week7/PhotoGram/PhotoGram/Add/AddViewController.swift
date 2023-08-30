@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 //Protocol 값 전달 1.
 protocol PassDataDelegate {
@@ -73,8 +74,10 @@ class AddViewController: BaseViewController {
     
     func presentActionSheet(){
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let web = UIAlertAction(title: "갤러리에서 가져오기", style: .default)
-        let gallery = UIAlertAction(title: "웹에서 검색하기", style: .default) { _ in
+        let gallery = UIAlertAction(title: "갤러리에서 가져오기", style: .default) { _ in
+            self.galleryButtonDidTap()
+        }
+        let web = UIAlertAction(title: "웹에서 검색하기", style: .default) { _ in
             let vc = SearchViewController()
             vc.delegate = self
             self.navigationController?.pushViewController(vc, animated: true)
@@ -102,6 +105,16 @@ class AddViewController: BaseViewController {
     @objc func searchButtonDidTap(){
         presentActionSheet()
     }
+    
+   func galleryButtonDidTap(){
+        var configuration = PHPickerConfiguration()
+        configuration.filter = .any(of: [.images])
+        let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = self
+        self.present(picker, animated: true)
+    }
+    
+    
     
     override func setProperties(){
         super.setProperties()
@@ -131,5 +144,24 @@ extension AddViewController: PassImageDelegate {
     func recieveImageURL(imageURL: URL) {
         print("으아아", imageURL)
         addView.photoImageView.kf.setImage(with: imageURL)
+    }
+}
+
+extension AddViewController: PHPickerViewControllerDelegate{
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true)
+        
+        let itemProvider = results.first?.itemProvider
+        
+        if let itemProvider = itemProvider,
+           itemProvider.canLoadObject(ofClass: UIImage.self) {
+            itemProvider.loadObject(ofClass: UIImage.self) { (image, error) in
+                DispatchQueue.main.async {
+                    self.addView.photoImageView.image = image as? UIImage
+                }
+            }
+        } else {
+            // TODO: Handle empty results or item provider not being able load UIImage
+        }
     }
 }
