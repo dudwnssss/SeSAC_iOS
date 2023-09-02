@@ -29,7 +29,7 @@ class CreditViewController : BaseViewController{
         }
     }
     
-    var movieInfo : ResultMovie!
+    var mediaInfo : Result!
     //문제
     var creditInfo : Credit?
     
@@ -41,7 +41,7 @@ class CreditViewController : BaseViewController{
     }
     
     func setCredits(){
-        CastManager.shared.callRequest(id: movieInfo.id ) { data in
+        CastManager.shared.callRequest(id: mediaInfo.id ) { data in
             self.creditInfo = data
             self.creditView.castTableView.reloadData()
         } failure: {
@@ -55,10 +55,9 @@ class CreditViewController : BaseViewController{
 
         creditView.castTableView.dataSource = self
         creditView.castTableView.delegate = self
-        creditView.titleLabel.text = movieInfo.title
        
-        let bgImageUrl = URLConstant.imageBaseURL + (movieInfo.backdropPath )
-        let mainImageurl = URLConstant.imageBaseURL + (movieInfo.posterPath )
+        let bgImageUrl = URLConstant.imageBaseURL + (mediaInfo.backdropPath )
+        let mainImageurl = URLConstant.imageBaseURL + (mediaInfo.posterPath )
        
         creditView.backgroundPosterImageView.kf.setImage(with: URL(string: bgImageUrl))
         creditView.mainPosterImageView.kf.setImage(with: URL(string: mainImageurl))
@@ -96,7 +95,7 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource{
         guard let castCell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier) as? CastTableViewCell else {return UITableViewCell()}
         let profileImageUrl = URLConstant.imageBaseURL + (creditInfo?.cast[indexPath.row].profilePath ?? "")
         
-        overviewCell.overviewLabel.text = movieInfo.overview
+        overviewCell.overviewLabel.text = mediaInfo.overview
         overviewCell.moreButton.addTarget(self, action: #selector(moreButtonDidTap), for: .touchUpInside)
         overviewCell.configureCell(isMore: isMoreButtonTapped)
         overviewCell.selectionStyle = .none

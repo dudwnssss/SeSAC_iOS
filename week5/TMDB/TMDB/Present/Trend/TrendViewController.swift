@@ -22,8 +22,14 @@ class TrendViewController : BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TrendManager.shared.callAllRequest { value in
-            self.allList = value
+//        TrendManager.shared.callAllRequest { value in
+//            self.allList = value
+//            self.trendView.trendTableView.reloadData()
+//        }
+        
+        
+        TrendManager.shared.callURLSecssionRequest { value in
+            self.allList = value ?? All(page: 0, results: [], totalPages: 0, totalResults: 0)
             self.trendView.trendTableView.reloadData()
         }
     }
@@ -92,9 +98,6 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource{
             if let originalTitle = row.originalName{
                 tvCell.originalTitleLabel.text = originalTitle
             }
-                
-            tvCell.genreLabel.text = "#TV SHOW"
-            
             tvCell.rateScoreLabel.text = row.rate
             let url = URLConstant.imageBaseURL + (row.backdropPath)
             tvCell.posterImageView.kf.setImage(with: URL(string: url))
@@ -122,13 +125,29 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = allList.results[indexPath.row]
         
+        switch row.mediaType {
+        case .tv:
+            let vc = CreditViewController()
+            vc.mediaInfo = allList.results[indexPath.row]
+            vc.creditView.titleLabel.text = vc.mediaInfo.name
+            navigationController?.pushViewController(vc, animated: true)
+            
+        case .movie:
+            let vc = CreditViewController()
+            vc.mediaInfo = allList.results[indexPath.row]
+            vc.creditView.titleLabel.text = vc.mediaInfo.title
+            navigationController?.pushViewController(vc, animated: true)
+        case .person:
+            print(row.mediaType)
+        }
+
 //        let vc = CreditViewController()
 //        vc.movieInfo = allList.results[indexPath.row]
 //        navigationController?.pushViewController(vc, animated: true)
         
         
-        print(allList.results[indexPath.row].mediaType)
     }
 }
 

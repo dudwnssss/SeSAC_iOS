@@ -11,6 +11,7 @@ class TVTableViewCell: BaseTableViewCell {
 
     let shadowBackgroundView = UIView().then{
         $0.setShadowView()
+        $0.layer.shadowColor = UIColor.systemBlue.cgColor
     }
     let trendBackgroundView = UIView().then{
         $0.layer.cornerRadius = 10
@@ -18,12 +19,9 @@ class TVTableViewCell: BaseTableViewCell {
         $0.backgroundColor = .white
     }
     
-    let dateLabel = UILabel().then{
-        $0.font = .systemFont(ofSize: 14)
-        $0.textColor = .gray
-    }
-    let genreLabel = UILabel().then{
+    let tvLabel = UILabel().then{
         $0.font = .boldSystemFont(ofSize: 18)
+        $0.text = "#TV SHOW"
     }
     let clipButton = UIButton().then{
         $0.setImage(UIImage(systemName: "paperclip"), for: .normal)
@@ -56,10 +54,7 @@ class TVTableViewCell: BaseTableViewCell {
         $0.textColor = .darkGray
 
     }
-    let castLabel = UILabel().then{
-        $0.textColor = .gray
-        $0.font = .systemFont(ofSize: 14)
-    }
+
     let separatorView = UIView().then{
         $0.backgroundColor = .black
     }
@@ -99,17 +94,14 @@ class TVTableViewCell: BaseTableViewCell {
     
     
     override func setLayouts(){
-        contentView.addSubviews(dateLabel, genreLabel, shadowBackgroundView)
-        dateLabel.snp.makeConstraints {
+        contentView.addSubviews(tvLabel, shadowBackgroundView)
+
+        tvLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(8)
             $0.top.equalToSuperview().offset(24)
         }
-        genreLabel.snp.makeConstraints {
-            $0.leading.equalTo(dateLabel)
-            $0.top.equalTo(dateLabel.snp.bottom)
-        }
         shadowBackgroundView.snp.makeConstraints {
-            $0.top.equalTo(genreLabel.snp.bottom).offset(12)
+            $0.top.equalTo(tvLabel.snp.bottom).offset(12)
             $0.bottom.horizontalEdges.equalToSuperview().inset(12)
         }
         shadowBackgroundView.addSubview(trendBackgroundView)
@@ -118,7 +110,7 @@ class TVTableViewCell: BaseTableViewCell {
             $0.edges.equalToSuperview()
         }
         
-        trendBackgroundView.addSubviews(posterImageView, rateTextLabel, rateScoreLabel, clipButton, castLabel, detailLabel, arrowButton, titleLabel, separatorView, originalTitleLabel)
+        trendBackgroundView.addSubviews(posterImageView, rateTextLabel, rateScoreLabel, clipButton, detailLabel, arrowButton, titleLabel, separatorView, originalTitleLabel)
        
         posterImageView.snp.makeConstraints {
             $0.top.horizontalEdges.equalToSuperview()
@@ -144,18 +136,14 @@ class TVTableViewCell: BaseTableViewCell {
             $0.top.equalTo(posterImageView.snp.bottom).offset(20)
             $0.trailing.equalTo(originalTitleLabel.snp.leading).offset(-10)
         }
-        castLabel.snp.makeConstraints {
-            $0.leading.equalTo(titleLabel)
-            $0.trailing.equalTo(clipButton)
-            $0.top.equalTo(castLabel.snp.bottom)
-        }
         originalTitleLabel.snp.makeConstraints {
             $0.trailing.equalTo(clipButton)
             $0.bottom.equalTo(titleLabel)
         }
         separatorView.snp.makeConstraints {
             $0.height.equalTo(1)
-            $0.leading.trailing.equalTo(castLabel)
+            $0.leading.equalTo(titleLabel)
+            $0.trailing.equalTo(clipButton)
             $0.bottom.equalTo(arrowButton.snp.top)
         }
         arrowButton.snp.makeConstraints {
