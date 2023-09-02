@@ -29,7 +29,7 @@ class CreditViewController : BaseViewController{
         }
     }
     
-    var movieInfo : Result!
+    var movieInfo : ResultMovie!
     //문제
     var creditInfo : Credit?
     

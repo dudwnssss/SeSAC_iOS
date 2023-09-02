@@ -13,6 +13,5 @@ import Foundation
 struct URLConstant {
     static let baseURL = "https://api.themoviedb.org/3"
     static let imageBaseURL = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2"
-    static let trendingURL = "trending/"
-    static let movieURL = "movie/"
+    static let trendingURL = "/trending"
 }

@@ -7,22 +7,62 @@
 
 import Foundation
 import Alamofire
+import AVFoundation
 
-//구조체를 바로 전달하지 말고 가공해서 전달?
+
+
+enum MediaType: String, CaseIterable, Codable{
+    case all = "all"
+    case tv = "tv"
+    case movie = "movie"
+    case person = "person"
+    
+    var contentURL: String{
+        switch self {
+        case .tv:
+            return "/tv"
+        case .movie:
+            return "/movie"
+        case .person:
+            return "/person"
+        case .all:
+            return "/all"
+        }
+    }
+    
+//    var Model: Decodable {
+//        switch self {
+//        case .tv:
+//            return TV.self
+//        case .movie:
+//            return Movie.self
+//        case .person:
+//            return Person.self
+//        case .all:
+//            return All.self
+//        }
+//    }
+}
+
 class TrendManager{
     static let shared = TrendManager()
-    func callRequest(success: @escaping(Trend)->Void, failure: @escaping ()-> Void){
-        let url = "\(URLConstant.baseURL)/trending/movie/week?api_key=\(Key.tmdb)"
-        AF.request(url, method: .get).validate(statusCode: 200...500).responseDecodable(of: Trend.self) { response in
-            switch response.result{
-            case .success(let value):
-                success(value)
-            case .failure(let error):
-                print(error)
-                failure()
+    private init() {} //인스턴스 생성 방지
+    typealias completionHandler = (All) -> Void
+    
+    func callAllRequest(completionHandler: @escaping completionHandler) {
+        let url = URLConstant.baseURL+URLConstant.trendingURL+"/all"+"/day"+"?api_key=\(Key.tmdb)"
+        AF.request(url, method: .get)
+            .validate(statusCode: 200...500)
+            .responseDecodable(of: All.self) {response in
+                switch response.result {
+                case .success(let value):
+                    print(value)
+                    completionHandler(value)
+                case .failure(let error):
+                    print(error)
+                }
+                
             }
-        }
-        
     }
     
     
