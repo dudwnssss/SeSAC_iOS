@@ -15,8 +15,8 @@ class TrendViewController : BaseViewController{
     override func loadView() {
         self.view = trendView
     }
-
-    var list = Movie(page: 0, results: [], totalPages: 0, totalResults: 0)
+    
+//    var list = Movie(page: 0, results: [], totalPages: 0, totalResults: 0)
     var allList = All(page: 0, results: [], totalPages: 0, totalResults: 0)
     
     override func viewDidLoad() {
@@ -24,6 +24,7 @@ class TrendViewController : BaseViewController{
         
         TrendManager.shared.callAllRequest { value in
             self.allList = value
+            self.trendView.trendTableView.reloadData()
         }
     }
     
@@ -64,7 +65,7 @@ class TrendViewController : BaseViewController{
         trendView.trendTableView.dataSource = self
     }
     
-
+    
     
 }
 
@@ -74,36 +75,60 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TrendTableViewCell.identifier) as? TrendTableViewCell else{
-            return UITableViewCell()
+        
+        guard let movieCell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.identifier) as? MovieTableViewCell else{ return UITableViewCell()}
+        guard let tvCell = tableView.dequeueReusableCell(withIdentifier: TVTableViewCell.identifier) as? TVTableViewCell else {return UITableViewCell()}
+        guard let personCell = tableView.dequeueReusableCell(withIdentifier: PersonTableViewCell.identifier) as?
+                PersonTableViewCell else {return UITableViewCell()}
+        
+        
+        let row = allList.results[indexPath.row]
+        
+        switch row.mediaType {
+        case .tv:
+            if let title = row.name {
+                tvCell.titleLabel.text = title
+            }
+            if let originalTitle = row.originalName{
+                tvCell.originalTitleLabel.text = originalTitle
+            }
+                
+            tvCell.genreLabel.text = "#TV SHOW"
+            
+            tvCell.rateScoreLabel.text = row.rate
+            let url = URLConstant.imageBaseURL + (row.backdropPath)
+            tvCell.posterImageView.kf.setImage(with: URL(string: url))
+            
+            return tvCell
+            
+        case .movie:
+            movieCell.titleLabel.text = row.title
+            movieCell.originalTitleLabel.text = row.originalTitle
+            movieCell.dateLabel.text = row.date
+            
+            if let genre = Genre.genreList[row.genreIDS[0]] {
+                movieCell.genreLabel.text = "#\(genre)"
+            }
+            movieCell.rateScoreLabel.text = row.rate
+            let url = URLConstant.imageBaseURL + (row.backdropPath)
+            movieCell.posterImageView.kf.setImage(with: URL(string: url))
+            return movieCell
+            
+        case .person:
+            return personCell
         }
         
-        let row = list.results[indexPath.row]
         
-        cell.titleLabel.text = row.title
-        cell.originalTitleLabel.text = row.originalTitle
-        cell.dateLabel.text = row.date
-
-        if let genre = Genre.genreList[row.genreIDS[0]] {
-            cell.genreLabel.text = "#\(genre)"
-        }
-        cell.rateScoreLabel.text = row.rate
-        let url = URLConstant.imageBaseURL + (row.backdropPath)
-        cell.posterImageView.kf.setImage(with: URL(string: url))
-        cell.selectionStyle = .none
-        
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let vc = CreditViewController()
+//        let vc = CreditViewController()
+//        vc.movieInfo = allList.results[indexPath.row]
+//        navigationController?.pushViewController(vc, animated: true)
         
-        vc.movieInfo = list.results[indexPath.row]
         
-        navigationController?.pushViewController(vc, animated: true)
+        print(allList.results[indexPath.row].mediaType)
     }
 }
 

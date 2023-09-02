@@ -10,7 +10,9 @@ import UIKit
 class TrendView: BaseView {
     
     lazy var trendTableView = UITableView().then{
-        $0.register(TrendTableViewCell.self, forCellReuseIdentifier: TrendTableViewCell.identifier)
+        $0.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.identifier)
+        $0.register(TVTableViewCell.self, forCellReuseIdentifier: TVTableViewCell.identifier)
+        $0.register(PersonTableViewCell.self, forCellReuseIdentifier: PersonTableViewCell.identifier)
         $0.separatorStyle = .none
         $0.rowHeight = 450
     }

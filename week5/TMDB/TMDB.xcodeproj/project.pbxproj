@@ -10,6 +10,8 @@
 		1021441A2AA1B46700BCCB08 /* TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102144192AA1B46700BCCB08 /* TV.swift */; };
 		1021441C2AA1B4B000BCCB08 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1021441B2AA1B4B000BCCB08 /* Person.swift */; };
 		1021441E2AA1C1EC00BCCB08 /* All.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1021441D2AA1C1EC00BCCB08 /* All.swift */; };
+		102144232AA30A7F00BCCB08 /* TVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102144222AA30A7F00BCCB08 /* TVTableViewCell.swift */; };
+		102144272AA30AE800BCCB08 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102144262AA30AE800BCCB08 /* PersonTableViewCell.swift */; };
 		103EB6152A8E2E0F00FF47FB /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103EB6142A8E2E0F00FF47FB /* ReusableViewProtocol.swift */; };
 		103EB6172A8E325B00FF47FB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103EB6162A8E325B00FF47FB /* UIView+.swift */; };
 		103EB61C2A8E3D2500FF47FB /* TrendManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103EB61B2A8E3D2500FF47FB /* TrendManager.swift */; };
@@ -53,7 +55,7 @@
 		10E7BCEF2A8E268500A20A93 /* CreditViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E7BCEE2A8E268500A20A93 /* CreditViewController.storyboard */; };
 		10E7BCF22A8E276E00A20A93 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 10E7BCF12A8E276E00A20A93 /* Alamofire */; };
 		10E7BCF52A8E277B00A20A93 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 10E7BCF42A8E277B00A20A93 /* Kingfisher */; };
-		10E7BCFB2A8E283C00A20A93 /* TrendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E7BCF92A8E283C00A20A93 /* TrendTableViewCell.swift */; };
+		10E7BCFB2A8E283C00A20A93 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E7BCF92A8E283C00A20A93 /* MovieTableViewCell.swift */; };
 		10E7BCFC2A8E283C00A20A93 /* TrendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10E7BCFA2A8E283C00A20A93 /* TrendTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,8 @@
 		102144192AA1B46700BCCB08 /* TV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TV.swift; sourceTree = "<group>"; };
 		1021441B2AA1B4B000BCCB08 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		1021441D2AA1C1EC00BCCB08 /* All.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = All.swift; sourceTree = "<group>"; };
+		102144222AA30A7F00BCCB08 /* TVTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVTableViewCell.swift; sourceTree = "<group>"; };
+		102144262AA30AE800BCCB08 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		103EB6142A8E2E0F00FF47FB /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		103EB6162A8E325B00FF47FB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		103EB61B2A8E3D2500FF47FB /* TrendManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendManager.swift; sourceTree = "<group>"; };
@@ -102,7 +106,7 @@
 		10E7BCEA2A8E267400A20A93 /* TrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
 		10E7BCEC2A8E267E00A20A93 /* CreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
 		10E7BCEE2A8E268500A20A93 /* CreditViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreditViewController.storyboard; sourceTree = "<group>"; };
-		10E7BCF92A8E283C00A20A93 /* TrendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewCell.swift; sourceTree = "<group>"; };
+		10E7BCF92A8E283C00A20A93 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		10E7BCFA2A8E283C00A20A93 /* TrendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +125,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		102144242AA30A8800BCCB08 /* Trend */ = {
+			isa = PBXGroup;
+			children = (
+				102144222AA30A7F00BCCB08 /* TVTableViewCell.swift */,
+				10E7BCF92A8E283C00A20A93 /* MovieTableViewCell.swift */,
+				102144262AA30AE800BCCB08 /* PersonTableViewCell.swift */,
+			);
+			path = Trend;
+			sourceTree = "<group>";
+		};
+		102144252AA30AA900BCCB08 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				103EB6252A8E4DA300FF47FB /* CastTableViewCell.xib */,
+				10E7BCFA2A8E283C00A20A93 /* TrendTableViewCell.xib */,
+				103EB6212A8E4D9700FF47FB /* OverViewTableViewCell.xib */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		103EB6132A8E2DD700FF47FB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,9 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				103EB6202A8E4D9700FF47FB /* OverViewTableViewCell.swift */,
-				103EB6212A8E4D9700FF47FB /* OverViewTableViewCell.xib */,
 				103EB6242A8E4DA300FF47FB /* CastTableViewCell.swift */,
-				103EB6252A8E4DA300FF47FB /* CastTableViewCell.xib */,
 			);
 			path = Credit;
 			sourceTree = "<group>";
@@ -265,6 +287,7 @@
 		10E7BCD12A8E262200A20A93 /* TMDB */ = {
 			isa = PBXGroup;
 			children = (
+				102144252AA30AA900BCCB08 /* Storyboards */,
 				104941E52A9DA8E8006B52BC /* Application */,
 				103EB66B2A9344B300FF47FB /* .gitignore */,
 				10E7BCF62A8E280800A20A93 /* Component */,
@@ -301,9 +324,8 @@
 		10E7BCF62A8E280800A20A93 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				102144242AA30A8800BCCB08 /* Trend */,
 				103EB61F2A8E4D6500FF47FB /* Credit */,
-				10E7BCF92A8E283C00A20A93 /* TrendTableViewCell.swift */,
-				10E7BCFA2A8E283C00A20A93 /* TrendTableViewCell.xib */,
 				104941F92A9DDEA7006B52BC /* ProfileCell.swift */,
 			);
 			path = Component;
@@ -397,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				102144272AA30AE800BCCB08 /* PersonTableViewCell.swift in Sources */,
 				10E7BCEB2A8E267400A20A93 /* TrendViewController.swift in Sources */,
 				104942032A9DE6E9006B52BC /* DescriptionDelegateViewController.swift in Sources */,
 				10AB4AD62A95DE9A00E1B514 /* sampleCode_map.swift in Sources */,
@@ -421,6 +444,7 @@
 				103EB61E2A8E3E1900FF47FB /* Movie.swift in Sources */,
 				103EB6642A9342FD00FF47FB /* Genre.swift in Sources */,
 				104941FF2A9DE6BE006B52BC /* UsernameNotificationViewController.swift in Sources */,
+				102144232AA30A7F00BCCB08 /* TVTableViewCell.swift in Sources */,
 				103EB6672A9343D300FF47FB /* APIKey.swift in Sources */,
 				104941FD2A9DE6B1006B52BC /* NameNotificationViewController.swift in Sources */,
 				1021441C2AA1B4B000BCCB08 /* Person.swift in Sources */,
@@ -430,7 +454,7 @@
 				104941E92A9DBBFA006B52BC /* TrendView.swift in Sources */,
 				104941EB2A9DBF63006B52BC /* CreditView.swift in Sources */,
 				104941AA2A9D851D006B52BC /* BaseView.swift in Sources */,
-				10E7BCFB2A8E283C00A20A93 /* TrendTableViewCell.swift in Sources */,
+				10E7BCFB2A8E283C00A20A93 /* MovieTableViewCell.swift in Sources */,
 				104941F82A9DDDCE006B52BC /* BaseTableViewCell.swift in Sources */,
 				103EB6222A8E4D9700FF47FB /* OverViewTableViewCell.swift in Sources */,
 			);

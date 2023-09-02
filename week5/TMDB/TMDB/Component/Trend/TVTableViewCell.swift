@@ -1,13 +1,13 @@
 //
-//  TrendTableViewCell.swift
+//  TVTableViewCell.swift
 //  TMDB
 //
-//  Created by 임영준 on 2023/08/17.
+//  Created by 임영준 on 2023/09/02.
 //
 
 import UIKit
 
-class TrendTableViewCell: UITableViewCell {
+class TVTableViewCell: BaseTableViewCell {
 
     let shadowBackgroundView = UIView().then{
         $0.setShadowView()
@@ -93,9 +93,12 @@ class TrendTableViewCell: UITableViewCell {
         clipButton.setCircleView()
     }
     
+    override func setProperties(){
+        selectionStyle = .none
+    }
     
     
-    func setLayouts(){
+    override func setLayouts(){
         contentView.addSubviews(dateLabel, genreLabel, shadowBackgroundView)
         dateLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(8)

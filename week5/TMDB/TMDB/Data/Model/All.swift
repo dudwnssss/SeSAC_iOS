@@ -59,7 +59,50 @@ struct Result: Codable {
         case releaseDate = "release_date"
         case video
     }
+    
+    var date: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let convertDate = dateFormatter.date(from: releaseDate!)
+        let myDateFormatter = DateFormatter()
+        myDateFormatter.dateFormat = "MM/dd/yyyy"
+        let convertStr = myDateFormatter.string(from: convertDate!)
+        return convertStr
+    }
+    
+    var rate: String {
+        let digit: Double = pow(10, 1)
+        let rate = floor(voteAverage * digit) / digit
+        return "\(rate)"
+    }
 }
 
-
-
+enum MediaType: String, CaseIterable, Codable{
+    case tv = "tv"
+    case movie = "movie"
+    case person = "person"
+    
+    var contentURL: String{
+        switch self {
+        case .tv:
+            return "/tv"
+        case .movie:
+            return "/movie"
+        case .person:
+            return "/person"
+        }
+    }
+    
+//    var Model: Decodable {
+//        switch self {
+//        case .tv:
+//            return TV.self
+//        case .movie:
+//            return Movie.self
+//        case .person:
+//            return Person.self
+//        case .all:
+//            return All.self
+//        }
+//    }
+}
