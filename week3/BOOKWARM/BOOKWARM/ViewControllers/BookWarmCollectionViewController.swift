@@ -6,16 +6,24 @@
 //
 
 import UIKit
-
+import RealmSwift
+import Kingfisher
 
 class BookWarmCollectionViewController: UICollectionViewController {
     
-    var movieInfo = MovieInfo()
+//    var movieInfo = MovieInfo()
     
-    var searchedMovies : [Movie] = []{
-        didSet{
-            collectionView.reloadData()
-        }
+    
+    var tasks: Results<MyBookInfo>?
+    
+//    var searchedMovies : [Movie] = []{
+//        didSet{
+//            collectionView.reloadData()
+//        }
+//    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView.reloadData()
     }
     
     let searchBar : UISearchBar = {
@@ -24,29 +32,35 @@ class BookWarmCollectionViewController: UICollectionViewController {
         return searchBar
     }()
     
+    func readBookRealm(){
+        let realm = try! Realm()
+        tasks = realm.objects(MyBookInfo.self).sorted(byKeyPath: "title", ascending: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
+        readBookRealm()
         registerCell()
         setCollectionViewLayout()
-        searchedMovies = movieInfo.movie
+//        searchedMovies = movieInfo.movie
         searchBar.delegate = self
         hideKeyboardWhenTappedAround()
     }
     
-    func searchQuery(text: String){
-        if text.isEmpty {
-            searchedMovies = movieInfo.movie
-        }
-        else{
-            searchedMovies.removeAll()
-            for item in movieInfo.movie {
-                if item.title.contains(text){
-                    searchedMovies.append(item)
-                }
-            }
-        }
-    }
+//    func searchQuery(text: String){
+//        if text.isEmpty {
+//            searchedMovies = movieInfo.movie
+//        }
+//        else{
+//            searchedMovies.removeAll()
+//            for item in movieInfo.movie {
+//                if item.title.contains(text){
+//                    searchedMovies.append(item)
+//                }
+//            }
+//        }
+//    }
     
     
     func setNavigationBar(){
@@ -62,19 +76,19 @@ class BookWarmCollectionViewController: UICollectionViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: BookWarmCell.identifier)
     }
     
-    @objc func likeButtonDidTap(_ sender: UIButton){
-        searchedMovies[sender.tag].like.toggle()
-        
-        //원본 list에서 제목을 통해 영화를 찾고,
-        let title = searchedMovies[sender.tag].title
-
-        //그 영화의 인덱스를 통해 list[sender.tag].like.toggle()를 해줘야 함
-        for (index,item) in movieInfo.movie.enumerated(){
-            if item.title == title{
-                movieInfo.movie[index].like.toggle()
-            }
-        }
-    }
+//    @objc func likeButtonDidTap(_ sender: UIButton){
+//        searchedMovies[sender.tag].like.toggle()
+//
+//        //원본 list에서 제목을 통해 영화를 찾고,
+//        let title = searchedMovies[sender.tag].title
+//
+//        //그 영화의 인덱스를 통해 list[sender.tag].like.toggle()를 해줘야 함
+//        for (index,item) in movieInfo.movie.enumerated(){
+//            if item.title == title{
+//                movieInfo.movie[index].like.toggle()
+//            }
+//        }
+//    }
             
     func setCollectionViewLayout(){
         let layout = UICollectionViewFlowLayout()
@@ -101,7 +115,7 @@ class BookWarmCollectionViewController: UICollectionViewController {
 extension BookWarmCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        searchedMovies.count
+        tasks?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -110,10 +124,12 @@ extension BookWarmCollectionViewController {
             return UICollectionViewCell()
         }
         
-        let row = searchedMovies[indexPath.row]
-        cell.configureCell(row: row)
-        cell.likeButton.tag = indexPath.row
-        cell.likeButton.addTarget(self, action: #selector(likeButtonDidTap), for: .touchUpInside)
+        if let row = tasks?[indexPath.row] {
+            let url = URL(string: row.thumb)
+            cell.posterImageView.kf.setImage(with: url)
+            cell.titleLabel.text = row.title
+            cell.rateLabel.text = row.author
+        }
         return cell
     }
     
@@ -123,7 +139,7 @@ extension BookWarmCollectionViewController {
         guard let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else{
             return
         }
-        vc.movie = searchedMovies[indexPath.row]
+        vc.myBookInfo = tasks?[indexPath.row]
         vc.isNav = true
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -133,7 +149,7 @@ extension BookWarmCollectionViewController {
 extension BookWarmCollectionViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchBarText = searchBar.text else {return}
-        searchQuery(text: searchBarText)
+//        searchQuery(text: searchBarText)
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -145,12 +161,12 @@ extension BookWarmCollectionViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchedMovies = movieInfo.movie
+//        searchedMovies = movieInfo.movie
         searchBar.text = ""
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard let searchBarText = searchBar.text else {return}
-        searchQuery(text: searchBarText)
+//        searchQuery(text: searchBarText)
     }
 }

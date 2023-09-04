@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailViewController: UIViewController {
     
@@ -17,7 +18,9 @@ class DetailViewController: UIViewController {
     @IBOutlet var overviewLabel: UILabel!
     @IBOutlet var memoTextView: UITextView!
     
-    var movie: Movie?
+//    var movie: Movie?
+    var myBookInfo: MyBookInfo?
+    
     var isNav: Bool = false
     let placeholder = "메모를 입력해주세요"
     
@@ -44,17 +47,18 @@ class DetailViewController: UIViewController {
     
     
     func setProperties(){
-        guard let movie else {
+        guard let myBookInfo else {
              return
         }
-        titleLabel.text = movie.title
+        titleLabel.text = myBookInfo.title
         titleLabel.font = .boldSystemFont(ofSize: 17)
         titleLabel.textColor = .white
-        posterImageVIew.image = UIImage(named: "\(movie.title)")
-        overviewLabel.text = movie.overview
+        let url = URL(string: myBookInfo.thumb)
+        posterImageVIew.kf.setImage(with: url)
+        overviewLabel.text = myBookInfo.overView
         overviewLabel.numberOfLines = 0
         overviewLabel.font = .systemFont(ofSize: 14)
-        rateLabel.text = movie.rateLabelText
+        rateLabel.text = myBookInfo.author
         rateLabel.font = .systemFont(ofSize: 12)
         rateLabel.textColor = .darkGray
         memoTextView.text = placeholder

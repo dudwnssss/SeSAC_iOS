@@ -7,10 +7,14 @@
 
 import UIKit
 import Kingfisher
+import RealmSwift
 
 class SearchViewController: UIViewController {
 
-    var bookInfo: BookInfo?{
+    
+    let realm = try! Realm()
+
+    var bookInfo : BookInfo!{
         didSet{
             collectionView.reloadData()
         }
@@ -43,6 +47,15 @@ class SearchViewController: UIViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: BookWarmCell.identifier)
     }
     
+    func addBookToRealm(index: Int){
+        let book = bookInfo.documents[index]
+        let authors = book.authors.joined(separator: ",")
+        let task = MyBookInfo(title: book.title, thumb: book.thumbnail, overView: book.contents, date: book.datetime, author: authors, price: book.price)
+        try! realm.write{
+            realm.add(task)
+        }
+    }
+    
     func setNavigationBar(){
         title = "검색 화면"
         let xmark = UIImage(systemName: "xmark")
@@ -57,11 +70,23 @@ class SearchViewController: UIViewController {
     func setProperties(){
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+    }
+    
+    func presentAlert(index: Int){
+        let alert = UIAlertController(title: "내 도서 목록에 추가하시겠습니까?", message: nil, preferredStyle: .alert)
+        let add = UIAlertAction(title: "추가", style: .default) { _ in
+            self.addBookToRealm(index: index)
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        alert.addAction(add)
+        alert.addAction(cancel)
+        present(alert, animated: true)
     }
     
     func setSearchController(){
         let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.placeholder = "찾고싶은 영화를 입력하세요"
+        searchController.searchBar.placeholder = "찾고싶은 도서를 입력하세요"
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         self.navigationItem.searchController = searchController
@@ -96,6 +121,10 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
             cell.rateLabel.text = row.datetime
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presentAlert(index: indexPath.row)
     }
     
 }

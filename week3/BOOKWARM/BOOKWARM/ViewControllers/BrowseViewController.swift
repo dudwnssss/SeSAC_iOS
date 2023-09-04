@@ -66,12 +66,12 @@ class BrowseViewController: UIViewController {
     }
     
     func presentDetailVC(row: Int){
-        guard let vc = storyboard?.instantiateViewController(identifier: "DetailViewController") as? DetailViewController else{
-            return
-        }
-        vc.movie = movieInfo.movie[row]
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+//        guard let vc = storyboard?.instantiateViewController(identifier: "DetailViewController") as? DetailViewController else{
+//            return
+//        }
+//        vc.movie = movieInfo.movie[row]
+//        vc.modalPresentationStyle = .fullScreen
+//        present(vc, animated: true)
     }
 }
 

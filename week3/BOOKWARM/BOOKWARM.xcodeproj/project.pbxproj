@@ -33,6 +33,7 @@
 		109B90FD2AA59C3E009958F1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 109B90FC2AA59C3E009958F1 /* Realm */; };
 		109B90FF2AA59C3E009958F1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 109B90FE2AA59C3E009958F1 /* RealmSwift */; };
 		109B91022AA5AEBF009958F1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 109B91012AA5AEBF009958F1 /* Kingfisher */; };
+		109B91042AA5B2E1009958F1 /* MyBookInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B91032AA5B2E1009958F1 /* MyBookInfo.swift */; };
 		10C9B6282A7BB13800026EE0 /* UIVIewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C9B6272A7BB13800026EE0 /* UIVIewController+.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		108212DA2A7C8B8B00695F75 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		109B90F12AA59BFF009958F1 /* BookInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfo.swift; sourceTree = "<group>"; };
 		109B90F32AA59C07009958F1 /* SearchBookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookManager.swift; sourceTree = "<group>"; };
+		109B91032AA5B2E1009958F1 /* MyBookInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookInfo.swift; sourceTree = "<group>"; };
 		10C9B6272A7BB13800026EE0 /* UIVIewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				109B90F12AA59BFF009958F1 /* BookInfo.swift */,
+				109B91032AA5B2E1009958F1 /* MyBookInfo.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				10C9B6282A7BB13800026EE0 /* UIVIewController+.swift in Sources */,
 				104C74902A790EE2002F486A /* MovieInfo.swift in Sources */,
 				104C74582A7799D3002F486A /* SearchViewController.swift in Sources */,
+				109B91042AA5B2E1009958F1 /* MyBookInfo.swift in Sources */,
 				104C74702A779AB5002F486A /* BookWarmCollectionViewController.swift in Sources */,
 				104C74A72A7A2E80002F486A /* BrowseCollectionViewCell.swift in Sources */,
 				104C74542A7799D3002F486A /* AppDelegate.swift in Sources */,
