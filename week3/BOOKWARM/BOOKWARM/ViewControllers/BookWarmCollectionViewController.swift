@@ -53,7 +53,8 @@ class BookWarmCollectionViewController: UICollectionViewController {
         let searchImage = UIImage(systemName: "magnifyingglass")
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: #selector(searchButtonDidTap))
         navigationItem.rightBarButtonItem?.tintColor = .black
-        navigationItem.titleView = searchBar
+        title = "고래밥님의 책장"
+//        navigationItem.titleView = searchBar
     }
     
     func registerCell(){

@@ -33,7 +33,7 @@ class BookWarmCell: UICollectionViewCell {
     }
     
     func setProperties(){
-        bgView.backgroundColor = .systemPink
+        bgView.backgroundColor = .lightGray
         bgView.layer.cornerRadius = 12
         titleLabel.textColor = .white
         titleLabel.font = .boldSystemFont(ofSize: 16)
