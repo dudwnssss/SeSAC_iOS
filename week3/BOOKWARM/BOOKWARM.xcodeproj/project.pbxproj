@@ -34,6 +34,7 @@
 		109B90FF2AA59C3E009958F1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 109B90FE2AA59C3E009958F1 /* RealmSwift */; };
 		109B91022AA5AEBF009958F1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 109B91012AA5AEBF009958F1 /* Kingfisher */; };
 		109B91042AA5B2E1009958F1 /* MyBookInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B91032AA5B2E1009958F1 /* MyBookInfo.swift */; };
+		109B910A2AA5D5B5009958F1 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 109B91092AA5D5B5009958F1 /* Then */; };
 		10C9B6282A7BB13800026EE0 /* UIVIewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C9B6272A7BB13800026EE0 /* UIVIewController+.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				109B90FF2AA59C3E009958F1 /* RealmSwift in Frameworks */,
+				109B910A2AA5D5B5009958F1 /* Then in Frameworks */,
 				109B90FD2AA59C3E009958F1 /* Realm in Frameworks */,
 				109B90F72AA59C1E009958F1 /* SnapKit in Frameworks */,
 				109B90FA2AA59C2A009958F1 /* Alamofire in Frameworks */,
@@ -206,6 +208,7 @@
 				109B90FC2AA59C3E009958F1 /* Realm */,
 				109B90FE2AA59C3E009958F1 /* RealmSwift */,
 				109B91012AA5AEBF009958F1 /* Kingfisher */,
+				109B91092AA5D5B5009958F1 /* Then */,
 			);
 			productName = BOOKWARM;
 			productReference = 104C74502A7799D3002F486A /* BOOKWARM.app */;
@@ -240,6 +243,7 @@
 				109B90F82AA59C2A009958F1 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				109B90FB2AA59C3E009958F1 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				109B91002AA5AEBF009958F1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				109B91082AA5D5B5009958F1 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = 104C74512A7799D3002F486A /* Products */;
 			projectDirPath = "";
@@ -539,6 +543,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		109B91082AA5D5B5009958F1 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -566,6 +578,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 109B91002AA5AEBF009958F1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		109B91092AA5D5B5009958F1 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 109B91082AA5D5B5009958F1 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

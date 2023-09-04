@@ -8,17 +8,26 @@
 import UIKit
 import Kingfisher
 import RealmSwift
+import Then
 
 class SearchViewController: UIViewController {
-
+    
+    var startPage = SearchBookManager.shared.startPage
+    var totalCount = SearchBookManager.shared.totalCount
+    
+    let searchController = UISearchController(searchResultsController: nil).then{
+        $0.searchBar.placeholder = "찾고싶은 도서를 입력하세요"
+    }
     
     let realm = try! Realm()
-
-    var bookInfo : BookInfo!{
+    
+    var bookList : [Document] = []{
         didSet{
             collectionView.reloadData()
         }
     }
+    
+    
     
     @IBOutlet var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -48,7 +57,7 @@ class SearchViewController: UIViewController {
     }
     
     func addBookToRealm(index: Int){
-        let book = bookInfo.documents[index]
+        let book = bookList[index]
         let authors = book.authors.joined(separator: ",")
         let task = MyBookInfo(title: book.title, thumb: book.thumbnail, overView: book.contents, date: book.datetime, author: authors, price: book.price)
         try! realm.write{
@@ -70,6 +79,7 @@ class SearchViewController: UIViewController {
     func setProperties(){
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.prefetchDataSource = self
         
     }
     
@@ -85,46 +95,62 @@ class SearchViewController: UIViewController {
     }
     
     func setSearchController(){
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.placeholder = "찾고싶은 도서를 입력하세요"
-        searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
         self.navigationItem.searchController = searchController
     }
 }
 
 extension SearchViewController : UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
-        dump(searchController.searchBar.text)
+//        dump(searchController.searchBar.text)
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         SearchBookManager.shared.callRequest(query: searchBar.text ?? "") { value in
-            self.bookInfo = value
+            self.bookList = value.documents
+            SearchBookManager.shared.totalCount = value.meta.totalCount
         }
     }
 }
 
-extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDataSourcePrefetching {
+    
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if bookList.count - 1 == indexPath.item && bookList.count < SearchBookManager.shared.totalCount {
+                SearchBookManager.shared.startPage += 1
+                SearchBookManager.shared.callRequest(query: searchController.searchBar.text ?? "") { value in
+                    self.bookList.append(contentsOf: value.documents)
+                print("callRequest Called")
+                }
+            }
+        }
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+//        print("canceled")
+//    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bookInfo?.documents.count ?? 0
+        return bookList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookWarmCell.identifier, for: indexPath) as? BookWarmCell else{
             return UICollectionViewCell()
         }
-        if let row = bookInfo?.documents[indexPath.row] {
-            cell.titleLabel.text = row.title
-            let url = URL(string: row.thumbnail)
-            cell.posterImageView.kf.setImage(with: url)
-            cell.rateLabel.text = row.datetime
-        }
+        let row = bookList[indexPath.row]
+        cell.titleLabel.text = row.title
+        let url = URL(string: row.thumbnail)
+        cell.posterImageView.kf.setImage(with: url)
+        cell.rateLabel.text = row.datetime
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presentAlert(index: indexPath.row)
     }
+    
     
 }

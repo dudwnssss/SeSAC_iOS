@@ -10,11 +10,15 @@ import Alamofire
 
 class SearchBookManager {
     static let shared = SearchBookManager()
+    
+    var startPage = 1
+    var totalCount = 0
+    
     private init () {}
     
     let header: HTTPHeaders = ["Authorization":"KakaoAK b891b8a4c83cb2a555d28d1e6bd93f8a"]
     func callRequest(query: String, completionHandler: @escaping (BookInfo) -> Void){
-        let url = "https://dapi.kakao.com/v3/search/book?target=title"
+        let url = "https://dapi.kakao.com/v3/search/book?size=20&page=\(startPage)&target=title"
         let parameter: [String: Any] = ["query": "\(query)"]
         AF.request(url, method: .get, parameters: parameter, headers: header).validate(statusCode: 200...500).responseDecodable(of: BookInfo.self) { response in
             switch response.result{
