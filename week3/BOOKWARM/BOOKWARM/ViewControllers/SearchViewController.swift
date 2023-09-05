@@ -26,9 +26,7 @@ class SearchViewController: UIViewController {
             collectionView.reloadData()
         }
     }
-    
-    
-    
+        
     @IBOutlet var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,9 +57,20 @@ class SearchViewController: UIViewController {
     func addBookToRealm(index: Int){
         let book = bookList[index]
         let authors = book.authors.joined(separator: ",")
+        
         let task = MyBookInfo(title: book.title, thumb: book.thumbnail, overView: book.contents, date: book.datetime, author: authors, price: book.price)
+        
         try! realm.write{
             realm.add(task)
+        }
+        
+        DispatchQueue.global().async {
+            if let url = URL(string: book.thumbnail), let data = try? Data(contentsOf: url ) {
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    self.saveImageToDocument(fileName: "\(task._id).jpg", image: image!)
+                }
+            }
         }
     }
     

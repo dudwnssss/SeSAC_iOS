@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import SnapKit
 
 class DetailViewController: UIViewController {
     
@@ -18,6 +19,11 @@ class DetailViewController: UIViewController {
     @IBOutlet var overviewLabel: UILabel!
     @IBOutlet var memoTextView: UITextView!
     
+    
+    
+    let toolBar = UIToolbar().then{
+        $0.barStyle = .default
+    }
 //    var movie: Movie?
     var myBookInfo: MyBookInfo?
     
@@ -27,10 +33,22 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setProperties()
+        setLayouts()
+        configureToolBar()
         setNavigationBar()
         setDismissButton()
         memoTextView.delegate = self
         hideKeyboardWhenTappedAround()
+    }
+    
+    func configureToolBar(){
+        let deleteButton = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: nil)
+        deleteButton.tintColor = .red
+        let updateButton = UIBarButtonItem(image: UIImage(systemName: "pencil"), style: .plain, target: self, action: nil)
+        updateButton.tintColor = .black
+        let space = UIBarButtonItem.fixedSpace(20)
+        let flexibleSpace = UIBarButtonItem.flexibleSpace()
+        toolBar.items = [flexibleSpace, updateButton, space, deleteButton]
     }
     
     func setDismissButton(){
@@ -43,6 +61,13 @@ class DetailViewController: UIViewController {
     
     @IBAction func dismissKeyboard(_ sender: Any) {
         view.endEditing(true)
+    }
+    
+    func setLayouts(){
+        view.addSubview(toolBar)
+        toolBar.snp.makeConstraints {
+            $0.bottom.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+        }
     }
     
     

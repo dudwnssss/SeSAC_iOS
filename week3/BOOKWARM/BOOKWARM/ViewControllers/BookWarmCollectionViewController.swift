@@ -15,7 +15,8 @@ class BookWarmCollectionViewController: UICollectionViewController {
     
     
     var tasks: Results<MyBookInfo>?
-    
+    let realm = try! Realm()
+
 //    var searchedMovies : [Movie] = []{
 //        didSet{
 //            collectionView.reloadData()
@@ -33,7 +34,6 @@ class BookWarmCollectionViewController: UICollectionViewController {
     }()
     
     func readBookRealm(){
-        let realm = try! Realm()
         tasks = realm.objects(MyBookInfo.self).sorted(byKeyPath: "title", ascending: false)
     }
     
@@ -46,6 +46,7 @@ class BookWarmCollectionViewController: UICollectionViewController {
 //        searchedMovies = movieInfo.movie
         searchBar.delegate = self
         hideKeyboardWhenTappedAround()
+        print(realm.configuration.fileURL)
     }
     
 //    func searchQuery(text: String){
@@ -125,8 +126,8 @@ extension BookWarmCollectionViewController {
         }
         
         if let row = tasks?[indexPath.row] {
-            let url = URL(string: row.thumb)
-            cell.posterImageView.kf.setImage(with: url)
+            let image = loadImageFromDocument(fileName: "\(row._id).jpg")
+            cell.posterImageView.image = image
             cell.titleLabel.text = row.title
             cell.rateLabel.text = row.author
         }
