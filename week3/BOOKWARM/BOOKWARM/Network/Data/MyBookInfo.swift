@@ -17,6 +17,7 @@ class MyBookInfo: Object {
     @Persisted var date: String
     @Persisted var author: String
     @Persisted var price: Int
+    @Persisted var memo: String?
     
     convenience init(title: String, thumb: String, overView: String, date: String, author: String, price: Int) {
         self.init()

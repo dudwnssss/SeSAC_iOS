@@ -11,6 +11,7 @@ import SnapKit
 
 class DetailViewController: UIViewController {
     
+    let realm = try! Realm()
     @IBOutlet var dismissButton: UIButton!
     @IBOutlet var infoBackgroundView: UIView!
     @IBOutlet var titleLabel: UILabel!
@@ -20,12 +21,11 @@ class DetailViewController: UIViewController {
     @IBOutlet var memoTextView: UITextView!
     
     
-    
     let toolBar = UIToolbar().then{
         $0.barStyle = .default
     }
 //    var movie: Movie?
-    var myBookInfo: MyBookInfo?
+    var myBookInfo: MyBookInfo!
     
     var isNav: Bool = false
     let placeholder = "메모를 입력해주세요"
@@ -42,14 +42,39 @@ class DetailViewController: UIViewController {
     }
     
     func configureToolBar(){
-        let deleteButton = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: nil)
+        let deleteButton = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(deleteButtonDidTap))
         deleteButton.tintColor = .red
-        let updateButton = UIBarButtonItem(image: UIImage(systemName: "pencil"), style: .plain, target: self, action: nil)
+        let updateButton = UIBarButtonItem(image: UIImage(systemName: "pencil"), style: .plain, target: self, action: #selector(updateButtonDidTap))
         updateButton.tintColor = .black
         let space = UIBarButtonItem.fixedSpace(20)
         let flexibleSpace = UIBarButtonItem.flexibleSpace()
         toolBar.items = [flexibleSpace, updateButton, space, deleteButton]
     }
+    
+    @objc func deleteButtonDidTap(){
+        removeImageFromDocument(fileName: "\(myBookInfo._id).jpg")
+        do {
+            try realm.write{
+                realm.delete(myBookInfo)
+            }
+        } catch {
+            print(error)
+        }
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func updateButtonDidTap(){
+        do {
+            try realm.write{
+                myBookInfo.setValue(memoTextView.text, forKey: "memo")
+            }
+            
+        } catch {
+            print("") //ns로그 등으로 기록을 남기기
+        }
+        navigationController?.popViewController(animated: true)
+    }
+    
     
     func setDismissButton(){
         dismissButton.isHidden = isNav ? true : false
@@ -86,8 +111,18 @@ class DetailViewController: UIViewController {
         rateLabel.text = myBookInfo.author
         rateLabel.font = .systemFont(ofSize: 12)
         rateLabel.textColor = .darkGray
-        memoTextView.text = placeholder
+        
+        if myBookInfo.memo == nil {
+            memoTextView.text = placeholder
+        } else {
+            memoTextView.text = myBookInfo.memo
+        }
+        
         memoTextView.textColor = .lightGray
+        
+        
+        
+        
         setInfoBackgroundView()
         dismissButton.setImage(UIImage(systemName: "xmark"), for: .normal)
         dismissButton.setTitle("", for: .normal)
