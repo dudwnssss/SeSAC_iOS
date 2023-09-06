@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BrowseCollectionViewCell: UICollectionViewCell {
+final class BrowseCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var posterImageView: UIImageView!
     

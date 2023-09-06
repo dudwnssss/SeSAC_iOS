@@ -15,9 +15,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-//        let config = Realm.Configuration(schemaVersion: 1){ migration,oldSchemaVersion in
-//            
-//        }
+        let config = Realm.Configuration(schemaVersion: 5){ migration,oldSchemaVersion in
+            if oldSchemaVersion < 1{} //like Column추가 (Automatic)
+            if oldSchemaVersion < 2{} //like Column삭제 (Automatic)
+            if oldSchemaVersion < 3{  //overView -> overview Column이름 변경(Manually)
+                migration.renameProperty(onType: MyBookInfo.className(), from: "overView", to: "overview")
+            }
+            if oldSchemaVersion < 4{  //bookSummary Column추가, title + overview (Manually)
+                migration.enumerateObjects(ofType: MyBookInfo.className()) { oldObject, newObject in
+                    guard let new = newObject else {return}
+                    guard let old = oldObject else {return}
+                    guard let title = old["title"] else {return}
+                    guard let overview = old["overview"] else {return}
+                    
+                    new["bookSummary"] = "제목은 '\(title)'이고, 내용은 '\(overview)'입니다"
+                }
+            }
+            if oldSchemaVersion < 5 {} //bookSummary Column Optional해제 //옵셔널 해제도 기존 칼럼 지우고 새로운 칼럼 생성된 것으로 판단
+            //renameProperty로 안되는데 어떻게 하 지 ?
+            //왜 repository는 shared 안쓰고 instance 생성해서 사용했지
+        }
+        
+        Realm.Configuration.defaultConfiguration = config
 
         return true
     }

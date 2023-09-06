@@ -16,7 +16,6 @@ class BookWarmCollectionViewController: UICollectionViewController {
     let repository = MyBookRepository()
     
     var tasks: Results<MyBookInfo>?
-//    let realm = try! Realm()
 
 //    var searchedMovies : [Movie] = []{
 //        didSet{
@@ -47,6 +46,8 @@ class BookWarmCollectionViewController: UICollectionViewController {
 //        searchedMovies = movieInfo.movie
         searchBar.delegate = self
         hideKeyboardWhenTappedAround()
+        repository.checkSchemaVersion()
+        print(tasks)
 //        print(realm.configuration.fileURL)
     }
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BrowseTableViewCell: UITableViewCell {
+final class BrowseTableViewCell: UITableViewCell {
 
     @IBOutlet var posterImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!

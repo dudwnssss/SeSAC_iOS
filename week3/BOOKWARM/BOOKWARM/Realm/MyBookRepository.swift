@@ -20,6 +20,15 @@ class MyBookRepository: MyBookRepositoryType{
     
     private let realm = try! Realm()
     
+    func checkSchemaVersion(){
+        do {
+            let version = try schemaVersionAtURL(realm.configuration.fileURL!)
+            print("Schema Version: \(version)")
+        } catch {
+            print(error)
+        }
+    }
+    
     func fetch() -> RealmSwift.Results<MyBookInfo> {
         let data = realm.objects(MyBookInfo.self).sorted(byKeyPath: "title", ascending: false)
         return data

@@ -92,7 +92,7 @@ class DetailViewController: UIViewController {
         titleLabel.textColor = .white
         let url = URL(string: myBookInfo.thumb)
         posterImageVIew.kf.setImage(with: url)
-        overviewLabel.text = myBookInfo.overView
+        overviewLabel.text = myBookInfo.overview
         overviewLabel.numberOfLines = 0
         overviewLabel.font = .systemFont(ofSize: 14)
         rateLabel.text = myBookInfo.author

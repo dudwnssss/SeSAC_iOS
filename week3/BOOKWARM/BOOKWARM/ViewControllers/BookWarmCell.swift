@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BookWarmCell: UICollectionViewCell {
+final class BookWarmCell: UICollectionViewCell {
 
     static let identifier = "BookWarmCell"
     
