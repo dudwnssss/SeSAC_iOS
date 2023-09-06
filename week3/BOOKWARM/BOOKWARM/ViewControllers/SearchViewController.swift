@@ -12,6 +12,8 @@ import Then
 
 class SearchViewController: UIViewController {
     
+    let repository = MyBookRepository()
+    
     var startPage = SearchBookManager.shared.startPage
     var totalCount = SearchBookManager.shared.totalCount
     
@@ -19,7 +21,6 @@ class SearchViewController: UIViewController {
         $0.searchBar.placeholder = "찾고싶은 도서를 입력하세요"
     }
     
-    let realm = try! Realm()
     
     var bookList : [Document] = []{
         didSet{
@@ -60,9 +61,7 @@ class SearchViewController: UIViewController {
         
         let task = MyBookInfo(title: book.title, thumb: book.thumbnail, overView: book.contents, date: book.datetime, author: authors, price: book.price)
         
-        try! realm.write{
-            realm.add(task)
-        }
+        repository.create(task)
         
         DispatchQueue.global().async {
             if let url = URL(string: book.thumbnail), let data = try? Data(contentsOf: url ) {

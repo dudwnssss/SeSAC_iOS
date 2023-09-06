@@ -18,6 +18,7 @@ class MyBookInfo: Object {
     @Persisted var author: String
     @Persisted var price: Int
     @Persisted var memo: String?
+//    @Persisted var like: Bool
     
     convenience init(title: String, thumb: String, overView: String, date: String, author: String, price: Int) {
         self.init()

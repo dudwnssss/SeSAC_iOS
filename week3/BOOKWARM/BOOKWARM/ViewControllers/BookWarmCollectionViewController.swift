@@ -13,9 +13,10 @@ class BookWarmCollectionViewController: UICollectionViewController {
     
 //    var movieInfo = MovieInfo()
     
+    let repository = MyBookRepository()
     
     var tasks: Results<MyBookInfo>?
-    let realm = try! Realm()
+//    let realm = try! Realm()
 
 //    var searchedMovies : [Movie] = []{
 //        didSet{
@@ -34,7 +35,7 @@ class BookWarmCollectionViewController: UICollectionViewController {
     }()
     
     func readBookRealm(){
-        tasks = realm.objects(MyBookInfo.self).sorted(byKeyPath: "title", ascending: false)
+        tasks = repository.fetch()
     }
     
     override func viewDidLoad() {
@@ -46,7 +47,7 @@ class BookWarmCollectionViewController: UICollectionViewController {
 //        searchedMovies = movieInfo.movie
         searchBar.delegate = self
         hideKeyboardWhenTappedAround()
-        print(realm.configuration.fileURL)
+//        print(realm.configuration.fileURL)
     }
     
 //    func searchQuery(text: String){

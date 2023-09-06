@@ -11,7 +11,7 @@ import SnapKit
 
 class DetailViewController: UIViewController {
     
-    let realm = try! Realm()
+    let repository = MyBookRepository()
     @IBOutlet var dismissButton: UIButton!
     @IBOutlet var infoBackgroundView: UIView!
     @IBOutlet var titleLabel: UILabel!
@@ -53,25 +53,12 @@ class DetailViewController: UIViewController {
     
     @objc func deleteButtonDidTap(){
         removeImageFromDocument(fileName: "\(myBookInfo._id).jpg")
-        do {
-            try realm.write{
-                realm.delete(myBookInfo)
-            }
-        } catch {
-            print(error)
-        }
+        repository.delete(myBookInfo)
         navigationController?.popViewController(animated: true)
     }
     
     @objc func updateButtonDidTap(){
-        do {
-            try realm.write{
-                myBookInfo.setValue(memoTextView.text, forKey: "memo")
-            }
-            
-        } catch {
-            print("") //ns로그 등으로 기록을 남기기
-        }
+        repository.update(item: myBookInfo, key: "memo", value: memoTextView.text)
         navigationController?.popViewController(animated: true)
     }
     
@@ -117,7 +104,6 @@ class DetailViewController: UIViewController {
         } else {
             memoTextView.text = myBookInfo.memo
         }
-        
         memoTextView.textColor = .lightGray
         
         
