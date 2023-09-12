@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		104A710B2AB05B94005698BB /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104A710A2AB05B94005698BB /* SignUpViewModel.swift */; };
+		104A710E2AB05BF8005698BB /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104A710D2AB05BF8005698BB /* Observable.swift */; };
 		1073F2792A973C8E008AE697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073F2782A973C8E008AE697 /* AppDelegate.swift */; };
 		1073F27B2A973C8E008AE697 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073F27A2A973C8E008AE697 /* SceneDelegate.swift */; };
 		1073F27D2A973C8E008AE697 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073F27C2A973C8E008AE697 /* BaseViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		104A710A2AB05B94005698BB /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		104A710D2AB05BF8005698BB /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		1073F2752A973C8E008AE697 /* Jackflix_CodeBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jackflix_CodeBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1073F2782A973C8E008AE697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1073F27A2A973C8E008AE697 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		104A710C2AB05BE0005698BB /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				1073F2932A973CF9008AE697 /* Extension */,
+				1073F2942A973CFE008AE697 /* Component */,
+				104A710D2AB05BF8005698BB /* Observable.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
 		1073F26C2A973C8E008AE697 = {
 			isa = PBXGroup;
 			children = (
@@ -66,10 +80,9 @@
 		1073F2772A973C8E008AE697 /* Jackflix_CodeBase */ = {
 			isa = PBXGroup;
 			children = (
+				104A710C2AB05BE0005698BB /* Global */,
 				1073F2982A973EBD008AE697 /* Data */,
 				1073F2952A973D0C008AE697 /* Presentatioin */,
-				1073F2942A973CFE008AE697 /* Component */,
-				1073F2932A973CF9008AE697 /* Extension */,
 				1073F2782A973C8E008AE697 /* AppDelegate.swift */,
 				1073F27A2A973C8E008AE697 /* SceneDelegate.swift */,
 				1073F2812A973C8E008AE697 /* Assets.xcassets */,
@@ -100,6 +113,7 @@
 			children = (
 				1073F27C2A973C8E008AE697 /* BaseViewController.swift */,
 				1073F29B2A97401A008AE697 /* SignUpViewController.swift */,
+				104A710A2AB05B94005698BB /* SignUpViewModel.swift */,
 			);
 			path = Presentatioin;
 			sourceTree = "<group>";
@@ -192,7 +206,9 @@
 			files = (
 				1073F29C2A97401A008AE697 /* SignUpViewController.swift in Sources */,
 				1073F27D2A973C8E008AE697 /* BaseViewController.swift in Sources */,
+				104A710B2AB05B94005698BB /* SignUpViewModel.swift in Sources */,
 				1073F29E2A9742CF008AE697 /* UIView+.swift in Sources */,
+				104A710E2AB05BF8005698BB /* Observable.swift in Sources */,
 				1073F2792A973C8E008AE697 /* AppDelegate.swift in Sources */,
 				1073F29A2A973EDB008AE697 /* UserInfoType.swift in Sources */,
 				1073F2972A973DE9008AE697 /* userInfoTextField.swift in Sources */,

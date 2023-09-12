@@ -9,26 +9,19 @@ import UIKit
 
 class SignUpViewController: BaseViewController {
 
+    let viewModel = SignupViewModel()
+    
     let logo = UILabel().then{
         $0.text = "JACKFLIX"
         $0.textColor = .red
         $0.font = .systemFont(ofSize: 30, weight: UIFont.Weight(rawValue: 1))
     }
-    let emailOrPhoneTextField = userInfoTextField().then{
-        $0.placeholder = UserInfoType.emailOrPhone.rawValue
-    }
-    let passwordTextField = userInfoTextField().then{
-        $0.placeholder = UserInfoType.password.rawValue
-    }
-    let nicknameTextField = userInfoTextField().then{
-        $0.placeholder = UserInfoType.nickname.rawValue
-    }
-    let locationTextField = userInfoTextField().then{
-        $0.placeholder = UserInfoType.location.rawValue
-    }
-    let recommendTextField = userInfoTextField().then{
-        $0.placeholder = UserInfoType.recommend.rawValue
-    }
+    let emailOrPhoneTextField = userInfoTextField()
+    let passwordTextField = userInfoTextField()
+    let nicknameTextField = userInfoTextField()
+    let locationTextField = userInfoTextField()
+    let recommendTextField = userInfoTextField()
+    
     let singUpButton = UIButton().then{
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
         $0.setTitle("회원가입", for: .normal)
@@ -47,6 +40,28 @@ class SignUpViewController: BaseViewController {
     }
     
     override func setProperties() {
+        bind()
+        emailOrPhoneTextField.do {
+            $0.placeholder = UserInfoType.emailOrPhone.rawValue
+            $0.addTarget(self, action: #selector(emailTextFieldChanged), for: .editingChanged)
+        }
+        passwordTextField.do {
+            $0.placeholder = UserInfoType.password.rawValue
+            $0.addTarget(self, action: #selector(passwordTextFieldChanged), for: .editingChanged)
+        }
+        nicknameTextField.do {
+            $0.placeholder = UserInfoType.nickname.rawValue
+            $0.addTarget(self, action: #selector(nicknameTextFieldChanged), for: .editingChanged)
+        }
+        locationTextField.do {
+            $0.placeholder = UserInfoType.location.rawValue
+            $0.addTarget(self, action: #selector(locationTextFieldChanged), for: .editingChanged)
+        }
+        recommendTextField.do {
+            $0.placeholder = UserInfoType.recommend.rawValue
+            $0.addTarget(self, action: #selector(recomendTextFieldChanged), for: .editingChanged)
+        }
+        
         view.backgroundColor = .black
     }
     
@@ -97,6 +112,66 @@ class SignUpViewController: BaseViewController {
         jfSwitch.snp.makeConstraints {
             $0.trailing.equalTo(singUpButton)
             $0.centerY.equalTo(moreInfoButton)
+        }
+    }
+    
+    @objc func emailTextFieldChanged(){
+        if let text = emailOrPhoneTextField.text {
+            viewModel.email.value = text
+            viewModel.checkValidation()
+        }
+    }
+    
+    @objc func passwordTextFieldChanged(){
+        if let text = passwordTextField.text {
+            viewModel.password.value = text
+            viewModel.checkValidation()
+        }
+    }
+    
+    @objc func nicknameTextFieldChanged(){
+        if let text = nicknameTextField.text {
+            viewModel.nickname.value = text
+            viewModel.checkValidation()
+        }
+    }
+    
+    @objc func locationTextFieldChanged(){
+        if let text = locationTextField.text {
+            viewModel.location.value = text
+            viewModel.checkValidation()
+        }
+    }
+    
+    @objc func recomendTextFieldChanged(){
+        if let text = recommendTextField.text {
+            viewModel.recommend.value = text
+        }
+    }
+    
+    func bind(){
+        viewModel.email.bind { text in
+            print(text)
+            self.emailOrPhoneTextField.text = text
+        }
+        viewModel.password.bind { text in
+            self.passwordTextField.text = text
+        }
+        viewModel.nickname.bind { text in
+            self.nicknameTextField.text = text
+        }
+        viewModel.location.bind { text in
+            self.locationTextField.text = text
+        }
+        
+        viewModel.recommend.bind {text in
+            self.recommendTextField.text = text
+        }
+        
+        viewModel.isValid.bind { bool in
+            self.singUpButton.isEnabled = bool
+            self.singUpButton.backgroundColor = bool ? .red : .lightGray
+            bool ? self.singUpButton.setTitleColor(.yellow, for: .normal) : self.singUpButton.setTitleColor(.black, for: .normal)
         }
     }
 }
