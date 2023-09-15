@@ -7,6 +7,7 @@
 
 import UIKit
 import PhotosUI
+import Kingfisher
 
 //Protocol 값 전달 1.
 protocol PassDataDelegate {
@@ -28,10 +29,15 @@ class AddViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        APIService.shared.callRequest()
+//        APIService.shared.callRequest(query: "sky")
+//        APIService.shared.callRequest()
 //        ClassOpenExample.publicExample()
 //        ClassPublicExample.publicExample()
 //        ClassInternalExample.internalExample()
+    }
+    
+    deinit {
+        print("deinit", self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,8 +97,11 @@ class AddViewController: BaseViewController {
     
     @objc func dateButtonDidTap(){
         //Protocol 값 전달 5.
-        let vc = DateViewController()
-        vc.delegate = self
+//        let vc = DateViewController()
+//        vc.delegate = self
+//        navigationController?.pushViewController(vc, animated: true)
+        
+        let vc = HomeViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     

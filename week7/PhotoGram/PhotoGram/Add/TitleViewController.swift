@@ -26,6 +26,10 @@ class TitleViewController: BaseViewController{
         setNavigationBar()
     }
     
+    deinit {
+        print("deinit", self)
+    }
+    
     override func setLayouts() {
         view.addSubview(textField)
         textField.snp.makeConstraints {

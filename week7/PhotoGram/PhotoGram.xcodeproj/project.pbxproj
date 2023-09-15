@@ -22,7 +22,7 @@
 		102089DF2A9C37EE00A34EFC /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102089DE2A9C37EE00A34EFC /* SearchCollectionViewCell.swift */; };
 		102D92792A9F177900E5A4A3 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 102D92782A9F177900E5A4A3 /* Then */; };
 		102D927C2A9F178B00E5A4A3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 102D927B2A9F178B00E5A4A3 /* Alamofire */; };
-		102D927F2A9F1ADD00E5A4A3 /* SearchedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D927E2A9F1ADD00E5A4A3 /* SearchedImage.swift */; };
+		102D927F2A9F1ADD00E5A4A3 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D927E2A9F1ADD00E5A4A3 /* Photo.swift */; };
 		102D92872A9F24B700E5A4A3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 102D92862A9F24B700E5A4A3 /* Kingfisher */; };
 		104941A12A9D7BF6006B52BC /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104941A02A9D7BF6006B52BC /* Notification+.swift */; };
 		104941A32A9D7C82006B52BC /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104941A22A9D7C82006B52BC /* DateView.swift */; };
@@ -37,6 +37,8 @@
 		104942162A9F153E006B52BC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 104942152A9F153E006B52BC /* .gitignore */; };
 		104942192A9F158C006B52BC /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104942182A9F158C006B52BC /* APIKey.swift */; };
 		1049421B2A9F16A2006B52BC /* SearchImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049421A2A9F16A2006B52BC /* SearchImageManager.swift */; };
+		10C929BB2AA01A7C00BA83D9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C929BA2AA01A7C00BA83D9 /* HomeViewController.swift */; };
+		10C929BD2AA01A8200BA83D9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C929BC2AA01A8200BA83D9 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,7 +69,7 @@
 		102089DA2A9C337800A34EFC /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		102089DC2A9C365C00A34EFC /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		102089DE2A9C37EE00A34EFC /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
-		102D927E2A9F1ADD00E5A4A3 /* SearchedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedImage.swift; sourceTree = "<group>"; };
+		102D927E2A9F1ADD00E5A4A3 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		104941A02A9D7BF6006B52BC /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
 		104941A22A9D7C82006B52BC /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		104941A42A9D7DBE006B52BC /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,8 @@
 		104942152A9F153E006B52BC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		104942182A9F158C006B52BC /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		1049421A2A9F16A2006B52BC /* SearchImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImageManager.swift; sourceTree = "<group>"; };
+		10C929BA2AA01A7C00BA83D9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		10C929BC2AA01A8200BA83D9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 		102089B72A9C1D6F00A34EFC /* PhotoGram */ = {
 			isa = PBXGroup;
 			children = (
+				10C929B92AA01A5600BA83D9 /* Home */,
 				102D927D2A9F194200E5A4A3 /* Data */,
 				104942152A9F153E006B52BC /* .gitignore */,
 				104942102A9F0C23006B52BC /* Application */,
@@ -170,7 +175,7 @@
 		102D927D2A9F194200E5A4A3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				102D927E2A9F1ADD00E5A4A3 /* SearchedImage.swift */,
+				102D927E2A9F1ADD00E5A4A3 /* Photo.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -218,6 +223,15 @@
 				104942182A9F158C006B52BC /* APIKey.swift */,
 			);
 			path = Key;
+			sourceTree = "<group>";
+		};
+		10C929B92AA01A5600BA83D9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				10C929BA2AA01A7C00BA83D9 /* HomeViewController.swift */,
+				10C929BC2AA01A8200BA83D9 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +321,7 @@
 				104941ED2A9DC0D9006B52BC /* ContentViewController.swift in Sources */,
 				104942192A9F158C006B52BC /* APIKey.swift in Sources */,
 				102089D92A9C2FE300A34EFC /* AddView.swift in Sources */,
+				10C929BD2AA01A8200BA83D9 /* HomeView.swift in Sources */,
 				104941A12A9D7BF6006B52BC /* Notification+.swift in Sources */,
 				102089D42A9C275000A34EFC /* SearchViewController.swift in Sources */,
 				102089DD2A9C365C00A34EFC /* BaseCollectionViewCell.swift in Sources */,
@@ -314,7 +329,8 @@
 				104941A52A9D7DBE006B52BC /* DateViewController.swift in Sources */,
 				102089DF2A9C37EE00A34EFC /* SearchCollectionViewCell.swift in Sources */,
 				104941A32A9D7C82006B52BC /* DateView.swift in Sources */,
-				102D927F2A9F1ADD00E5A4A3 /* SearchedImage.swift in Sources */,
+				102D927F2A9F1ADD00E5A4A3 /* Photo.swift in Sources */,
+				10C929BB2AA01A7C00BA83D9 /* HomeViewController.swift in Sources */,
 				102089D12A9C240700A34EFC /* BaseViewController.swift in Sources */,
 				1049420C2A9EEBD6006B52BC /* URLSessionViewController.swift in Sources */,
 				102089DB2A9C337800A34EFC /* SearchView.swift in Sources */,

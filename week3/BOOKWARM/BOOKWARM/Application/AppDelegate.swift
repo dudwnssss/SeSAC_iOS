@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let config = Realm.Configuration(schemaVersion: 5){ migration,oldSchemaVersion in
+        let config = Realm.Configuration(schemaVersion: 7){ migration,oldSchemaVersion in
             if oldSchemaVersion < 1{} //like Column추가 (Automatic)
             if oldSchemaVersion < 2{} //like Column삭제 (Automatic)
             if oldSchemaVersion < 3{  //overView -> overview Column이름 변경(Manually)
@@ -33,7 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             if oldSchemaVersion < 5 {} //bookSummary Column Optional해제 //옵셔널 해제도 기존 칼럼 지우고 새로운 칼럼 생성된 것으로 판단
             //renameProperty로 안되는데 어떻게 하 지 ?
-            //왜 repository는 shared 안쓰고 instance 생성해서 사용했지
+            //왜 repository는 shared 안쓰고 instance 생성해서 사용했지 //쓰레드에서 안전하지 않음
+            if oldSchemaVersion < 6 {} //text(Strig) Column추가 (기본 값은 뭘로 들어갈까? String = "")
+            if oldSchemaVersion < 7 {} //number(Int) Column추가 (기본 값은 뭘로 들어갈까? Int = 0), (Bool = false)
+            
         }
         
         Realm.Configuration.defaultConfiguration = config

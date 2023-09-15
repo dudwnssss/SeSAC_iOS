@@ -25,6 +25,6 @@ struct Result: Codable {
 
 // MARK: - Urls
 struct URLs: Codable {
-    let full, small: String
+    let full, small, thumb: String
 }
 

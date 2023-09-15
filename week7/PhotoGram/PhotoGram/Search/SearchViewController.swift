@@ -11,7 +11,7 @@ import Kingfisher
 
 class SearchViewController: BaseViewController {
     
-    var searchedImage : SearchedImage?{
+    var searchedImage : Photo?{
         didSet{
             searchView.collectionView.reloadData()
         }
@@ -57,9 +57,9 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if let url = URL(string: (searchedImage?.results[indexPath.row].urls.regular)!) {
-            delegate?.recieveImageURL(imageURL: url)
-        }
+        guard let imageURL = URL(string: (searchedImage?.results[indexPath.row].urls.full)!) else {return}
+        delegate?.recieveImageURL(imageURL: imageURL)
+        
 
         navigationController?.popViewController(animated: true)
     }
