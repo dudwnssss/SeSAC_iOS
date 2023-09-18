@@ -21,6 +21,7 @@ class SignUpViewController: BaseViewController {
     let nicknameTextField = userInfoTextField()
     let locationTextField = userInfoTextField()
     let recommendTextField = userInfoTextField()
+    let alertLabel = UILabel()
     
     let singUpButton = UIButton().then{
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
@@ -61,12 +62,18 @@ class SignUpViewController: BaseViewController {
             $0.placeholder = UserInfoType.recommend.rawValue
             $0.addTarget(self, action: #selector(recomendTextFieldChanged), for: .editingChanged)
         }
+        alertLabel.do {
+            $0.text = "경고경고경고경고"
+            $0.textColor = .lightGray
+            $0.font = .systemFont(ofSize: 15)
+        }
+
         
         view.backgroundColor = .black
     }
     
     override func setLayouts() {
-        view.addSubviews(logo, emailOrPhoneTextField, passwordTextField, nicknameTextField, locationTextField, recommendTextField, singUpButton, moreInfoButton, jfSwitch)
+        view.addSubviews(logo, emailOrPhoneTextField, passwordTextField, nicknameTextField, locationTextField, recommendTextField, singUpButton, moreInfoButton, jfSwitch, alertLabel)
         
         logo.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(40)
@@ -112,6 +119,11 @@ class SignUpViewController: BaseViewController {
         jfSwitch.snp.makeConstraints {
             $0.trailing.equalTo(singUpButton)
             $0.centerY.equalTo(moreInfoButton)
+        }
+        
+        alertLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(jfSwitch.snp.bottom).offset(20)
         }
     }
     
@@ -166,6 +178,10 @@ class SignUpViewController: BaseViewController {
         
         viewModel.recommend.bind {text in
             self.recommendTextField.text = text
+        }
+        
+        viewModel.alert.bind { text in
+            self.alertLabel.text = text
         }
         
         viewModel.isValid.bind { bool in
