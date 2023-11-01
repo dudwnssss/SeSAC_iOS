@@ -7,8 +7,13 @@
  
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class BirthdayViewController: UIViewController {
+    
+    let viewModel = BirthdayViewModel()
+    let disposeBag = DisposeBag()
     
     let birthDayPicker: UIDatePicker = {
         let picker = UIDatePicker()
@@ -64,6 +69,10 @@ class BirthdayViewController: UIViewController {
         return label
     }()
   
+    let buttonEnabled = PublishRelay<Bool>()
+    let buttonColor = PublishRelay<UIColor>()
+    let infoLabelHidden = PublishRelay<Bool>()
+    
     let nextButton = PointButton(title: "가입하기")
     
     override func viewDidLoad() {
@@ -74,6 +83,57 @@ class BirthdayViewController: UIViewController {
         configureLayout()
         
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
+        
+        bind()
+    }
+    
+    func bind() {
+        
+        //UI
+        buttonEnabled
+            .bind(to: nextButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        buttonColor
+            .bind(to: nextButton.rx.backgroundColor)
+            .disposed(by: disposeBag)
+        
+        infoLabelHidden
+            .bind(to: infoLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        
+        //Input
+        birthDayPicker.rx.date
+            .bind(with: self) { owner, date in
+                owner.viewModel.birthday.accept(date)
+            }
+            .disposed(by: disposeBag)
+        
+        //Output
+        viewModel.year
+            .map {"\($0)"}
+            .bind(to: yearLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.month
+            .map {"\($0)"}
+            .bind(to: monthLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.day
+            .map {"\($0)"}
+            .bind(to: dayLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.isValid
+            .bind(with: self) { owner, value in
+                owner.buttonEnabled.accept(value)
+                owner.infoLabelHidden.accept(value)
+                let color: UIColor = value ? .blue : .red
+                owner.buttonColor.accept(color)
+            }
+            .disposed(by: disposeBag)
     }
     
     @objc func nextButtonClicked() {

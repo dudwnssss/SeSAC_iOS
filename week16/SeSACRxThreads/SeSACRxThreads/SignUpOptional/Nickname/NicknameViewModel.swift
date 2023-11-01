@@ -6,3 +6,21 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+
+class NicknameViewModel {
+    
+    let disposeBag = DisposeBag()
+    
+    init(){
+        bind()
+    }
+
+}
+
+extension NicknameViewModel {
+    func bind() {
+        
+    }
+}
