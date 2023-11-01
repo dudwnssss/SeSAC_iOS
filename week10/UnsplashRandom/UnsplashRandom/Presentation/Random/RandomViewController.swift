@@ -36,7 +36,7 @@ class RandomViewController: BaseViewController {
         print(#fileID, #function, #line, "- ")
         PhotoManager.shared.fetchRandomPhoto { [weak self] value in
             self?.randomViewModel.photoList.value.insert(value, at: 0)
-        }
+        } //버튼 터치만 observe, or viewModel.fetchPhoto()실행
     }
     
 }
