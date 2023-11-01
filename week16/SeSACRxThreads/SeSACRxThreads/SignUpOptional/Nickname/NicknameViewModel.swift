@@ -13,6 +13,12 @@ class NicknameViewModel {
     
     let disposeBag = DisposeBag()
     
+    //Input
+    let nickname = PublishRelay<String>()
+    
+    //Output
+    let isValid = BehaviorRelay<Bool>(value: false)
+    
     init(){
         bind()
     }
@@ -21,6 +27,11 @@ class NicknameViewModel {
 
 extension NicknameViewModel {
     func bind() {
-        
+        nickname
+            .map { $0.count >= 2 && $0.count < 6 }
+            .bind(with: self) { owner, value in
+                owner.isValid.accept(value)
+            }
+            .disposed(by: disposeBag)
     }
 }
